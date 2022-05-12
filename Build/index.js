@@ -26,7 +26,7 @@ var createScene = function () {
     var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(0, -5, 0), scene);
     scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
-    camera1.lowerRadiusLimit = 2;
+    camera1.lowerRadiusLimit = 4;
     camera1.upperRadiusLimit = 10;
     camera1.wheelDeltaPercentage = 0.01;
 
@@ -156,48 +156,161 @@ var createScene = function () {
    // someAnim.play()
     //someAnim.loopAnimation = true
 
+
+
+    var rect1 = new BABYLON.GUI.Rectangle();
+    rect1.width = "300px";
+    rect1.height = "280px";
+    rect1.verticalAlignment = "Top";
+    rect1.horizontalAlignment = "Left";
+    rect1.cornerRadius = 20;
+    rect1.color = "";
+    rect1.thickness = 2;
+    rect1.background = "";
+    advancedTexture.addControl(rect1);
+
+    var scroll = new BABYLON.GUI.ScrollViewer("Texture",scene,true);
+    scroll.width = "200px";
+    scroll.height = "230px";
+    scroll.background = "";
+    scroll.barSize = 20;
+ //  scroll.verticalAlignment = "Top";
+   //scroll.horizontalAlignment = "Left";
+    scroll.cornerRadius = 0;
+    scroll.thickness = 0;
+   // scroll.left = "20";
+  //scroll.top = "30";
+
+    scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://i.imgur.com/kDTplHW.png");
+    scroll.barImage = new BABYLON.GUI.Image("bar", "https://i.imgur.com/aPLvx9B.png");
+    scroll.thumbLength = 0.05;
+    scroll.thumbHeight = 0.7;
+    scroll.barImageHeight = 0.3;
+    // scroll.scrollBackground = "";
+    // scroll.barBackground = "blue";
+     rect1.addControl(scroll)
+   // advancedTexture.addControl(scroll);
+
+ var gd = new BABYLON.GUI.Grid();
+    gd.width = "575px";
+    gd.height = "200px";
+    gd.paddingTop = "10px"
+    gd.addColumnDefinition(1/6);
+    gd.addColumnDefinition(1/6);
+    gd.addColumnDefinition(1/6);
+    gd.addColumnDefinition(1/6);
+    gd.addColumnDefinition(1/6);
+    gd.addColumnDefinition(1/6);
+    gd.addRowDefinition(0.5);
+    gd.addRowDefinition(0.5);
+
+    scroll.addControl(gd);
+
     var button2 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1","https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
     button2.width = "70px"
     button2.height = "70px";
     button2.color = "white";
-    button2.verticalAlignment = "Top";
-    button2.horizontalAlignment = "Left";
+    //button2.verticalAlignment = "Top";
+   // button2.horizontalAlignment = "Left";
     button2.cornerRadius = 20;
-    button2.left = "20";
+   // button2.left = "20";
+  
     button2.onPointerUpObservable.add(function() {
         var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
         textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);   
+          textureblack.diffuseTexture.uScale = 1;
+         textureblack.diffuseTexture.vScale = 1;
+         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
         hero.material = textureblack;            
      });
-    advancedTexture.addControl(button2);
-
+   // advancedTexture.addControl(button2);
+    gd.addControl(button2, 0, 0); 
 
     var button3 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg ");
     button3.width = "70px"
     button3.height = "70px";
     button3.color = "white";
-    button3.verticalAlignment = "Top";
-    button3.horizontalAlignment = "Left";
-    button3.top = "80";
-    button3.left = "20";
+   // button3.verticalAlignment = "Top";
+   // button3.horizontalAlignment = "Left";
+   // button3.top = "80";
+  //  button3.left = "20";
     button3.cornerRadius = 20;
     button3.onPointerUpObservable.add(function() {
         var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
         textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);   
         hero.material = textureblack;            
      });
-    advancedTexture.addControl(button3);
+  //  advancedTexture.addControl(button3);
+     gd.addControl(button3, 1, 0); 
 
 
+    var button4 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg ");
+    button4.width = "70px"
+    button4.height = "70px";
+    button4.color = "white";
+    button4.cornerRadius = 20;
+    button4.onPointerUpObservable.add(function() {
+    var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+    textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg", scene);   
+    hero.material = textureblack;            
+    });
+    gd.addControl(button4, 0, 1); 
+
+
+    
+    var button5 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg ");
+    button5.width = "70px"
+    button5.height = "70px";
+    button5.color = "white";
+    button5.cornerRadius = 20;
+    button5.onPointerUpObservable.add(function() {
+    var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+    textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);   
+     textureblack.diffuseTexture.uScale = 2;
+         textureblack.diffuseTexture.vScale = 2;
+         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+    hero.material = textureblack;            
+    });
+    gd.addControl(button5, 0, 2); 
+
+
+    
+    var button6 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg ");
+    button6.width = "70px"
+    button6.height = "70px";
+    button6.color = "white";
+    button6.cornerRadius = 20;
+    button6.onPointerUpObservable.add(function() {
+    var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+    textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg", scene);   
+    hero.material = textureblack;            
+    });
+    gd.addControl(button6, 0, 3); 
+
+    
+    var button7 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg ");
+    button7.width = "70px"
+    button7.height = "70px";
+    button7.color = "white";
+    button7.cornerRadius = 20;
+    button7.onPointerUpObservable.add(function() {
+    var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+    textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg", scene);   
+    hero.material = textureblack;            
+    });
+    gd.addControl(button7, 0, 4); 
+
+
+    // var next = BABYLON.GUI.Button.CreateImageOnlyButton("Arrow_Btn", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/4.jpg");
+    // next.width = "50px"
+    // next.height = "40px";
+    // next.color = "";
+    // rect1.addControl(next)
 
   });
 
-
-//let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("GUI", true, scene);  
-//let loadedGUI = await advancedTexture.parseFromSnippetAsync("#MMWSUI");
-
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI",true,scene);
-   // let loadedGUI =  advancedTexture.parseFromSnippetAsync("QBLSTS");
+
 
     var button1 = BABYLON.GUI.Button.CreateSimpleButton("Open_Btn", "Open");
     button1.width = "150px"
@@ -223,64 +336,9 @@ var createScene = function () {
     someAnim1.loopAnimation = false
     });
    advancedTexture.addControl(button1);
-
-    // var button2 = BABYLON.GUI.Button.CreateSimpleButton("but1", "Texture 1");
-    //         button2.width = "150px"
-    //         button2.height = "40px";
-    //         button2.color = "white";
-    //          button1.verticalAlignment = "Bottom";
-    //         button2.cornerRadius = 20;
-    //         button2.background = "red";
-    //         button2.onPointerUpObservable.add(function() {
-
-    //            // var grile = scene.getMaterialByName("hero");
-    //           //  var grile = scene.getMeshByName("hero");
-    //            var grile = scene.getMeshById(9490);
-             
-    //            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-    //             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
-    //             grile.material = textureblack;
-    //             console.log ("grile.albedoTexture.name = " + grile.diffuseTexture.name);    
-    //             console.log ("model name  = " + grile.name);  
-                
-    //         });
-    //         advancedTexture.addControl(button2);
-
-
-//     //// Gui Editing
-//         let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("GUI", true, scene);
-//        let loadedGUI = advancedTexture.parseFromSnippetAsync("D04P4Z#58");    
-        
-//         let openbtn = advancedTexture.getControlByName("Open");
-
-
-//          openbtn.onPointerUpObservable.add(function() {
-//             const aniGr = scene.animationGroups
-//          console.log(aniGr)
-//          scene.animationGroups.forEach((g)=>{
-//          g.stop()
-//     })
-//         let someAnim = scene.animationGroups[2]
-//         someAnim.play()
-//         someAnim.loopAnimation = false
-            
-//    });
-
-
-    
-
-
+   
     /// animations 
-        var animationGroup = new BABYLON.AnimationGroup("my group");
-    // animationGroup.addTargetedAnimation(animation1, hero);
-    // animationGroup.addTargetedAnimation(animation2, hero);
-
-
-
-   
-   
-
-
+    var animationGroup = new BABYLON.AnimationGroup("my group");
     return scene;
 }
         window.initFunction = async function() {
