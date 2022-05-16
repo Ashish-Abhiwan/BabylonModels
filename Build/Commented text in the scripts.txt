@@ -1,0 +1,71 @@
+
+// Skybox
+    // var dome = new BABYLON.PhotoDome(
+    //         "testdome",
+    //         "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Skybox.jpg",
+    //         {
+    //             resolution: 50,
+    //             size: 1000
+    //         },
+    //         scene
+    //     );
+
+
+
+
+// Ground
+    // var ground = BABYLON.MeshBuilder.CreateGround("ground", { height: 5, width: 5, subdivisions: 4 }, scene);
+    // var groundMaterial = new BABYLON.StandardMaterial("groundMaterial", scene);
+    // groundMaterial.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/wood.jpg", scene);
+    // groundMaterial.diffuseTexture.uScale = 3;
+    // groundMaterial.diffuseTexture.vScale = 3;
+    // groundMaterial.specularColor = new BABYLON.Color3(.1, .1, .1);
+    // ground.material = groundMaterial;
+
+
+
+//Get the Samba animation Group
+        //const sambaAnim = scene.getAnimationGroupByName("Shoved Reaction With Spin");
+
+        //Play the Samba animation  
+        //sambaAnim.start(true, 1.0, sambaAnim.from, sambaAnim.to, false);
+
+
+// material lagana hai model mai 
+  //   var bagmaterial = new BABYLON.StandardMaterial("bagmaterial", scene);
+        //  bagmaterial.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
+        //  bagmaterial.diffuseTexture.uScale = 5;
+        //  bagmaterial.diffuseTexture.vScale = 5;
+        //  bagmaterial.specularColor = new BABYLON.Color3(.1, .1, .1);
+
+        //     her7.material = bagmaterial;
+        //      her8.material = bagmaterial;
+        //      her9.material = bagmaterial;
+        //      her10.material = bagmaterial;
+        //      her11.material = bagmaterial;
+        //     her12.material = bagmaterial;
+        //     her13.material = bagmaterial;
+        //      her14.material = bagmaterial;
+        //     her15.material = bagmaterial;
+        //      her16.material = bagmaterial;
+
+
+
+
+
+// scroll bar related 
+
+
+	//  scroll.verticalAlignment = "Top";
+        //scroll.horizontalAlignment = "Left";
+	 // scroll.left = "20";
+        //scroll.top = "30";
+
+        // scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://i.imgur.com/kDTplHW.png");
+        // scroll.barImage = new BABYLON.GUI.Image("bar", "https://i.imgur.com/aPLvx9B.png");
+        // scroll.thumbLength = 0.05;
+        // scroll.thumbHeight = 0.7;
+        // scroll.barImageHeight = 0.3;
+        // scroll.scrollBackground = "";
+        // scroll.barBackground = "blue";
+

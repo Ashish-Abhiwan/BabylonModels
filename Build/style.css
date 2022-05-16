@@ -7,20 +7,23 @@ body {
     height: 100%;
     touch-action: none;
 }
+
 .modal-dialog {
-  
-    width: 80%;
- 
+    width: 100%;
 }
+
 .modal-dialog {
     max-width: 900px;
 }
+
 .hide {
     visibility: hidden;
 }
+
 .show {
-    visibility: visible !important ;
+    visibility: visible !important;
 }
+
 .canvas-style {
     margin-top: 150px;
     border: 2px solid;
