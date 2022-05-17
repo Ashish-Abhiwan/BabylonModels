@@ -260,8 +260,17 @@ window.initFunction = async function() {
 initFunction().then(() => {sceneToRender = scene                    
 });
 
+function resize(){
+    setTimeout(function(){
+        engine.resize();
+        console.log("safygfasghfsdhgciujkshgdcj")
+    }, 200);
+        
+}
+
 // Resize
 window.addEventListener("resize", async function () {
     engine.resize();
+    console.log("safygfasghfsdhgciujkshgdcj")
 });
 
