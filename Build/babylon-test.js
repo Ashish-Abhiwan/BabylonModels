@@ -95,8 +95,8 @@ var createScene = function () {
             g.stop()
         })
         var rect1 = new BABYLON.GUI.Rectangle();
-        rect1.width = "300px";
-        rect1.height = "80px";
+        rect1.width = "30%";
+        rect1.height = "15%";
         rect1.verticalAlignment = "Center";
         rect1.horizontalAlignment = "Center";
         rect1.top = "85%";
@@ -194,8 +194,9 @@ var createScene = function () {
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
 
     var button1 = BABYLON.GUI.Button.CreateSimpleButton("Open_Btn", "Open");
-    button1.width = "100px"
-    button1.height = "35px";
+    button1.width = "15%"
+    button1.height = "7%";
+    button1.fontSize = "4%";
     button1.top = "3%";
     button1.color = "white";
     button1.verticalAlignment = "Top";
@@ -224,6 +225,21 @@ var createScene = function () {
     return scene;
 }
 
+// window.initFunction = async function() {
+//     var asyncEngineCreation = async function() {
+//         try {
+//             return createDefaultEngine();
+//         } catch(e) {
+//             return createDefaultEngine();
+//         }
+//     }
+//     window.engine = await asyncEngineCreation();
+//     if (!engine) throw 'engine should not be null.';
+//     startRenderLoop(engine, canvas);
+//     window.scene = createScene();
+//     console.log("scene width and height will be " + window.scene ) 
+// };
+
 window.initFunction = async function() {
     var asyncEngineCreation = async function() {
         try {
@@ -238,11 +254,14 @@ window.initFunction = async function() {
     window.scene = createScene();
     console.log("scene width and height will be " + window.scene ) 
 };
+
+
+
 initFunction().then(() => {sceneToRender = scene                    
 });
 
 // Resize
-window.addEventListener("resize", function () {
+window.addEventListener("resize", async function () {
     engine.resize();
 });
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Bag1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -26,13 +26,14 @@
 
 </head>
 <body>
-
-
+<a href="index.html">
     <img src="https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/LogoM.png" alt="Hidesign" class="center">
+</a>
 
+   
 <div class="custom_container">
-  <h2>Bag 1</h2>
-  <button onclick="resize()" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Customize</button>
+  <h2 class="head">Bag 1</h2>
+  <button onclick="render()" type="button" class="btn btn-info btn-lg custbtn" data-toggle="modal" data-target="#myModal">Customize</button>
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -44,7 +45,7 @@
                     <canvas id="renderCanvas"></canvas>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Checkout</button>
                 </div>
             </div>
 
@@ -52,34 +53,50 @@
     </div>
 </div>
 <style>
+
+.modal-body{
+    width: 100%;
+    height: 100%;
+}
+
+
+.btn-lg{
+    height: 70px;
+    width: 220px;
+    font-size: 35px;
+}
+
+.head{
+   font-size: 40px;
+}
+
 .custom_container{
     padding: 0 110px;
+    font-size: 40px;
 }
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 30%;
 }
-
-
     .modal-dialog {
-    width: 1080px;
+    width: 50%;
 }
+#renderCanvas {
+    width: 100%;
+    height: 100%;
+    /* touch-action: none; */
+}
+    /* html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    } */
 
-            html, body {
-                overflow: hidden;
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            #renderCanvas {
-                width: 100%;
-                height: 100%;
-                touch-action: none;
-            }
+           
 </style>
 
 <script>
