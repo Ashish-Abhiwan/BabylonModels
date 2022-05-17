@@ -31,10 +31,15 @@
 </a>
 
 <div class="bag_img">   
-    <img src="https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bag4.png" alt="Hidesign" >
-  <div class="custom_container">
-        <h2 class="head">Bag1</h2>
-        <button onclick="resize()" type="button" class="btn btn-info btn-lg custbtn" data-toggle="modal" data-target="#myModal">Customize</button> 
+    <div class="custom">
+        <img src="https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bag4.png"
+            alt="Hidesign">
+        <div>
+            <h2 class="head">Bag1</h2>
+            <button onclick="resize()" type="button" class="btn btn-info btn-lg custbtn" data-toggle="modal"
+                data-target="#myModal">Customize</button>
+        </div>
+    </div>
     <div class="modal fade" id="myModal" role="dialog">        
         <div class="modal-dialog">
             <div class="modal-content">
@@ -56,7 +61,12 @@
 </div>
 <style>
 
-    
+.custom {
+
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
 .modal-body{
     width: 100%;
     height: 100%;
@@ -72,12 +82,12 @@
    font-size: 40px;
 }
 
-.custom_container{
+/* .custom_container{
     padding: 0 1460px;
     font-size: 40px;
     margin-top: -420px;
     
-}
+} */
 .center {
   display: block;
   margin-left: auto;
@@ -100,6 +110,19 @@
     padding: 0;
     } */
 
+
+
+
+    @media only screen and (max-device-width : 1023px) {
+                .custom {
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+
+            }
            
 </style>
 
