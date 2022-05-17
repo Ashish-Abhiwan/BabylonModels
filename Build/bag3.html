@@ -26,27 +26,47 @@
 
 </head>
 <body>
-
-<div class="container">
+    <img src="https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/LogoM.png" alt="Hidesign" class="center">
+<div class="custom_container">
 
   <h2>Bag 3</h2>
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Customize</button>
 
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>   
-                </div>
-                <div class="modal-body">
-                    <canvas id="renderCanvas"></canvas>
-                </div>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Bag Configrator</h4>
+            </div>
+            <div class="modal-body">
+                <canvas id="renderCanvas"></canvas>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
+
     </div>
 </div>
+</div>
 <style>
+
+
+.custom_container{
+    padding: 0 110px;
+}
+
+.center {
+  display: block;
+  margin-left: 10px;
+  margin-right: 80px;
+  width: 15%;
+}
+
+
+
     .modal-dialog {
     width: 1000px;
 }

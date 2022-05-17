@@ -29,7 +29,7 @@ var createScene = function () {
     camera1.lowerRadiusLimit = 3;
     camera1.upperRadiusLimit = 10;
     camera1.wheelDeltaPercentage = 0.01;
-    scene.clearColor = new BABYLON.Color3(0.89, 0.89, 0.83);
+    scene.clearColor = new BABYLON.Color3(0.96, 0.96, 0.96);
     // Lights
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
     light.intensity = 1;
@@ -99,8 +99,8 @@ var createScene = function () {
         rect1.height = "80px";
         rect1.verticalAlignment = "Center";
         rect1.horizontalAlignment = "Center";
-        rect1.top = "90%";
-        rect1.left = "38%";
+        rect1.top = "85%";
+        rect1.left = "36%";
         rect1.cornerRadius = 20;
         rect1.color = "";
         rect1.thickness = 0;
@@ -194,8 +194,9 @@ var createScene = function () {
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
 
     var button1 = BABYLON.GUI.Button.CreateSimpleButton("Open_Btn", "Open");
-    button1.width = "15%"
-    button1.height = "4%";
+    button1.width = "100px"
+    button1.height = "35px";
+    button1.top = "3%";
     button1.color = "white";
     button1.verticalAlignment = "Top";
     button1.cornerRadius = 20;
@@ -235,6 +236,7 @@ window.initFunction = async function() {
     if (!engine) throw 'engine should not be null.';
     startRenderLoop(engine, canvas);
     window.scene = createScene();
+    console.log("scene width and height will be " + window.scene ) 
 };
 initFunction().then(() => {sceneToRender = scene                    
 });
