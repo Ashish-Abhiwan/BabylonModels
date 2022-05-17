@@ -51,6 +51,25 @@
         </div>
     </div>
 </div>
+<style>
+    .modal-dialog {
+    width: 1000px;
+}
+
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+</style>
 
 <script>
     
@@ -59,7 +78,7 @@
     let lastWord = myString[myString.length - 1];
     mystring = lastWord.split('.');
     var finalString = mystring[0];
-    var modelname = "New" + ".glb" ;
+    var modelname = finalString + ".glb" ;
 
 </script>
 
