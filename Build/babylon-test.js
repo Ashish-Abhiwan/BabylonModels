@@ -27,7 +27,7 @@ var createScene = function () {
     scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
     camera1.lowerRadiusLimit = 3;
-    camera1.upperRadiusLimit = 10;
+    camera1.upperRadiusLimit = 5;
     camera1.wheelDeltaPercentage = 0.01;
     scene.clearColor = new BABYLON.Color3(0.96, 0.96, 0.96);
     // Lights
