@@ -106,6 +106,9 @@ var createScene = function () {
         canvas.color = "Grey";
         canvas.thickness = 0;
         canvas.background = "#F5F4F2";
+        canvas.shadowColor = "black";
+        canvas.shadowOffsetX = 3;
+        canvas.shadowBlur = 15;
         advancedTexture.addControl(canvas);
 
         var titleRect = new BABYLON.GUI.Rectangle();
@@ -159,7 +162,8 @@ var createScene = function () {
         scroll.top = "15%";
         scroll.cornerRadius = 0;
         scroll.thickness = 0;
-        rect1.addControl(scroll)
+        rect1.addControl(scroll);
+
         var gd = new BABYLON.GUI.Grid();
         gd.width = "100%";
         gd.height = "100%";
@@ -170,11 +174,12 @@ var createScene = function () {
         gd.addColumnDefinition(1 / 4);
         gd.addRowDefinition(1);
         scroll.addControl(gd);
+
         var button2 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
         button2.width = "95%"
         button2.height = "95%";
         button2.color = "white";
-        button2.cornerRadius = 20;
+        button2.cornerRadius = 10;
         button2.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
@@ -189,7 +194,7 @@ var createScene = function () {
         button3.width = "95%"
         button3.height = "95%";
         button3.color = "white";
-        button3.cornerRadius = 20;
+        button3.cornerRadius = 10;
         button3.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);
@@ -202,7 +207,7 @@ var createScene = function () {
         button4.width = "95%"
         button4.height = "95%";
         button4.color = "white";
-        button4.cornerRadius = 20;
+        button4.cornerRadius = 10;
         button4.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg", scene);
@@ -216,7 +221,7 @@ var createScene = function () {
         button5.width = "95%"
         button5.height = "95%";
         button5.color = "white";
-        button5.cornerRadius = 20;
+        button5.cornerRadius = 10;
         button5.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
@@ -274,7 +279,7 @@ var createScene = function () {
         L1Btn.width = "95%"
         L1Btn.height = "95%";
         L1Btn.color = "white";
-        L1Btn.cornerRadius = 20;
+        L1Btn.cornerRadius = 10;
         L1Btn.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
@@ -289,7 +294,7 @@ var createScene = function () {
         L2Btn.width = "95%"
         L2Btn.height = "95%";
         L2Btn.color = "white";
-        L2Btn.cornerRadius = 20;
+        L2Btn.cornerRadius = 10;
         L2Btn.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);
@@ -302,7 +307,7 @@ var createScene = function () {
         L3Btn.width = "95%"
         L3Btn.height = "95%";
         L3Btn.color = "white";
-        L3Btn.cornerRadius = 20;
+        L3Btn.cornerRadius = 10;
         L3Btn.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg", scene);
@@ -316,7 +321,7 @@ var createScene = function () {
         L4Btn.width = "95%"
         L4Btn.height = "95%";
         L4Btn.color = "white";
-        L4Btn.cornerRadius = 20;
+        L4Btn.cornerRadius = 10;
         L4Btn.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
@@ -361,6 +366,7 @@ var createScene = function () {
      scrollS.cornerRadius = 0;
      scrollS.thickness = 0;
      rect3.addControl(scrollS)
+
      var gd2 = new BABYLON.GUI.Grid();
      gd2.width = "100%";
      gd2.height = "100%";
@@ -375,7 +381,7 @@ var createScene = function () {
      C1Btn.width = "95%"
      C1Btn.height = "95%";
      C1Btn.color = "white";
-     C1Btn.cornerRadius = 20;
+     C1Btn.cornerRadius = 10;
      C1Btn.onPointerUpObservable.add(function () {
          var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
          textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
@@ -390,7 +396,7 @@ var createScene = function () {
      C2Btn.width = "95%"
      C2Btn.height = "95%";
      C2Btn.color = "white";
-     C2Btn.cornerRadius = 20;
+     C2Btn.cornerRadius = 10;
      C2Btn.onPointerUpObservable.add(function () {
          var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
          textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);
@@ -403,7 +409,7 @@ var createScene = function () {
      C3Btn.width = "95%"
      C3Btn.height = "95%";
      C3Btn.color = "white";
-     C3Btn.cornerRadius = 20;
+     C3Btn.cornerRadius = 10;
      C3Btn.onPointerUpObservable.add(function () {
          var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
          textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg", scene);
@@ -417,7 +423,7 @@ var createScene = function () {
      C4Btn.width = "95%"
      C4Btn.height = "95%";
      C4Btn.color = "white";
-     C4Btn.cornerRadius = 20;
+     C4Btn.cornerRadius = 10;
      C4Btn.onPointerUpObservable.add(function () {
          var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
          textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
@@ -434,7 +440,7 @@ var createScene = function () {
      ////////////////////////////////////////////////////////////////       
         var rect4 = new BABYLON.GUI.Rectangle();
         rect4.width = "98%";
-        rect4.height = "22%";
+        rect4.height = "24%";
         rect4.verticalAlignment = "Center";
         rect4.horizontalAlignment = "Center";
         rect4.top = "76%";
@@ -450,11 +456,13 @@ var createScene = function () {
         grd.width = "100%";
         grd.height = "100%";
         grd.paddingTop = "5%"
-        //gd2.addColumnDefinition(1 / 4);
+      //  gdd.addColumnDefinition();
         grd.addRowDefinition(1/4);
         grd.addRowDefinition(1/4);
         grd.addRowDefinition(1/4);
         grd.addRowDefinition(1/4);
+        grd.addColumnDefinition(0.70);
+        grd.addColumnDefinition(0.30);
         rect4.addControl(grd);
 
         
@@ -464,7 +472,7 @@ var createScene = function () {
         lePText.verticalAlignment = "top";
         lePText.horizontalAlignment = "Center";
         // lePText.paddingBottom = "65%"
-        lePText.paddingRight = "28%"
+        //lePText.paddingRight = "28%"
         grd.addControl(lePText,0);
 
 
@@ -475,27 +483,41 @@ var createScene = function () {
         leP1Text.verticalAlignment = "top";
         leP1Text.horizontalAlignment = "Center";
        // leP1Text.paddingBottom = "30%"
-        leP1Text.paddingRight = "27%"
+       // leP1Text.paddingRight = "27%"
         grd.addControl(leP1Text,1);
 
         var leP2Text = new BABYLON.GUI.TextBlock();
-        leP2Text.text = "Name in Blind Emboss";
+        leP2Text.text = "Name in Gold Emboss";
         leP2Text.fontSize = "55%";
         leP2Text.verticalAlignment = "top";
         leP2Text.horizontalAlignment = "Center";
         //leP2Text.paddingTop = "20%"
-        leP2Text.paddingRight = "27%"
+       // leP2Text.paddingRight = "27%"
         grd.addControl(leP2Text,2);
 
-        var namefeild = new BABYLON.GUI.InputText("Input");
-        namefeild.width = "80%";
-        namefeild.height = "75%";
-        namefeild.color = "black";
-        namefeild.background = "white";
+          var namefeild = new BABYLON.GUI.InputText("Input");
+        namefeild.width = "85%";
+        namefeild.height = "80%";
+        namefeild.color = "white";
+        namefeild.background = "#AFAFAFFF";
         namefeild.placeholderText = "Your Name";
-        namefeild.placeholderColor = "black";
-        namefeild.focusedBackground = "white";
+        namefeild.placeholderColor = "White";
+        namefeild.focusedBackground = "#AFAFAFFF"
         grd.addControl(namefeild,3);
+
+        var tag1 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/PlainTag.png ");
+        tag1.width = "80%"
+        tag1.height = "80%";
+        tag1.color = "white";
+        tag1.cornerRadius = 10;
+        grd.addControl(tag1,1,2);
+
+        var tag2 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/GoldTag.png");
+        tag2.width = "80%"
+        tag2.height = "80%";
+        tag2.color = "white";
+        tag2.cornerRadius = 10;
+        grd.addControl(tag2,2,2);
 
     });
 
@@ -508,7 +530,7 @@ var createScene = function () {
     button1.top = "3%";
     button1.color = "white";
     button1.verticalAlignment = "Top";
-    button1.cornerRadius = 20;
+    button1.cornerRadius = 10;
     button1.background = "green";
     button1.onPointerUpObservable.add(function () {
         const aniGr = scene.animationGroups
@@ -581,3 +603,7 @@ window.addEventListener("resize", async function () {
     engine.resize();
     console.log("safygfasghfsdhgciujkshgdcj")
 });
+
+
+
+
