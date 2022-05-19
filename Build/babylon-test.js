@@ -27,9 +27,9 @@ var createScene = function () {
     scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
     camera1.lowerRadiusLimit = 3;
-    camera1.upperRadiusLimit = 5;
-    camera1.wheelDeltaPercentage = 0.01;
-    scene.clearColor = new BABYLON.Color3(0.96, 0.96, 0.96);
+    camera1.upperRadiusLimit = 6;
+    camera1.wheelDeltaPercentage = 0.05;
+    scene.clearColor = new BABYLON.Color3(1, 1, 1);
     // Lights
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
     light.intensity = 1;
@@ -94,24 +94,69 @@ var createScene = function () {
         scene.animationGroups.forEach((g) => {
             g.stop()
         })
+
+        var canvas = new BABYLON.GUI.Rectangle();
+        canvas.width = "25%";
+        canvas.height = "100%";
+        canvas.verticalAlignment = "Center";
+        canvas.horizontalAlignment = "Center";
+        canvas.top = "";
+        canvas.left = "";
+        canvas.cornerRadius = 0;
+        canvas.color = "Grey";
+        canvas.thickness = 0;
+        canvas.background = "#F5F4F2";
+        advancedTexture.addControl(canvas);
+
+        var titleRect = new BABYLON.GUI.Rectangle();
+        titleRect.width = "85%";
+        titleRect.height = "6.5%";
+        titleRect.verticalAlignment = "Center";
+        titleRect.horizontalAlignment = "Center";
+        titleRect.top = "2%";
+        titleRect.left = "1%";
+        titleRect.cornerRadius = 0;
+        titleRect.color = "black";
+        titleRect.thickness = 2;
+        titleRect.background = "white";
+        titleRect.paddingLeft = "17%"
+        canvas.addControl(titleRect);
+
+
+        var titleText = new BABYLON.GUI.TextBlock();
+        titleText.text = "CUSTOMIZE";
+       titleText.fontSize = "80%";
+       titleText.verticalAlignment = "top";
+       titleText.horizontalAlignment = "Center";
+       titleRect.addControl(titleText);
+
         var rect1 = new BABYLON.GUI.Rectangle();
-        rect1.width = "30%";
-        rect1.height = "15%";
+        rect1.width = "98%";
+        rect1.height = "20%";
         rect1.verticalAlignment = "Center";
         rect1.horizontalAlignment = "Center";
-        rect1.top = "85%";
-        rect1.left = "36%";
-        rect1.cornerRadius = 20;
-        rect1.color = "";
-        rect1.thickness = 0;
+        rect1.top = "10%";
+        rect1.left = "1%";
+        rect1.cornerRadius = 0;
+        rect1.color = "black";
+        rect1.thickness = 1;
         rect1.background = "";
-        advancedTexture.addControl(rect1);
+        canvas.addControl(rect1);
 
+
+        var leText = new BABYLON.GUI.TextBlock();
+        leText.text = "LEATHER";
+        leText.fontSize = "15%";    
+        leText.paddingBottom = "70%"
+        leText.paddingRight = "63%"
+        rect1.addControl(leText);
+      
         var scroll = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
-        scroll.width = "100%";
-        scroll.height = "100%";
+        scroll.width = "95%";
+        scroll.height = "70%";
         scroll.background = "";
         scroll.barSize = "10";
+        scroll.top = "15%";
         scroll.cornerRadius = 0;
         scroll.thickness = 0;
         rect1.addControl(scroll)
@@ -181,14 +226,277 @@ var createScene = function () {
             hero.material = textureblack;
         });
         gd.addControl(button5, 0, 3);
+     ////////////////////////////////////////////////    
+        var rect2 = new BABYLON.GUI.Rectangle();
+        rect2.width = "98%";
+        rect2.height = "20%";
+        rect2.verticalAlignment = "Center";
+        rect2.horizontalAlignment = "Center";
+        rect2.top = "32%";
+        rect2.left = "1%";
+        rect2.cornerRadius = 0;
+        rect2.color = "black";
+        rect2.thickness = 1;
+        rect2.background = "";
+        canvas.addControl(rect2);
 
-        var fetchApi = function(url){
+       var leliText = new BABYLON.GUI.TextBlock();
+       leliText.text = "LEATHER LINING";
+       leliText.fontSize = "16%";
+       leliText.verticalAlignment = "top";
+       leliText.horizontalAlignment = "Center";
+       leliText.paddingBottom = "70%"
+       leliText.paddingRight = "37%"
+       rect2.addControl(leliText);
+      
+        var scroll1 = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
+        scroll1.width = "95%";
+        scroll1.height = "70%";
+        scroll1.background = "";
+        scroll1.barSize = "10";
+        scroll1.top = "15%";
+        scroll1.cornerRadius = 0;
+        scroll1.thickness = 0;
+        rect2.addControl(scroll1)
 
-            var url = fetch(fetchApi)
-            var data = url
+        var gd1 = new BABYLON.GUI.Grid();
+        gd1.width = "100%";
+        gd1.height = "100%";
+        gd1.paddingTop = "10%"
+        gd1.addColumnDefinition(1 / 4);
+        gd1.addColumnDefinition(1 / 4);
+        gd1.addColumnDefinition(1 / 4);
+        gd1.addColumnDefinition(1 / 4);
+        gd1.addRowDefinition(1);
+        scroll1.addControl(gd1);
 
-           // console.log("dsvchvsdgfcgsd" + url)
-        }
+        var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
+        L1Btn.width = "95%"
+        L1Btn.height = "95%";
+        L1Btn.color = "white";
+        L1Btn.cornerRadius = 20;
+        L1Btn.onPointerUpObservable.add(function () {
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
+            textureblack.diffuseTexture.uScale = 1;
+            textureblack.diffuseTexture.vScale = 1;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L1Btn, 0, 0);
+
+        var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg ");
+        L2Btn.width = "95%"
+        L2Btn.height = "95%";
+        L2Btn.color = "white";
+        L2Btn.cornerRadius = 20;
+        L2Btn.onPointerUpObservable.add(function () {
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L2Btn, 0, 1);
+
+
+        var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg ");
+        L3Btn.width = "95%"
+        L3Btn.height = "95%";
+        L3Btn.color = "white";
+        L3Btn.cornerRadius = 20;
+        L3Btn.onPointerUpObservable.add(function () {
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg", scene);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L3Btn, 0, 2);
+
+
+
+        var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg ");
+        L4Btn.width = "95%"
+        L4Btn.height = "95%";
+        L4Btn.color = "white";
+        L4Btn.cornerRadius = 20;
+        L4Btn.onPointerUpObservable.add(function () {
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L4Btn, 0, 3);
+
+
+     ///////////////////////////////////////////////////////
+     var rect3 = new BABYLON.GUI.Rectangle();
+     rect3.width = "98%";
+     rect3.height = "20%";
+     rect3.verticalAlignment = "Center";
+     rect3.horizontalAlignment = "Center";
+     rect3.top = "54%";
+     rect3.left = "1%";
+     rect3.cornerRadius = 0;
+     rect3.color = "black";
+     rect3.thickness = 1;
+     rect3.background = "";
+     canvas.addControl(rect3);
+
+ 
+     var leLText = new BABYLON.GUI.TextBlock();
+     leLText.text = "COLORS";
+     leLText.fontSize = "15%";
+     leLText.verticalAlignment = "top";
+     leLText.horizontalAlignment = "Center";
+     leLText.paddingBottom = "70%"
+     leLText.paddingRight = "65%"
+     rect3.addControl(leLText);
+   
+     var scrollS = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
+     scrollS.width = "95%";
+     scrollS.height = "70%";
+     scrollS.background = "";
+     scrollS.barSize = "10";
+     scrollS.top = "15%";
+     scrollS.cornerRadius = 0;
+     scrollS.thickness = 0;
+     rect3.addControl(scrollS)
+     var gd2 = new BABYLON.GUI.Grid();
+     gd2.width = "100%";
+     gd2.height = "100%";
+     gd2.paddingTop = "10%"
+     gd2.addColumnDefinition(1 / 4);
+     gd2.addColumnDefinition(1 / 4);
+     gd2.addColumnDefinition(1 / 4);
+     gd2.addColumnDefinition(1 / 4);
+     gd2.addRowDefinition(1);
+     scrollS.addControl(gd2);
+     var C1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
+     C1Btn.width = "95%"
+     C1Btn.height = "95%";
+     C1Btn.color = "white";
+     C1Btn.cornerRadius = 20;
+     C1Btn.onPointerUpObservable.add(function () {
+         var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+         textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
+         textureblack.diffuseTexture.uScale = 1;
+         textureblack.diffuseTexture.vScale = 1;
+         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+         hero.material = textureblack;
+     });
+     gd2.addControl(C1Btn, 0, 0);
+
+     var C2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg ");
+     C2Btn.width = "95%"
+     C2Btn.height = "95%";
+     C2Btn.color = "white";
+     C2Btn.cornerRadius = 20;
+     C2Btn.onPointerUpObservable.add(function () {
+         var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+         textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);
+         hero.material = textureblack;
+     });
+     gd2.addControl(C2Btn, 0, 1);
+
+
+     var C3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg ");
+     C3Btn.width = "95%"
+     C3Btn.height = "95%";
+     C3Btn.color = "white";
+     C3Btn.cornerRadius = 20;
+     C3Btn.onPointerUpObservable.add(function () {
+         var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+         textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg", scene);
+         hero.material = textureblack;
+     });
+     gd2.addControl(C3Btn, 0, 2);
+
+
+
+     var C4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg ");
+     C4Btn.width = "95%"
+     C4Btn.height = "95%";
+     C4Btn.color = "white";
+     C4Btn.cornerRadius = 20;
+     C4Btn.onPointerUpObservable.add(function () {
+         var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+         textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
+         textureblack.diffuseTexture.uScale = 2;
+         textureblack.diffuseTexture.vScale = 2;
+         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+         hero.material = textureblack;
+     });
+     gd2.addControl(C4Btn, 0, 3);
+
+
+
+
+     ////////////////////////////////////////////////////////////////       
+        var rect4 = new BABYLON.GUI.Rectangle();
+        rect4.width = "98%";
+        rect4.height = "22%";
+        rect4.verticalAlignment = "Center";
+        rect4.horizontalAlignment = "Center";
+        rect4.top = "76%";
+        rect4.left = "1%";
+        rect4.cornerRadius = 0;
+        rect4.color = "black";
+        rect4.thickness = 1;
+        rect4.background = "";
+        canvas.addControl(rect4);
+        
+       
+        var grd = new BABYLON.GUI.Grid();
+        grd.width = "100%";
+        grd.height = "100%";
+        grd.paddingTop = "5%"
+        //gd2.addColumnDefinition(1 / 4);
+        grd.addRowDefinition(1/4);
+        grd.addRowDefinition(1/4);
+        grd.addRowDefinition(1/4);
+        grd.addRowDefinition(1/4);
+        rect4.addControl(grd);
+
+        
+        var lePText = new BABYLON.GUI.TextBlock();
+        lePText.text = "PERSONALISE TAG";
+        lePText.fontSize = "65%";
+        lePText.verticalAlignment = "top";
+        lePText.horizontalAlignment = "Center";
+        // lePText.paddingBottom = "65%"
+        lePText.paddingRight = "28%"
+        grd.addControl(lePText,0);
+
+
+
+        var leP1Text = new BABYLON.GUI.TextBlock();
+        leP1Text.text = "Name in Blind Emboss";
+        leP1Text.fontSize = "55%";
+        leP1Text.verticalAlignment = "top";
+        leP1Text.horizontalAlignment = "Center";
+       // leP1Text.paddingBottom = "30%"
+        leP1Text.paddingRight = "27%"
+        grd.addControl(leP1Text,1);
+
+        var leP2Text = new BABYLON.GUI.TextBlock();
+        leP2Text.text = "Name in Blind Emboss";
+        leP2Text.fontSize = "55%";
+        leP2Text.verticalAlignment = "top";
+        leP2Text.horizontalAlignment = "Center";
+        //leP2Text.paddingTop = "20%"
+        leP2Text.paddingRight = "27%"
+        grd.addControl(leP2Text,2);
+
+        var namefeild = new BABYLON.GUI.InputText("Input");
+        namefeild.width = "80%";
+        namefeild.height = "75%";
+        namefeild.color = "black";
+        namefeild.background = "white";
+        namefeild.placeholderText = "Your Name";
+        namefeild.placeholderColor = "black";
+        namefeild.focusedBackground = "white";
+        grd.addControl(namefeild,3);
+
     });
 
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
@@ -273,4 +581,3 @@ window.addEventListener("resize", async function () {
     engine.resize();
     console.log("safygfasghfsdhgciujkshgdcj")
 });
-
