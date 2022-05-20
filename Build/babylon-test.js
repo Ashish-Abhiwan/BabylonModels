@@ -14,15 +14,9 @@ var sceneToRender = null;
 var createDefaultEngine = function() { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true,  disableWebGL2Support: false}); };
 
 var createScene = function () {
-    
-    // Low Poly Character with Blender Tutorial of Grant Abbitt: https://www.youtube.com/user/mediagabbitt
-    // Character animations by Mixamo: https://www.mixamo.com/
-
     engine.enableOfflineSupport = false;
-
     // Scene and Camera
     var scene = new BABYLON.Scene(engine);
-
     var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(0, -5, 0), scene);
     scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
@@ -109,6 +103,8 @@ var createScene = function () {
         canvas.shadowColor = "black";
         canvas.shadowOffsetX = 3;
         canvas.shadowBlur = 15;
+        canvas.shadowColor = "#7C7878FF";
+        
         advancedTexture.addControl(canvas);
 
         var titleRect = new BABYLON.GUI.Rectangle();
@@ -128,10 +124,10 @@ var createScene = function () {
 
         var titleText = new BABYLON.GUI.TextBlock();
         titleText.text = "CUSTOMIZE";
-       titleText.fontSize = "80%";
-       titleText.verticalAlignment = "top";
-       titleText.horizontalAlignment = "Center";
-       titleRect.addControl(titleText);
+        titleText.fontSize = "80%";
+        // titleText.verticalAlignment = "top";
+        // titleText.horizontalAlignment = "Center";
+        titleRect.addControl(titleText);
 
         var rect1 = new BABYLON.GUI.Rectangle();
         rect1.width = "98%";
@@ -166,13 +162,20 @@ var createScene = function () {
 
         var gd = new BABYLON.GUI.Grid();
         gd.width = "100%";
-        gd.height = "100%";
+        gd.height = "650%";
         gd.paddingTop = "10%"
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
-        gd.addRowDefinition(1);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/8);
         scroll.addControl(gd);
 
         var button2 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
@@ -225,8 +228,8 @@ var createScene = function () {
         button5.onPointerUpObservable.add(function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture.uScale = 3;
+            textureblack.diffuseTexture.vScale = 3;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
@@ -434,9 +437,6 @@ var createScene = function () {
      });
      gd2.addControl(C4Btn, 0, 3);
 
-
-
-
      ////////////////////////////////////////////////////////////////       
         var rect4 = new BABYLON.GUI.Rectangle();
         rect4.width = "98%";
@@ -464,8 +464,7 @@ var createScene = function () {
         grd.addColumnDefinition(0.70);
         grd.addColumnDefinition(0.30);
         rect4.addControl(grd);
-
-        
+ 
         var lePText = new BABYLON.GUI.TextBlock();
         lePText.text = "PERSONALISE TAG";
         lePText.fontSize = "65%";
@@ -474,8 +473,6 @@ var createScene = function () {
         // lePText.paddingBottom = "65%"
         //lePText.paddingRight = "28%"
         grd.addControl(lePText,0);
-
-
 
         var leP1Text = new BABYLON.GUI.TextBlock();
         leP1Text.text = "Name in Blind Emboss";
@@ -495,7 +492,7 @@ var createScene = function () {
        // leP2Text.paddingRight = "27%"
         grd.addControl(leP2Text,2);
 
-          var namefeild = new BABYLON.GUI.InputText("Input");
+        var namefeild = new BABYLON.GUI.InputText("Input");
         namefeild.width = "85%";
         namefeild.height = "80%";
         namefeild.color = "white";
@@ -549,9 +546,14 @@ var createScene = function () {
         someAnim1.loopAnimation = false
     });
     advancedTexture.addControl(button1);
+    
+   
 
     /// animations 
     var animationGroup = new BABYLON.AnimationGroup("my group");
+
+
+
     return scene;
 }
 
@@ -600,10 +602,15 @@ function resize(){
 
 // Resize
 window.addEventListener("resize", async function () {
+   // engine.scaleTo(engine.getRenderWidth(), engine.getRenderHeight());
     engine.resize();
+  
     console.log("safygfasghfsdhgciujkshgdcj")
 });
 
 
+// window.addEventListener("resize", () => {
+//     adt.scaleTo(engine.getRenderWidth(), engine.getRenderHeight());
+//     });
 
 
