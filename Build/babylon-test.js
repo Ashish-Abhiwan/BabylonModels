@@ -156,6 +156,13 @@ var createScene = function () {
         scroll.top = "15%";
         scroll.cornerRadius = 0;
         scroll.thickness = 0;
+        scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
+        scroll.barImage = new BABYLON.GUI.Image("bar", "https://i.imgur.com/aPLvx9B.png");
+        scroll.thumbLength = 0.5;
+        scroll.thumbHeight = 1;
+        scroll.barImageHeight = 0.3;
+        scroll.scrollBackground = "";
+        scroll.barBackground = "blue";
         rect1.addControl(scroll);
 
         var gd = new BABYLON.GUI.Grid();

@@ -29,7 +29,7 @@
 }
 
 .modal-dialog {
-    width: 65%;
+    width: 70%;
 }
 
 #renderCanvas {
@@ -107,6 +107,9 @@
         width: 160px;
         font-size: 20px;
     }
+    .modal-dialog {
+        width: 96%;
+    }
 
 }
 @media (min-width:425px) and (max-width:575px) {
@@ -123,6 +126,11 @@
         height: 50px;
         width: 160px;
         font-size: 20px;
+    }
+
+    .modal-dialog {
+        width: 96%;
+       
     }
 
 }
@@ -142,4 +150,13 @@
         width: 160px;
         font-size: 20px;
     }
+
+    .modal-dialog {
+        width: 96%;
+     
+    }
+
+    
+
+
 }
