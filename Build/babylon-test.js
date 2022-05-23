@@ -642,7 +642,7 @@ var createScene = function () {
 
         var gd1 = new BABYLON.GUI.Grid();
         gd1.width = "100%";
-        gd1.height = "200%";
+        gd1.height = "250%";
         gd1.paddingTop = "10%"
         gd1.addColumnDefinition(1 / 4);
         gd1.addColumnDefinition(1 / 4);
