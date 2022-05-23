@@ -156,8 +156,8 @@ var createScene = function () {
         scroll.top = "15%";
         scroll.cornerRadius = 0;
         scroll.thickness = 0;
-        scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
-        scroll.barImage = new BABYLON.GUI.Image("bar", "https://i.imgur.com/aPLvx9B.png");
+        scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bar.jpg");
+        scroll.barImage = new BABYLON.GUI.Image("bar", "");
         scroll.thumbLength = 0.5;
         scroll.thumbHeight = 1;
         scroll.barImageHeight = 0.3;
@@ -167,191 +167,25 @@ var createScene = function () {
 
         var gd = new BABYLON.GUI.Grid();
         gd.width = "100%";
-        gd.height = "650%";
+        gd.height = "500%";
         gd.paddingTop = "10%"
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
-        gd.addRowDefinition(1/8);
+        gd.addRowDefinition(1/6);
+        gd.addRowDefinition(1/6);
+        gd.addRowDefinition(1/6);
+        gd.addRowDefinition(1/6);
+        gd.addRowDefinition(1/6);+
+        gd.addRowDefinition(1/6);
+      
         scroll.addControl(gd);
 
-        var currentButton;
-
-        var button2 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg");
-        currentButton = button2;
-        button2.width = "95%"
-        button2.height = "95%";
-        button2.color = "#25BAFFFF";
-        button2.cornerRadius = 10;
-        button2.thickness = 0;
-        button2.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button2;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg", scene);
-            textureblack.diffuseTexture.uScale = 1;
-            textureblack.diffuseTexture.vScale = 1;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button2, 0, 0);
-
-        var button3 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg ");
-        button3.width = "95%"
-        button3.height = "95%";
-        button3.color = "#25BAFFFF";
-        button3.cornerRadius = 10;
-        button3.thickness=0;
-        button3.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button3;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg", scene);
-            hero.material = textureblack;
-        });
-        gd.addControl(button3, 0, 1);
-
-        var button4 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg ");
-        button4.width = "95%"
-        button4.height = "95%";
-        button4.color = "#25BAFFFF";
-        button4.cornerRadius = 10;
-        button4.thickness = 0;
-        button4.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button4;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg", scene);
-            hero.material = textureblack;
-        });
-        gd.addControl(button4, 0, 2);
-
-        var button5 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg ");
-        button5.width = "95%"
-        button5.height = "95%";
-        button5.color = "#25BAFFFF";
-        button5.cornerRadius = 10;
-        button5.thickness = 0;
-        button5.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button5;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button5, 0, 3);
-
-        
-        var button6 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg ");
-        button6.width = "95%"
-        button6.height = "95%";
-        button6.color = "#25BAFFFF";
-        button6.cornerRadius = 10;
-        button6.thickness = 0;
-        button6.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button6;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button6, 1, 0);
-        
-        var button7 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE BLUE.jpg ");
-        button7.width = "95%"
-        button7.height = "95%";
-        button7.color = "#25BAFFFF";
-        button7.cornerRadius = 10;
-        button7.thickness =0;
-        button7.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button7;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE BLUE.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button7, 1, 1);
-        
-        var button8 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE RED.jpg ");
-        button8.width = "95%"
-        button8.height = "95%";
-        button8.color = "#25BAFFFF";
-        button8.cornerRadius = 10;
-        button8.thickness = 0;
-        button8.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button8;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE RED.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button8, 1, 2);
-        
-        var button9 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BIG BROWN.jpg ");
-        button9.width = "95%"
-        button9.height = "95%";
-        button9.color = "#25BAFFFF";
-        button9.cornerRadius = 10;
-        button9.thickness = 0;
-        button9.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button9;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BIG BROWN.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button9, 1, 3);
-
-        var button10 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BLACK.jpg ");
-        button10.width = "95%"
-        button10.height = "95%";
-        button10.color = "#25BAFFFF";
-        button10.cornerRadius = 10;
-        button10.thickness = 0;
-        button10.onPointerUpObservable.add(function () {
-            currentButton.thickness = 0;
-            currentButton = button10;
-            currentButton.thickness = 3;
-            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BLACK.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
-            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-            hero.material = textureblack;
-        });
-        gd.addControl(button10, 2, 0);
+        var currentButton; 
+        /// leather items start
         var button11 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg ");
+        currentButton = button11;
         button11.width = "95%"
         button11.height = "95%";
         button11.color = "#25BAFFFF";
@@ -368,7 +202,8 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button11, 2, 1);
+        gd.addControl(button11, 0, 0);
+
         var button12 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg ");
         button12.width = "95%"
         button12.height = "95%";
@@ -386,7 +221,8 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button12, 2, 2);
+        gd.addControl(button12, 0, 1);
+
         var button13 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg ");
         button13.width = "95%"
         button13.height = "95%";
@@ -404,7 +240,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button13, 2, 3);
+        gd.addControl(button13, 0, 2);
 
         var button14 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg ");
         button14.width = "95%"
@@ -423,7 +259,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button14, 3, 0);
+        gd.addControl(button14, 0, 3);
 
         var button15 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KID SUEDE GENUINE LEATHER BROWN.jpg ");
         button15.width = "95%"
@@ -442,7 +278,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button15, 3, 1);
+        gd.addControl(button15, 1, 0);
 
         var button16 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KID SUEDE GENUINE LEATHER TAN.jpg ");
         button16.width = "95%"
@@ -461,7 +297,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button16, 3, 2);
+        gd.addControl(button16, 1, 1);
 
         var button17 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH CHOCOLATE.jpg ");
         button17.width = "95%"
@@ -480,7 +316,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button17, 3, 3);
+        gd.addControl(button17, 1, 2);
 
         var button18 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH RED.jpg ");
         button18.width = "95%"
@@ -499,7 +335,8 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button18, 4, 0);
+        gd.addControl(button18, 1, 3);
+
         var button19 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH TAN.jpg ");
         button19.width = "95%"
         button19.height = "95%";
@@ -517,7 +354,8 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button19, 4, 1);
+        gd.addControl(button19, 2, 0);
+
         var button20 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF BLACK.jpg ");
         button20.width = "95%"
         button20.height = "95%";
@@ -535,7 +373,8 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button20, 4, 2);
+        gd.addControl(button20, 2, 1);
+
         var button21 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF EMERALD.jpg ");
         button21.width = "95%"
         button21.height = "95%";
@@ -553,7 +392,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button21, 4, 3);
+        gd.addControl(button21, 2, 2);
 
  
         var button22 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF MID NIGHT BLUE.jpg ");
@@ -573,7 +412,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button22, 5, 0);
+        gd.addControl(button22, 2, 3);
    
         var button23 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF RED.jpg ");
         button23.width = "95%"
@@ -592,7 +431,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button23, 5, 1);
+        gd.addControl(button23, 3, 0);
 
         var button24 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN  BROWN.jpg ");
         button24.width = "95%"
@@ -611,7 +450,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button24, 5, 2);
+        gd.addControl(button24, 3, 1);
    
         var button25 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN.jpg ");
         button25.width = "95%"
@@ -630,7 +469,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button25, 5, 3);
+        gd.addControl(button25, 3, 2);
 
         var button26 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REAL DEER BLACK.jpg ");
         button26.width = "95%"
@@ -649,7 +488,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button26, 6, 0);
+        gd.addControl(button26, 3, 3);
         var button27 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BLACK.jpg ");
         button27.width = "95%"
         button27.height = "95%";
@@ -667,7 +506,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button27, 6, 1);
+        gd.addControl(button27, 4, 0);
         var button28 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BROWN.jpg ");
         button28.width = "95%"
         button28.height = "95%";
@@ -685,7 +524,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button28, 6, 2);
+        gd.addControl(button28, 4, 1);
         var button29 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER HONEY.jpg ");
         button29.width = "95%"
         button29.height = "95%";
@@ -703,7 +542,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button29, 6, 3);
+        gd.addControl(button29, 4, 2);
 
         var button30 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg ");
         button30.width = "95%"
@@ -722,7 +561,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button30, 7, 0);
+        gd.addControl(button30, 4, 3);
         var button31 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER RED.jpg ");
         button31.width = "95%"
         button31.height = "95%";
@@ -740,7 +579,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button31, 7, 1);
+        gd.addControl(button31, 5, 0);
         var button32 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER TAN.jpg ");
         button32.width = "95%"
         button32.height = "95%";
@@ -758,7 +597,7 @@ var createScene = function () {
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        gd.addControl(button32, 7, 2);
+        gd.addControl(button32, 5, 1);
        
       
      ////////////////////////////////////////////////    
@@ -792,23 +631,30 @@ var createScene = function () {
         scroll1.top = "15%";
         scroll1.cornerRadius = 0;
         scroll1.thickness = 0;
+        scroll1.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bar.jpg");
+        scroll1.barImage = new BABYLON.GUI.Image("bar", "");
+        scroll1.thumbLength = 0.5;
+        scroll1.thumbHeight = 1;
+        scroll1.barImageHeight = 0.3;
+        scroll1.scrollBackground = "";
+        scroll1.barBackground = "blue";
         rect2.addControl(scroll1)
 
         var gd1 = new BABYLON.GUI.Grid();
         gd1.width = "100%";
-        gd1.height = "100%";
+        gd1.height = "200%";
         gd1.paddingTop = "10%"
         gd1.addColumnDefinition(1 / 4);
         gd1.addColumnDefinition(1 / 4);
         gd1.addColumnDefinition(1 / 4);
         gd1.addColumnDefinition(1 / 4);
-        gd1.addRowDefinition(1);
+        gd1.addRowDefinition(1/3);
+        gd1.addRowDefinition(1/3);
+        gd1.addRowDefinition(1/3);
         scroll1.addControl(gd1);
 
         var crnt;
-
-
-        var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
+        var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg");
         crnt = L1Btn;
         L1Btn.width = "95%"
         L1Btn.height = "95%";
@@ -820,7 +666,7 @@ var createScene = function () {
             crnt = L1Btn;
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg", scene);
             textureblack.diffuseTexture.uScale = 1;
             textureblack.diffuseTexture.vScale = 1;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -828,7 +674,7 @@ var createScene = function () {
         });
         gd1.addControl(L1Btn, 0, 0);
 
-        var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg ");
+        var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg ");
         L2Btn.width = "95%"
         L2Btn.height = "95%";
         L2Btn.color = "#25BAFFFF";
@@ -839,13 +685,13 @@ var createScene = function () {
             crnt = L2Btn;
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/3.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg", scene);
             hero.material = textureblack;
         });
         gd1.addControl(L2Btn, 0, 1);
 
 
-        var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg ");
+        var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg ");
         L3Btn.width = "95%"
         L3Btn.height = "95%";
         L3Btn.color = "#25BAFFFF";
@@ -856,14 +702,14 @@ var createScene = function () {
            crnt = L3Btn;
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/1.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg", scene);
             hero.material = textureblack;
         });
         gd1.addControl(L3Btn, 0, 2);
 
 
 
-        var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg ");
+        var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture4", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg ");
         L4Btn.width = "95%"
         L4Btn.height = "95%";
         L4Btn.color = "#25BAFFFF";
@@ -874,7 +720,7 @@ var createScene = function () {
             crnt = L4Btn;
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -882,6 +728,100 @@ var createScene = function () {
         });
         gd1.addControl(L4Btn, 0, 3);
 
+        var L5Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture5", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg ");
+        L5Btn.width = "95%"
+        L5Btn.height = "95%";
+        L5Btn.color = "#25BAFFFF";
+        L5Btn.cornerRadius = 10;
+        L5Btn.thickness = 0;
+        L5Btn.onPointerUpObservable.add(function () {
+            crnt.thickness = 0;
+            crnt = L5Btn;
+            crnt.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L5Btn, 1, 0);
+
+        var L6Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture6", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE BLUE.jpg ");
+        L6Btn.width = "95%"
+        L6Btn.height = "95%";
+        L6Btn.color = "#25BAFFFF";
+        L6Btn.cornerRadius = 10;
+        L6Btn.thickness = 0;
+        L6Btn.onPointerUpObservable.add(function () {
+            crnt.thickness = 0;
+            crnt = L6Btn;
+            crnt.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE BLUE.jpg", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L6Btn, 1, 1);
+
+        var L7Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture7", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE RED.jpg ");
+        L7Btn.width = "95%"
+        L7Btn.height = "95%";
+        L7Btn.color = "#25BAFFFF";
+        L7Btn.cornerRadius = 10;
+        L7Btn.thickness = 0;
+        L7Btn.onPointerUpObservable.add(function () {
+            crnt.thickness = 0;
+            crnt = L7Btn;
+            crnt.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE RED.jpg", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L7Btn, 1, 2);
+
+        var L8Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture8", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BIG BROWN.jpg ");
+        L8Btn.width = "95%"
+        L8Btn.height = "95%";
+        L8Btn.color = "#25BAFFFF";
+        L8Btn.cornerRadius = 10;
+        L8Btn.thickness = 0;
+        L8Btn.onPointerUpObservable.add(function () {
+            crnt.thickness = 0;
+            crnt = L8Btn;
+            crnt.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BIG BROWN.jpg", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L8Btn, 1, 3);
+
+        var L9Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture9", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BLACK.jpg ");
+        L9Btn.width = "95%"
+        L9Btn.height = "95%";
+        L9Btn.color = "#25BAFFFF";
+        L9Btn.cornerRadius = 10;
+        L9Btn.thickness = 0;
+        L9Btn.onPointerUpObservable.add(function () {
+            crnt.thickness = 0;
+            crnt = L4Btn;
+            crnt.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BLACK.jpg", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            hero.material = textureblack;
+        });
+        gd1.addControl(L9Btn, 2, 0);
 
      ///////////////////////////////////////////////////////
      var rect3 = new BABYLON.GUI.Rectangle();
@@ -928,7 +868,7 @@ var createScene = function () {
      gd2.addRowDefinition(1);
      scrollS.addControl(gd2);
 
-        var curtn;
+     var curtn;
 
 
      var C1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/2.jpg");
