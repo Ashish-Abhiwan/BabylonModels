@@ -93,7 +93,7 @@ var createScene = function () {
         canvas.verticalAlignment = "Center";
         canvas.horizontalAlignment = "Center";
         canvas.top = "";
-        canvas.left = "";
+        canvas.left = "0.5%";
         canvas.cornerRadius = 0;
         canvas.color = "Grey";
         canvas.thickness = 0;
@@ -156,9 +156,9 @@ var createScene = function () {
         scroll.top = "15%";
         scroll.cornerRadius = 0;
         scroll.thickness = 0;
-        scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bar.jpg");
+        scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bars.png");
         scroll.barImage = new BABYLON.GUI.Image("bar", "");
-        scroll.thumbLength = 0.5;
+        scroll.thumbLength = 0.3;
         scroll.thumbHeight = 1;
         scroll.barImageHeight = 0.3;
         scroll.scrollBackground = "";
@@ -194,7 +194,7 @@ var createScene = function () {
         button11.onPointerUpObservable.add(function () {
             currentButton.thickness = 0;
             currentButton = button11;
-            currentButton.thickness = 3;
+            currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg", scene);
             textureblack.diffuseTexture.uScale = 3;
@@ -213,7 +213,7 @@ var createScene = function () {
         button12.onPointerUpObservable.add(function () {
             currentButton.thickness = 0;
             currentButton = button12;
-            currentButton.thickness = 3;
+            currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg", scene);
             textureblack.diffuseTexture.uScale = 3;
@@ -232,7 +232,7 @@ var createScene = function () {
         button13.onPointerUpObservable.add(function () {
             currentButton.thickness = 0;
             currentButton = button13;
-            currentButton.thickness = 3;
+            currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg", scene);
             textureblack.diffuseTexture.uScale = 3;
@@ -251,7 +251,7 @@ var createScene = function () {
         button14.onPointerUpObservable.add(function () {
             currentButton.thickness = 0;
             currentButton = button14;
-            currentButton.thickness = 3;
+            currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg", scene);
             textureblack.diffuseTexture.uScale = 3;
@@ -270,7 +270,7 @@ var createScene = function () {
         button15.onPointerUpObservable.add(function () {
             currentButton.thickness = 0;
             currentButton = button15;
-            currentButton.thickness = 3;
+            currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KID SUEDE GENUINE LEATHER BROWN.jpg", scene);
             textureblack.diffuseTexture.uScale = 3;
@@ -631,9 +631,9 @@ var createScene = function () {
         scroll1.top = "15%";
         scroll1.cornerRadius = 0;
         scroll1.thickness = 0;
-        scroll1.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bar.png");
+        scroll1.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bars.png");
         scroll1.barImage = new BABYLON.GUI.Image("bar", "");
-        scroll1.thumbLength = 0.5;
+        scroll1.thumbLength = 0.3;
         scroll1.thumbHeight = 1;
         scroll1.barImageHeight = 0.3;
         scroll1.scrollBackground = "";
@@ -1001,13 +1001,16 @@ var createScene = function () {
         grd.addControl(leP2Text,2);
 
         var namefeild = new BABYLON.GUI.InputText("Input");
-        namefeild.width = "85%";
+        namefeild.width = "95%";
         namefeild.height = "80%";
         namefeild.color = "White";
         namefeild.background = "#AFAFAFFF";
-        namefeild.placeholderText = "Your Name";
+        namefeild.placeholderText = "Your Text";
+        namefeild.fontSize = "70%";
+        namefeild.placeholderText.fontSize = "10px"
         namefeild.placeholderColor = "white";
-        namefeild.focusedBackground = "#AFAFAFFF"
+        namefeild.focusedBackground = "#AFAFAFFF";
+         namefeild.autoStretchWidth = true;
         grd.addControl(namefeild,3);
       
      var ctag;
@@ -1078,6 +1081,9 @@ var createScene = function () {
 
 
 
+     
+ window.addEventListener("resize", () => {advancedTexture.scaleTo(engine.getRenderWidth(), engine.getRenderHeight());});
+
     return scene;
 }
 
@@ -1119,6 +1125,9 @@ initFunction().then(() => {sceneToRender = scene
 function resize(){
     setTimeout(function(){
         engine.resize();
+        if ($(window).width() < 450) {
+            alert('For better experience open in landscpe mode');
+          }
         console.log("safygfasghfsdhgciujkshgdcj")
     }, 200);
         

@@ -48,7 +48,7 @@
     .modal-dialog {
         width: 96%;
     }
-
+  
 }
 @media (min-width:991px) and (max-width:1022px) {
     .custom img {
@@ -70,6 +70,8 @@
         width: 96%;
     }
 
+   
+    
 }
 @media (min-width:768px) and (max-width:991px) {
     .custom img {
@@ -91,6 +93,9 @@
         width: 96%;
     }
 
+  
+    
+
 }
 @media (min-width:576px) and (max-width:767px) {
     .custom img {
@@ -110,6 +115,7 @@
     .modal-dialog {
         width: 96%;
     }
+
 
 }
 @media (min-width:425px) and (max-width:575px) {
@@ -132,6 +138,9 @@
         width: 96%;
        
     }
+
+  
+    
 
 }
 
@@ -156,6 +165,7 @@
      
     }
 
+   
     
 
 
