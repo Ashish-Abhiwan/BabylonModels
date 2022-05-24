@@ -229,7 +229,7 @@ let activeTab = "";
         leatherstab.verticalAlignment = "Center";
         leatherstab.horizontalAlignment = "Center";
         leatherstab.top = "";
-        leatherstab.left = "0.5%";
+        leatherstab.left = "0%";
         leatherstab.cornerRadius = 0;
         leatherstab.color = "Grey";
         leatherstab.thickness = 0;
@@ -246,30 +246,9 @@ let activeTab = "";
         leathergd.paddingTop = "0%";
         leathergd.addRowDefinition(0.04);
         leathergd.addRowDefinition(0.96);
-        leathergd.addColumnDefinition(0.05);
-        leathergd.addColumnDefinition(0.95);
+        leathergd.addColumnDefinition(0.08);
+        leathergd.addColumnDefinition(0.92);
         leatherstab.addControl(leathergd);
-
-
-
-
-
-        // var letherscroll = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
-        // letherscroll.width = "95%";
-        // letherscroll.height = "98%";
-        // letherscroll.background = "";
-        // letherscroll.barSize = "10";
-        // letherscroll.top = "0%";
-        // letherscroll.cornerRadius = 0;
-        // letherscroll.thickness = 0;
-        // letherscroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bars.png");
-        // letherscroll.barImage = new BABYLON.GUI.Image("bar", "");
-        // letherscroll.thumbLength = 0.3;
-        // letherscroll.thumbHeight = 1;
-        // letherscroll.barImageHeight = 0.3;
-        // letherscroll.scrollBackground = "";
-        // letherscroll.barBackground = "blue";
-        // leatherstab.addControl(letherscroll);
 
         var leText = new BABYLON.GUI.TextBlock();
         leText.text = "LEATHER";
@@ -278,11 +257,12 @@ let activeTab = "";
         leText.paddingRight = "0%"
         leathergd.addControl(leText,0,1);
 
-        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://www.figma.com/file/wruZAbV1s7CtRs6d9EIxJd/HIDESIGN-UI-3?node-id=2%3A48");
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/back.png");
         close.width = "90%"
         close.height = "90%";
         close.color = "black";
-        close.fontSize = "100%";
+        close.fontSize = "90%";
+        close.left = "1%";
         close.cornerRadius = 3;
         close.thickness = 0;
         // close.fontSize = "20%";
@@ -308,7 +288,7 @@ let activeTab = "";
         Leathertab.left = "1%";
         Leathertab.cornerRadius = 0;
         Leathertab.color = "black";
-        Leathertab.thickness = 1;
+        Leathertab.thickness = 0;
         Leathertab.background = "";
         leathergd.addControl(Leathertab,1,1);
 
