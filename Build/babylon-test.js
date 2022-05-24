@@ -102,7 +102,6 @@ var createScene = function () {
         canvas.shadowOffsetX = 3;
         canvas.shadowBlur = 15;
         canvas.shadowColor = "#7C7878FF";
-        
         advancedTexture.addControl(canvas);
 
         var scrol = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
@@ -126,61 +125,207 @@ var createScene = function () {
         grid.width = "100%";
         grid.height = "100%";
         grid.paddingTop = "10%"
-        grid.addColumnDefinition(1 / 4);
-        grid.addColumnDefinition(1 / 4);
-        grid.addColumnDefinition(1 / 4);
-        grid.addColumnDefinition(1 / 4);  
+        grid.addRowDefinition(1/4);
+        grid.addRowDefinition(1/4);
+        grid.addRowDefinition(1/4);
+        grid.addRowDefinition(1/4);
+      
         scrol.addControl(grid);
 
-        var titleRect = new BABYLON.GUI.Rectangle();
-        titleRect.width = "85%";
-        titleRect.height = "6.5%";
-        titleRect.verticalAlignment = "Center";
-        titleRect.horizontalAlignment = "Center";
-        titleRect.top = "2%";
-        titleRect.left = "1%";
-        titleRect.cornerRadius = 0;
-        titleRect.color = "black";
-        titleRect.thickness = 2;
-        titleRect.background = "white";
-        titleRect.paddingLeft = "17%"
-        scrol.addControl(titleRect);
 
 
-        var titleText = new BABYLON.GUI.TextBlock();
-        titleText.text = "CUSTOMIZE";
-        titleText.fontSize = "80%";
-        // titleText.verticalAlignment = "top";
-        // titleText.horizontalAlignment = "Center";
-        titleRect.addControl(titleText);
+///////////////////  Buttons of the customize options 
 
-        var rect1 = new BABYLON.GUI.Rectangle();
-        rect1.width = "98%";
-        rect1.height = "20%";
-        rect1.verticalAlignment = "Center";
-        rect1.horizontalAlignment = "Center";
-        rect1.top = "10%";
-        rect1.left = "1%";
-        rect1.cornerRadius = 0;
-        rect1.color = "black";
-        rect1.thickness = 1;
-        rect1.background = "";
-        scrol.addControl(rect1);
+var activatetab
+let activeTab = "";
 
+        var leather = BABYLON.GUI.Button.CreateSimpleButton("Leather", "LEATHER");
+        leather.width = "90%"
+        leather.height = "40%";
+        leather.color = "White";
+        leather.background = "#2A1502FF";
+        leather.cornerRadius = 3;
+        leather.thickness = 2;
+        leather.fontSize = "20%";
+        leather.shadowColor = "black";
+        leather.shadowOffsetX = 3;
+        leather.shadowBlur = 15;
+        leather.shadowColor = "#7C7878FF";
+        leather.onPointerUpObservable.add(function () {
+           // activatetab = leatherstab;
+           leatherstab.isVisible = true;
+            leatherlining.isVisible = false;
+            colors.isVisible = false;
+            canvas.isVisible = false;
+        });
+        grid.addControl(leather, 0);
+
+        var leatherlining = BABYLON.GUI.Button.CreateSimpleButton("Leather lining", "LEATHER LINING");
+        leatherlining.width = "90%"
+        leatherlining.height = "40%";
+        leatherlining.color = "white";
+        leatherlining.background = "#2A1502FF";
+        leatherlining.cornerRadius = 3;
+        leatherlining.thickness = 2;
+        leatherlining.fontSize = "20%";
+        leatherlining.shadowColor = "black";
+        leatherlining.shadowOffsetX = 3;
+        leatherlining.shadowBlur = 15;
+        leatherlining.shadowColor = "#7C7878FF";
+        leatherlining.onPointerUpObservable.add(function () {
+            activatetab = leatherliningtab;
+            leatherliningtab.isVisible = true;
+            colors.isVisible = false;
+            leather.isVisible = false;
+        });
+        grid.addControl(leatherlining, 1);
+
+
+        var colors = BABYLON.GUI.Button.CreateSimpleButton("Leather lining", "COLORS");
+        colors.width = "90%"
+        colors.height = "40%";
+        colors.color = "white";
+        colors.background = "#2A1502FF";
+        colors.cornerRadius = 3;
+        colors.thickness = 2;
+        colors.fontSize = "20%";
+        colors.shadowColor = "black";
+        colors.shadowOffsetX = 3;
+        colors.shadowBlur = 40;
+        colors.shadowColor = "#7C7878FF";
+        colors.onPointerUpObservable.add(function  () {
+            activatetab = colortab;
+            colortab.isVisible = true;
+            leather.isVisible = false;
+            leatherlining.isVisible = false;
+        });
+        grid.addControl(colors, 2);
+///////////////////////////////////////////////////////////////////////////////// making the tabs visible and off
+
+// //let activeTab = "";
+// function setActiveTab(tabName) {
+//     if (activeTab === tabName) return;
+//     // hide the old tab
+//     if (tabContent[activeTab]) {
+//         tabContent[activeTab].isVisible = false;
+//     }
+//     activeTab = tabName;
+//     for(const button of tabButtons) {
+//         // update the button colors
+//         if (activeTab === button.name) {
+//             button.color = "#E4D9B9FF";
+//         } else {
+//             button.color = "#808080FF";
+//         }
+//     }
+//     // show the new tab
+//     if (tabContent[activeTab]) {
+//         tabContent[activeTab].isVisible = true;
+//         tabContent[activeTab].left = "0%";
+//         tabContent[activeTab].isPointerBlocker = false;
+//     }
+// };
+
+////////////////////////////////////////////////////////////////////////////
+
+        var leatherstab = new BABYLON.GUI.Rectangle();
+        leatherstab.isVisible = false;
+        leatherstab.width = "25%";
+        leatherstab.height = "100%";
+        leatherstab.verticalAlignment = "Center";
+        leatherstab.horizontalAlignment = "Center";
+        leatherstab.top = "";
+        leatherstab.left = "0.5%";
+        leatherstab.cornerRadius = 0;
+        leatherstab.color = "Grey";
+        leatherstab.thickness = 0;
+        leatherstab.background = "#F5F4F2";
+        leatherstab.shadowColor = "black";
+        leatherstab.shadowOffsetX = 3;
+        leatherstab.shadowBlur = 15;
+        leatherstab.shadowColor = "#7C7878FF";
+        advancedTexture.addControl(leatherstab);
+
+        var leathergd = new BABYLON.GUI.Grid();
+        leathergd.width = "100%";
+        leathergd.height = "98%";
+        leathergd.paddingTop = "0%";
+        leathergd.addRowDefinition(0.04);
+        leathergd.addRowDefinition(0.96);
+        leathergd.addColumnDefinition(0.01);
+        leathergd.addColumnDefinition(0.99);
+        leatherstab.addControl(leathergd);
+
+
+
+
+
+        // var letherscroll = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
+        // letherscroll.width = "95%";
+        // letherscroll.height = "98%";
+        // letherscroll.background = "";
+        // letherscroll.barSize = "10";
+        // letherscroll.top = "0%";
+        // letherscroll.cornerRadius = 0;
+        // letherscroll.thickness = 0;
+        // letherscroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bars.png");
+        // letherscroll.barImage = new BABYLON.GUI.Image("bar", "");
+        // letherscroll.thumbLength = 0.3;
+        // letherscroll.thumbHeight = 1;
+        // letherscroll.barImageHeight = 0.3;
+        // letherscroll.scrollBackground = "";
+        // letherscroll.barBackground = "blue";
+        // leatherstab.addControl(letherscroll);
 
         var leText = new BABYLON.GUI.TextBlock();
         leText.text = "LEATHER";
-        leText.fontSize = "15%";    
-        leText.paddingBottom = "70%"
-        leText.paddingRight = "63%"
-        rect1.addControl(leText);
+        leText.fontSize = "98%";    
+        leText.paddingBottom = "0%"
+        leText.paddingRight = "0%"
+        leathergd.addControl(leText,0);
+
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg ");
+        close.width = "90%"
+        close.height = "40%";
+        close.color = "white";
+        close.background = "#2A1502FF";
+        close.cornerRadius = 3;
+        close.thickness = 2;
+        close.fontSize = "20%";
+        close.shadowColor = "black";
+        close.shadowOffsetX = 3;
+        close.shadowBlur = 40;
+        close.shadowColor = "#7C7878FF";
+        close.onPointerUpObservable.add(function  () {
+            activatetab = colortab;
+            colortab.isVisible = true;
+            leather.isVisible = false;
+            leatherlining.isVisible = false;
+        });
+        leathergd.addControl(close, 0, 1);
+
+
+        var Leathertab = new BABYLON.GUI.Rectangle();
+        Leathertab.width = "98%";
+        Leathertab.height = "90%";
+        Leathertab.verticalAlignment = "Center";
+        Leathertab.horizontalAlignment = "Center";
+        Leathertab.top = "3%";
+        Leathertab.left = "1%";
+        Leathertab.cornerRadius = 0;
+        Leathertab.color = "black";
+        Leathertab.thickness = 1;
+        Leathertab.background = "";
+        leathergd.addControl(Leathertab,1);
+
+       
       
         var scroll = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
         scroll.width = "95%";
-        scroll.height = "70%";
+        scroll.height = "98%";
         scroll.background = "";
         scroll.barSize = "10";
-        scroll.top = "15%";
+        scroll.top = "0%";
         scroll.cornerRadius = 0;
         scroll.thickness = 0;
         scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bars.png");
@@ -190,11 +335,11 @@ var createScene = function () {
         scroll.barImageHeight = 0.3;
         scroll.scrollBackground = "";
         scroll.barBackground = "blue";
-        rect1.addControl(scroll);
+        Leathertab.addControl(scroll);
 
         var gd = new BABYLON.GUI.Grid();
         gd.width = "100%";
-        gd.height = "500%";
+        gd.height = "90%";
         gd.paddingTop = "10%"
         gd.addColumnDefinition(1 / 4);
         gd.addColumnDefinition(1 / 4);
@@ -205,8 +350,7 @@ var createScene = function () {
         gd.addRowDefinition(1/6);
         gd.addRowDefinition(1/6);
         gd.addRowDefinition(1/6);+
-        gd.addRowDefinition(1/6);
-      
+        gd.addRowDefinition(1/6); 
         scroll.addControl(gd);
 
         var currentButton; 
@@ -224,8 +368,8 @@ var createScene = function () {
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg", scene);
-            textureblack.diffuseTexture.uScale = 3;
-            textureblack.diffuseTexture.vScale = 3;
+            textureblack.diffuseTexture.uScale = 20;
+            textureblack.diffuseTexture.vScale = 20;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
@@ -628,18 +772,18 @@ var createScene = function () {
        
       
      ////////////////////////////////////////////////    
-        var rect2 = new BABYLON.GUI.Rectangle();
-        rect2.width = "98%";
-        rect2.height = "20%";
-        rect2.verticalAlignment = "Center";
-        rect2.horizontalAlignment = "Center";
-        rect2.top = "32%";
-        rect2.left = "1%";
-        rect2.cornerRadius = 0;
-        rect2.color = "black";
-        rect2.thickness = 1;
-        rect2.background = "";
-        scrol.addControl(rect2);
+        var leatherliningtab = new BABYLON.GUI.Rectangle();
+        leatherliningtab.width = "98%";
+        leatherliningtab.height = "20%";
+        leatherliningtab.verticalAlignment = "Center";
+        leatherliningtab.horizontalAlignment = "Center";
+        leatherliningtab.top = "32%";
+        leatherliningtab.left = "1%";
+        leatherliningtab.cornerRadius = 0;
+        leatherliningtab.color = "black";
+        leatherliningtab.thickness = 1;
+        leatherliningtab.background = "";
+       // scrol.addControl(leatherliningtab);
 
        var leliText = new BABYLON.GUI.TextBlock();
        leliText.text = "LEATHER LINING";
@@ -648,7 +792,7 @@ var createScene = function () {
        leliText.horizontalAlignment = "Center";
        leliText.paddingBottom = "70%"
        leliText.paddingRight = "37%"
-       rect2.addControl(leliText);
+       leatherliningtab.addControl(leliText);
       
         var scroll1 = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
         scroll1.width = "95%";
@@ -665,7 +809,7 @@ var createScene = function () {
         scroll1.barImageHeight = 0.3;
         scroll1.scrollBackground = "";
         scroll1.barBackground = "blue";
-        rect2.addControl(scroll1)
+        leatherliningtab.addControl(scroll1)
 
         var gd1 = new BABYLON.GUI.Grid();
         gd1.width = "100%";
@@ -851,18 +995,18 @@ var createScene = function () {
         gd1.addControl(L9Btn, 2, 0);
 
      ///////////////////////////////////////////////////////
-     var rect3 = new BABYLON.GUI.Rectangle();
-     rect3.width = "98%";
-     rect3.height = "20%";
-     rect3.verticalAlignment = "Center";
-     rect3.horizontalAlignment = "Center";
-     rect3.top = "54%";
-     rect3.left = "1%";
-     rect3.cornerRadius = 0;
-     rect3.color = "black";
-     rect3.thickness = 1;
-     rect3.background = "";
-     scrol.addControl(rect3);
+     var colortab = new BABYLON.GUI.Rectangle();
+     colortab.width = "98%";
+     colortab.height = "20%";
+     colortab.verticalAlignment = "Center";
+     colortab.horizontalAlignment = "Center";
+     colortab.top = "54%";
+     colortab.left = "1%";
+     colortab.cornerRadius = 0;
+     colortab.color = "black";
+     colortab.thickness = 1;
+     colortab.background = "";
+     //scrol.addControl(colortab);
 
  
      var leLText = new BABYLON.GUI.TextBlock();
@@ -872,7 +1016,7 @@ var createScene = function () {
      leLText.horizontalAlignment = "Center";
      leLText.paddingBottom = "70%"
      leLText.paddingRight = "65%"
-     rect3.addControl(leLText);
+     colortab.addControl(leLText);
    
      var scrollS = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
      scrollS.width = "95%";
@@ -882,7 +1026,7 @@ var createScene = function () {
      scrollS.top = "15%";
      scrollS.cornerRadius = 0;
      scrollS.thickness = 0;
-     rect3.addControl(scrollS)
+     colortab.addControl(scrollS)
 
      var gd2 = new BABYLON.GUI.Grid();
      gd2.width = "100%";
@@ -1069,6 +1213,8 @@ var createScene = function () {
             ctag.thickness = 3; 
         });
         grd.addControl(tag2,2,2);
+
+        
 
     });
 
