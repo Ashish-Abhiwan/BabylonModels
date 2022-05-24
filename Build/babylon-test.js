@@ -105,6 +105,33 @@ var createScene = function () {
         
         advancedTexture.addControl(canvas);
 
+        var scrol = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
+        scrol.width = "95%";
+        scrol.height = "98%";
+        scrol.background = "";
+        scrol.barSize = "10";
+        scrol.top = "";
+        scrol.cornerRadius = 0;
+        scrol.thickness = 0;
+        scrol.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bars.png");
+        scrol.barImage = new BABYLON.GUI.Image("bar", "");
+        scrol.thumbLength = 0.3;
+        scrol.thumbHeight = 1;
+        scrol.barImageHeight = 0.2;
+        scrol.scrollBackground = "";
+        scrol.barBackground = "blue";
+        canvas.addControl(scrol);
+
+        var grid = new BABYLON.GUI.Grid();
+        grid.width = "100%";
+        grid.height = "100%";
+        grid.paddingTop = "10%"
+        grid.addColumnDefinition(1 / 4);
+        grid.addColumnDefinition(1 / 4);
+        grid.addColumnDefinition(1 / 4);
+        grid.addColumnDefinition(1 / 4);  
+        scrol.addControl(grid);
+
         var titleRect = new BABYLON.GUI.Rectangle();
         titleRect.width = "85%";
         titleRect.height = "6.5%";
@@ -117,7 +144,7 @@ var createScene = function () {
         titleRect.thickness = 2;
         titleRect.background = "white";
         titleRect.paddingLeft = "17%"
-        canvas.addControl(titleRect);
+        scrol.addControl(titleRect);
 
 
         var titleText = new BABYLON.GUI.TextBlock();
@@ -138,7 +165,7 @@ var createScene = function () {
         rect1.color = "black";
         rect1.thickness = 1;
         rect1.background = "";
-        canvas.addControl(rect1);
+        scrol.addControl(rect1);
 
 
         var leText = new BABYLON.GUI.TextBlock();
@@ -612,7 +639,7 @@ var createScene = function () {
         rect2.color = "black";
         rect2.thickness = 1;
         rect2.background = "";
-        canvas.addControl(rect2);
+        scrol.addControl(rect2);
 
        var leliText = new BABYLON.GUI.TextBlock();
        leliText.text = "LEATHER LINING";
@@ -835,7 +862,7 @@ var createScene = function () {
      rect3.color = "black";
      rect3.thickness = 1;
      rect3.background = "";
-     canvas.addControl(rect3);
+     scrol.addControl(rect3);
 
  
      var leLText = new BABYLON.GUI.TextBlock();
@@ -957,7 +984,7 @@ var createScene = function () {
         rect4.color = "black";
         rect4.thickness = 1;
         rect4.background = "";
-        canvas.addControl(rect4);
+        scrol.addControl(rect4);
         
        
         var grd = new BABYLON.GUI.Grid();
@@ -975,7 +1002,7 @@ var createScene = function () {
  
         var lePText = new BABYLON.GUI.TextBlock();
         lePText.text = "PERSONALISE TAG";
-        lePText.fontSize = "65%";
+        lePText.fontSize = "60%";
         lePText.verticalAlignment = "top";
         lePText.horizontalAlignment = "Center";
         // lePText.paddingBottom = "65%"
