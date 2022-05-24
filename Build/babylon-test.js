@@ -154,8 +154,6 @@ let activeTab = "";
         leather.onPointerUpObservable.add(function () {
            // activatetab = leatherstab;
            leatherstab.isVisible = true;
-            leatherlining.isVisible = false;
-            colors.isVisible = false;
             canvas.isVisible = false;
         });
         grid.addControl(leather, 0);
@@ -173,10 +171,8 @@ let activeTab = "";
         leatherlining.shadowBlur = 15;
         leatherlining.shadowColor = "#7C7878FF";
         leatherlining.onPointerUpObservable.add(function () {
-            activatetab = leatherliningtab;
             leatherliningtab.isVisible = true;
-            colors.isVisible = false;
-            leather.isVisible = false;
+            canvas.isVisible = false;
         });
         grid.addControl(leatherlining, 1);
 
@@ -194,10 +190,8 @@ let activeTab = "";
         colors.shadowBlur = 40;
         colors.shadowColor = "#7C7878FF";
         colors.onPointerUpObservable.add(function  () {
-            activatetab = colortab;
             colortab.isVisible = true;
-            leather.isVisible = false;
-            leatherlining.isVisible = false;
+            canvas.isVisible = false;
         });
         grid.addControl(colors, 2);
 ///////////////////////////////////////////////////////////////////////////////// making the tabs visible and off
@@ -252,8 +246,8 @@ let activeTab = "";
         leathergd.paddingTop = "0%";
         leathergd.addRowDefinition(0.04);
         leathergd.addRowDefinition(0.96);
-        leathergd.addColumnDefinition(0.01);
-        leathergd.addColumnDefinition(0.99);
+        leathergd.addColumnDefinition(0.05);
+        leathergd.addColumnDefinition(0.95);
         leatherstab.addControl(leathergd);
 
 
@@ -282,27 +276,27 @@ let activeTab = "";
         leText.fontSize = "98%";    
         leText.paddingBottom = "0%"
         leText.paddingRight = "0%"
-        leathergd.addControl(leText,0);
+        leathergd.addControl(leText,0,1);
 
-        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg ");
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://www.figma.com/file/wruZAbV1s7CtRs6d9EIxJd/HIDESIGN-UI-3?node-id=2%3A48");
         close.width = "90%"
-        close.height = "40%";
-        close.color = "white";
-        close.background = "#2A1502FF";
+        close.height = "90%";
+        close.color = "black";
+        close.fontSize = "100%";
         close.cornerRadius = 3;
-        close.thickness = 2;
-        close.fontSize = "20%";
-        close.shadowColor = "black";
-        close.shadowOffsetX = 3;
-        close.shadowBlur = 40;
-        close.shadowColor = "#7C7878FF";
+        close.thickness = 0;
+        // close.fontSize = "20%";
+        // close.shadowColor = "black";
+        // close.shadowOffsetX = 3;
+        // close.shadowBlur = 40;
+        // close.shadowColor = "#7C7878FF";
         close.onPointerUpObservable.add(function  () {
-            activatetab = colortab;
-            colortab.isVisible = true;
-            leather.isVisible = false;
-            leatherlining.isVisible = false;
+            leatherstab.isVisible = false;
+            leatherlining.isVisible = true;
+            colors.isVisible = true;
+            canvas.isVisible = true;
         });
-        leathergd.addControl(close, 0, 1);
+        leathergd.addControl(close, 0, 0);
 
 
         var Leathertab = new BABYLON.GUI.Rectangle();
@@ -316,7 +310,7 @@ let activeTab = "";
         Leathertab.color = "black";
         Leathertab.thickness = 1;
         Leathertab.background = "";
-        leathergd.addControl(Leathertab,1);
+        leathergd.addControl(Leathertab,1,1);
 
        
       
@@ -352,7 +346,7 @@ let activeTab = "";
         gd.addRowDefinition(1/6);+
         gd.addRowDefinition(1/6); 
         scroll.addControl(gd);
-
+       
         var currentButton; 
         /// leather items start
         var button11 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg ");
@@ -1287,7 +1281,7 @@ window.initFunction = async function() {
     if (!engine) throw 'engine should not be null.';
     startRenderLoop(engine, canvas);
     window.scene = createScene();
-    console.log("scene width and height will be " + window.scene ) 
+   // console.log("scene width and height will be " + window.scene ) 
 };
 
 
@@ -1300,8 +1294,8 @@ function resize(){
         engine.resize();
         if ($(window).width() < 450) {
             alert('For better experience open in landscpe mode');
-          }
-        console.log("safygfasghfsdhgciujkshgdcj")
+        }
+       // console.log("safygfasghfsdhgciujkshgdcj")
     }, 200);
         
 }
@@ -1309,5 +1303,5 @@ function resize(){
 // Resize
 window.addEventListener("resize", async function () {
     engine.resize();
-    console.log("safygfasghfsdhgciujkshgdcj")
+   // console.log("safygfasghfsdhgciujkshgdcj")
 });
