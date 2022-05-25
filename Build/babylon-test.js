@@ -300,8 +300,10 @@ var createScene = function () {
         KALAHARI.shadowBlur = 10;
         KALAHARI.shadowColor = "#7C7878FF";
         KALAHARI.onPointerUpObservable.add(function  () {
-            kalaharitab.isVisible = true;
-            leatherstab.isVisible = false;
+           
+            KALAHARI.isVisible = false;
+            kalaharigd.isVisible = true;
+            //leatherstab.isVisible = false;
         });
         gd.addControl(KALAHARI, 0);
 
@@ -392,42 +394,46 @@ var createScene = function () {
 
 //////////////////////////////////////////////////////////////////////// kalahari leather option opens 
 
-var kalaharitab = new BABYLON.GUI.Rectangle("kalaharitab");
-kalaharitab.isVisible = false;
-kalaharitab.width = "25%";
-kalaharitab.height = "100%";
-kalaharitab.verticalAlignment = "Center";
-kalaharitab.horizontalAlignment = "Center";
-kalaharitab.top = "";
-kalaharitab.left = "0%";
-kalaharitab.cornerRadius = 0;
-kalaharitab.color = "Grey";
-kalaharitab.thickness = 0;
-kalaharitab.background = "#F5F4F2";
-kalaharitab.shadowColor = "black";
-kalaharitab.shadowOffsetX = 3;
-kalaharitab.shadowBlur = 15;
-kalaharitab.shadowColor = "#7C7878FF";
-advancedTexture.addControl(kalaharitab);
+// var kalaharitab = new BABYLON.GUI.Rectangle("kalaharitab");
+// kalaharitab.isVisible = false;
+// kalaharitab.width = "100%";
+// kalaharitab.height = "100%";
+// kalaharitab.verticalAlignment = "Center";
+// kalaharitab.horizontalAlignment = "Center";
+// kalaharitab.top = "0%";
+// kalaharitab.left = "0%";
+// kalaharitab.cornerRadius = 0;
+// kalaharitab.color = "Grey";
+// kalaharitab.thickness = 0;
+// kalaharitab.background = "#F5F4F2";
+// kalaharitab.shadowColor = "black";
+// kalaharitab.shadowOffsetX = 3;
+// kalaharitab.shadowBlur = 15;
+// kalaharitab.shadowColor = "#7C7878FF";
+// gd.addControl(kalaharitab,0);
 
 var kalaharigd = new BABYLON.GUI.Grid("kalaharigd");
+kalaharigd.isVisible = false
 kalaharigd.width = "100%";
-kalaharigd.height = "98%";
+kalaharigd.height = "100%";
 kalaharigd.paddingTop = "0%";
-kalaharigd.addRowDefinition(0.04);
-kalaharigd.addRowDefinition(0.96);
-kalaharigd.addColumnDefinition(0.08);
-kalaharigd.addColumnDefinition(0.92);
-kalaharitab.addControl(kalaharigd);
+kalaharigd.addRowDefinition(0.20);
+kalaharigd.addRowDefinition(0.40);
+kalaharigd.addRowDefinition(0.40);
+kalaharigd.addColumnDefinition(0.10);
+kalaharigd.addColumnDefinition(0.90/3);
+kalaharigd.addColumnDefinition(0.90/3);
+kalaharigd.addColumnDefinition(0.90/3);
+gd.addControl(kalaharigd,0);
 
-var kalahariText = new BABYLON.GUI.TextBlock("kalahariText");
-kalahariText.text = "KALAHARI LEATHER";
-kalahariText.fontSize = "98%";    
-kalahariText.paddingBottom = "0%"
-kalahariText.paddingRight = "0%"
-kalaharigd.addControl(kalahariText,0,1);
+// var kalahariText = new BABYLON.GUI.TextBlock("kalahariText");
+// kalahariText.text = "KALAHARI LEATHER";
+// kalahariText.fontSize = "98%";    
+// kalahariText.paddingBottom = "0%"
+// kalahariText.paddingRight = "0%"
+// kalaharigd.addControl(kalahariText,0,1);
 
-var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/back.png");
+var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/arrowup.png");
 close.width = "90%"
 close.height = "90%";
 close.color = "black";
@@ -436,22 +442,23 @@ close.left = "1%";
 close.cornerRadius = 3;
 close.thickness = 0;
 close.onPointerUpObservable.add(function  () {
-    kalaharitab.isVisible = false;
-    leatherstab.isVisible = true;
+    kalaharigd.isVisible = false;
+   // leatherstab.isVisible = true;
+    KALAHARI.isVisible = true;
 });
 kalaharigd.addControl(close, 0, 0);
 
-var kalgrid = new BABYLON.GUI.Grid("kalaharigrid");
-kalgrid.width = "100%";
-kalgrid.height = "95%";
-kalgrid.paddingTop = "5%";
-kalgrid.paddingBottom = "60%";
-kalgrid.addRowDefinition(1/2);
-kalgrid.addRowDefinition(1/2);
-kalgrid.addColumnDefinition(1/3);
-kalgrid.addColumnDefinition(1/3);
-kalgrid.addColumnDefinition(1/3);
-kalaharigd.addControl(kalgrid,1,1);
+// var kalgrid = new BABYLON.GUI.Grid("kalaharigrid");
+// kalgrid.width = "100%";
+// kalgrid.height = "95%";
+// kalgrid.paddingTop = "5%";
+// kalgrid.paddingBottom = "60%";
+// kalgrid.addRowDefinition(1/2);
+// kalgrid.addRowDefinition(1/2);
+// kalgrid.addColumnDefinition(1/3);
+// kalgrid.addColumnDefinition(1/3);
+// kalgrid.addColumnDefinition(1/3);
+// kalaharigd.addControl(kalgrid,1,1);
 
 var currentButton; 
 
@@ -473,7 +480,7 @@ var currentButton;
         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
         hero.material = textureblack;
     });
-    kalgrid.addControl(button11, 0, 0);
+    kalaharigd.addControl(button11, 1, 1);
 
     var button12 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg ");
     button12.width = "95%"
@@ -492,7 +499,7 @@ var currentButton;
         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
         hero.material = textureblack;
     });
-    kalgrid.addControl(button12, 0, 1);
+    kalaharigd.addControl(button12, 1, 2);
 
     var button13 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg ");
         button13.width = "95%"
@@ -511,7 +518,7 @@ var currentButton;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             hero.material = textureblack;
         });
-        kalgrid.addControl(button13, 0, 2);
+        kalaharigd.addControl(button13, 1, 3);
 
     var button14 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg ");
     button14.width = "95%"
@@ -530,7 +537,7 @@ var currentButton;
         textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
         hero.material = textureblack;
     });
-    kalgrid.addControl(button14, 1, 0);
+    kalaharigd.addControl(button14, 2, 1);
 
 /////////////////////////////////////////////////////////////////////////////// kid suede leather option 
 
