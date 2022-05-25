@@ -434,6 +434,7 @@ gd.addControl(kalaharigd,0);
 // kalaharigd.addControl(kalahariText,0,1);
 
 var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/arrowup.png");
+
 close.width = "90%"
 close.height = "90%";
 close.color = "black";
