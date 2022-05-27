@@ -38,7 +38,7 @@
    
 }
 
-@media only screen and (max-device-width : 1023px) {
+@media only screen and (max-device-width : 1024px) {
     .custom {
         display: flex;
         flex-direction: column;
@@ -46,7 +46,7 @@
         align-items: center;
     }
     .modal-dialog {
-        width: 96%;
+        width: 98%;
     }
   
 }
