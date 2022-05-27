@@ -232,7 +232,7 @@ var createScene = function () {
        
 
         var ctag;
-        var tag1 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/PlainTag.png");
+        var tag1 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/PlainTag.png");
         ctag = tag1;
         tag1.width = "70%"
         tag1.height = "60%";
@@ -246,7 +246,7 @@ var createScene = function () {
         });
         GIrd.addControl(tag1, 0, 1);
 
-        var tag2 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/GoldTag.png");
+        var tag2 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/GoldTag.png");
         tag2.width = "70%"
         tag2.height = "60%";
         tag2.color = "#25BAFFFF";
