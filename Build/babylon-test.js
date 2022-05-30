@@ -1698,18 +1698,6 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
     advancedTexture.addControl(anipanel);
 
 
-    // var imageopen = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Closed.png");
-    // imageopen.width = "100%";
-    // imageopen.height = "100%";
-    // anipanel.addControl(imageopen); 
-
-    // var imageCLOSE = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Open.png");
-    // imageCLOSE.isVisible = false;
-    // imageCLOSE.width = "100%";
-    // imageCLOSE.height = "100%";
-
-    // anipanel.addControl(imageCLOSE); 
-
 
     var AnimationgD = new BABYLON.GUI.Grid("kaligd");
     AnimationgD.width = "100%";
@@ -1720,14 +1708,16 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
     anipanel.addControl(AnimationgD);
 
 
-    var button1 = BABYLON.GUI.Button.CreateImageOnlyButton("CLOSED_Btn", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Closed.png" );
+    var button1 = BABYLON.GUI.Button.CreateImageOnlyButton("CLOSED_Btn", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Group 1.png" );
     button1.width = "100%"
     button1.height = "100%";
-    button1.fontSize = "38%";
+    button1.fontSize = "100%";
+    button1.image.width = "100%";
+    button1.image.height = "110%";
    // button1.textBlock.text = "CLOSED";
-    button1.color = "";
+   // button1.color = "";
     button1.resizeToFit = true;
-    button1.cornerRadius = 100;
+   // button1.cornerRadius = 0;
    // button1.background = "RED";
     button1.onPointerUpObservable.add(function () {
         const aniGr = scene.animationGroups
@@ -1752,15 +1742,15 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
     AnimationgD.addControl(button1,0,0);
 
 
-    var CLOSED = BABYLON.GUI.Button.CreateImageOnlyButton("OPEN_Btn",  "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Open.png");
+    var CLOSED = BABYLON.GUI.Button.CreateImageOnlyButton("OPEN_Btn",  "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Group 2.png");
     CLOSED.isVisible = false;
     CLOSED.width = "100%"
     CLOSED.height = "100%";
-    CLOSED.fontSize = "40%";
+    CLOSED.fontSize = "100%";
     // CLOSED.textBlock.text = "OPEN";
     // CLOSED.color = "white";
     CLOSED.resizeToFit = true;
-    CLOSED.cornerRadius = 100;
+    CLOSED.cornerRadius = 0;
     //CLOSED.background = "GREEN";
     CLOSED.onPointerUpObservable.add(function () {
         const aniGr = scene.animationGroups
