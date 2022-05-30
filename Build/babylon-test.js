@@ -1684,8 +1684,8 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
     
     anipanel.verticalAlignment = "Center";
     anipanel.horizontalAlignment = "Center";
-    anipanel.width = "7%";
-    anipanel.height = "5%";
+    anipanel.width = "10%";
+    anipanel.height = "7%";
     anipanel.left = "88%";
     anipanel.top = "3%";
     anipanel.bottom = "30%";
@@ -1698,17 +1698,17 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
     advancedTexture.addControl(anipanel);
 
 
-    var imageopen = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Closed.png");
-    imageopen.width = "100%";
-    imageopen.height = "100%";
-    anipanel.addControl(imageopen); 
+    // var imageopen = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Closed.png");
+    // imageopen.width = "100%";
+    // imageopen.height = "100%";
+    // anipanel.addControl(imageopen); 
 
-    var imageCLOSE = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Open.png");
-    imageCLOSE.isVisible = false;
-    imageCLOSE.width = "100%";
-    imageCLOSE.height = "100%";
+    // var imageCLOSE = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Open.png");
+    // imageCLOSE.isVisible = false;
+    // imageCLOSE.width = "100%";
+    // imageCLOSE.height = "100%";
 
-    anipanel.addControl(imageCLOSE); 
+    // anipanel.addControl(imageCLOSE); 
 
 
     var AnimationgD = new BABYLON.GUI.Grid("kaligd");
@@ -1720,7 +1720,7 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
     anipanel.addControl(AnimationgD);
 
 
-    var button1 = BABYLON.GUI.Button.CreateSimpleButton("CLOSED_Btn", );
+    var button1 = BABYLON.GUI.Button.CreateImageOnlyButton("CLOSED_Btn", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Closed.png" );
     button1.width = "100%"
     button1.height = "100%";
     button1.fontSize = "38%";
@@ -1746,13 +1746,13 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
         someAnim1.loopAnimation = false;
         button1.isVisible = false;
         CLOSED.isVisible = true;
-        imageCLOSE.isVisible = true;
-        imageopen.isVisible = false;
+      //  imageCLOSE.isVisible = true;
+      //  imageopen.isVisible = false;
     });
     AnimationgD.addControl(button1,0,0);
 
 
-    var CLOSED = BABYLON.GUI.Button.CreateSimpleButton("OPEN_Btn", );
+    var CLOSED = BABYLON.GUI.Button.CreateImageOnlyButton("OPEN_Btn",  "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/Open.png");
     CLOSED.isVisible = false;
     CLOSED.width = "100%"
     CLOSED.height = "100%";
@@ -1778,8 +1778,8 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI"
         someAnim1.loopAnimation = false;
         button1.isVisible = true;
         CLOSED.isVisible = false;
-        imageCLOSE.isVisible = false;
-        imageopen.isVisible = true;
+        // imageCLOSE.isVisible = false;
+        // imageopen.isVisible = true;
 
     });
     AnimationgD.addControl(CLOSED,0,1);
