@@ -20,7 +20,7 @@ var createScene = function () {
     var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(0, -5, 0), scene);
     //scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
-    camera1.lowerRadiusLimit = 2.3;
+    camera1.lowerRadiusLimit = 2;
     camera1.upperRadiusLimit = 4;
     camera1.wheelDeltaPercentage = 0.05;
     
@@ -73,6 +73,7 @@ var createScene = function () {
 
         var newmat = new BABYLON.StandardMaterial("newmat", scene);
         newmat.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/bag.jpg", scene);
+        newmat.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Bag/normal.jpg", scene);
         newmat.diffuseTexture.uScale = 2;
         newmat.diffuseTexture.vScale = 2;
         newmat.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -474,6 +475,7 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg", scene);
             textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
+            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Bag/normal.jpg", scene);
             textureblack.diffuseTexture.uScale = 1.5;
             textureblack.diffuseTexture.vScale = 1.5;
              textureblack.bumpTexture.uScale = 1.5;
