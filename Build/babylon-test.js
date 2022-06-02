@@ -438,14 +438,14 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg", scene);
             textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
-            textureblack.diffuseTexture.uScale = 1.5;
-            textureblack.diffuseTexture.vScale = 1.5;
-             textureblack.bumpTexture.uScale = 1.5;
-             textureblack.bumpTexture.vScale = 1.5;
+            textureblack.diffuseTexture.uScale = 10;
+            textureblack.diffuseTexture.vScale = 10;
+             textureblack.bumpTexture.uScale = 10;
+             textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         kaligd.addControl(button11, 0, 0);
 
@@ -463,13 +463,15 @@ var createScene = function () {
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI MARSALA.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI MARSALA.bmp", scene);
+            textureblack.diffuseTexture.uScale = 20;
+            textureblack.diffuseTexture.vScale = 20;
+            // textureblack.bumpTexture.uScale = 10;
+            // textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.83, 0.29, 0.29)
+            Stich.renderOverlay = true;
         });
         kaligd.addControl(button12, 0, 1);
 
@@ -488,12 +490,14 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg", scene);
             textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI SAPPHIRE.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture.uScale = 10;
+            textureblack.diffuseTexture.vScale = 10;
+            textureblack.bumpTexture.uScale = 10;
+            textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.29, 0.68, 0.83)
+            Stich.renderOverlay = true;
         });
         kaligd.addControl(button13, 0, 2);
 
@@ -512,12 +516,14 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg", scene);
             textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI TANGERINE.bmp", scene);
-            textureblack.diffuseTexture.uScale = 1;
-            textureblack.diffuseTexture.vScale = 1;
+            textureblack.diffuseTexture.uScale = 10;
+            textureblack.diffuseTexture.vScale = 10;
+            textureblack.bumpTexture.uScale = 10;
+            textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         kaligd.addControl(button14, 0, 3);
 
@@ -600,8 +606,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         ostgd.addControl(button17, 0, 0);
 
@@ -624,8 +630,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         ostgd.addControl(button18, 0, 1);
 
@@ -648,8 +654,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         ostgd.addControl(button19, 0, 2);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////ranch smooth
@@ -731,8 +737,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         rangd.addControl(button20, 0, 0);
 
@@ -755,8 +761,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         rangd.addControl(button21, 0, 1);
 
@@ -780,8 +786,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         rangd.addControl(button22, 0, 2);
 
@@ -804,8 +810,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         rangd.addControl(button23, 0, 3);
 
@@ -830,8 +836,8 @@ var createScene = function () {
             // textureblack.bumpTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         rangd.addControl(button24, 0, 4);
 
@@ -854,8 +860,8 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         rangd.addControl(button25, 0, 5);
 
@@ -941,8 +947,8 @@ var createScene = function () {
             textureblack.bumpTexture.vScale = 5;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
 dearsgd.addControl(button26, 0, 0);
 
@@ -1025,8 +1031,8 @@ regtab.addControl(regugd);
      textureblack.diffuseTexture.vScale = 2;
      textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
      Bag.material = textureblack;
-     stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-    stich.renderOverlay = true;
+     Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+    Stich.renderOverlay = true;
  });
  regugd.addControl(button27, 0, 0);
 
@@ -1049,8 +1055,8 @@ regtab.addControl(regugd);
      textureblack.diffuseTexture.vScale = 2;
      textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
      Bag.material = textureblack;
-     stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+     Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
  });
  regugd.addControl(button28, 0, 1);
 
@@ -1073,8 +1079,8 @@ regtab.addControl(regugd);
      textureblack.diffuseTexture.vScale = 2;
      textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
      Bag.material = textureblack;
-     stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+     Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
  });
  regugd.addControl(button29, 0, 2);
 
@@ -1097,8 +1103,8 @@ regtab.addControl(regugd);
      textureblack.diffuseTexture.vScale = 2;
      textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
      Bag.material = textureblack;
-     stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+     Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
  });
  regugd.addControl(button30, 0, 3);
 
@@ -1121,8 +1127,8 @@ regtab.addControl(regugd);
      textureblack.diffuseTexture.vScale = 2;
      textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
      Bag.material = textureblack;
-     stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+     Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
  });
  regugd.addControl(button31, 0, 4);
 
@@ -1145,8 +1151,8 @@ regtab.addControl(regugd);
      textureblack.diffuseTexture.vScale = 2;
      textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
      Bag.material = textureblack;
-     stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+     Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
  });
  regugd.addControl(button32, 0, 5);
 
@@ -1225,8 +1231,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         babygd.addControl(L1Btn, 0, 0);
 
@@ -1249,8 +1255,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         babygd.addControl(L2Btn, 0, 1);
 
@@ -1274,8 +1280,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         babygd.addControl(L3Btn, 0, 2);
 
@@ -1300,8 +1306,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         babygd.addControl(L4Btn, 0, 3);
 
@@ -1326,8 +1332,8 @@ babycrtab.addControl(babygd);
             textureblack.bumpTexture.vScale = 1.1;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         babygd.addControl(L5Btn, 0, 4);
 
@@ -1495,8 +1501,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         LININGgd.addControl(button15, 0, 0);
 
@@ -1519,8 +1525,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 3;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         LININGgd.addControl(button16, 0, 1);
 
@@ -1595,8 +1601,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         hbrgd.addControl(L8Btn, 0, 0);
 
@@ -1619,8 +1625,8 @@ babycrtab.addControl(babygd);
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+            Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
         });
         hbrgd.addControl(L9Btn, 0, 1);
 
@@ -1690,8 +1696,8 @@ L6Btn.onPointerUpObservable.add(function () {
     textureblack.diffuseTexture.vScale = 2;
     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
     Bag.material = textureblack;
-    stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+    Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
 });
 Bgd.addControl(L6Btn, 0, 0);
 
@@ -1714,8 +1720,8 @@ L7Btn.onPointerUpObservable.add(function () {
     textureblack.diffuseTexture.vScale = 2;
     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
     Bag.material = textureblack;
-    stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
-            stich.renderOverlay = true;
+    Stich.overlayColor =  new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
 });
 Bgd.addControl(L7Btn, 0, 1);
 
