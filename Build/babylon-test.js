@@ -422,11 +422,6 @@ var createScene = function () {
         var btnColor = "#25BAFFFF";
         var fonttext = "27%";
 
-
-
-
-
-
         var Loadingpanel = new BABYLON.GUI.Rectangle();
         Loadingpanel.isVisible = false
         Loadingpanel.width = "100%";
@@ -460,39 +455,30 @@ var createScene = function () {
         button11.color = btnColor;
         button11.cornerRadius = 100;
         button11.thickness = 0;
-        
-        Bag.material.onLoadObservable.add(tex => {
-            console.log('alpha:', textureblack.hasAlpha)
-           Loadingpanel.isVisible = false;
-        })
-
         button11.onPointerUpObservable.add(function () {
+           Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button11;
             currentButton.thickness = 2;
             leaname.text = "KALAHARI\nBROWN";
             leaname.fontSize = fonttext;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            Loadingpanel.isVisible = true;
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
-            textureblack.diffuseTexture.uScale = 10;
-            textureblack.diffuseTexture.vScale = 10;
-            textureblack.bumpTexture.uScale = 10;
-            textureblack.bumpTexture.vScale = 10;
+             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI BROWN.jpg", scene);
+        //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+           // textureblack.bumpTexture.uScale = 10;
+           // textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.delayLoadState = BABYLON.Engine.DELAYLOADSTATE_NOTLOADED;
             Bag.hasAlpha = true;
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
-            // textureblack.diffuseTexture.onLoadObservable.add(tex => {
-            //     console.log('alpha:', textureblack.hasAlpha)
-            //    Loadingpanel.isVisible = false;
-            // })
-
-
-
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         kaligd.addControl(button11, 0, 0);
 
@@ -503,22 +489,29 @@ var createScene = function () {
         button12.cornerRadius = 100;
         button12.thickness = 0;
         button12.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button12;
             leaname.text = "KALAHARI\nMARSALA";
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI MARSALA.bmp", scene);
-            textureblack.diffuseTexture.uScale = 20;
-            textureblack.diffuseTexture.vScale = 20;
-            textureblack.bumpTexture.uScale = 10;
-            textureblack.bumpTexture.vScale = 10;
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI MARSALA.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI MARSALA.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+           // textureblack.bumpTexture.uScale = 10;
+            //textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.83, 0.29, 0.29)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+
+
         });
         kaligd.addControl(button12, 0, 1);
 
@@ -529,22 +522,27 @@ var createScene = function () {
         button13.cornerRadius = 100;
         button13.thickness = 0;
         button13.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button13;
             leaname.text = "KALAHARI\nSAPPHIRE";
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI SAPPHIRE.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI SAPPHIRE.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI SAPPHIRE.bmp", scene);
             textureblack.diffuseTexture.uScale = 10;
             textureblack.diffuseTexture.vScale = 10;
-            textureblack.bumpTexture.uScale = 10;
-            textureblack.bumpTexture.vScale = 10;
+           // textureblack.bumpTexture.uScale = 10;
+          //  textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.29, 0.68, 0.83)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         kaligd.addControl(button13, 0, 2);
 
@@ -555,22 +553,27 @@ var createScene = function () {
         button14.cornerRadius = 100;
         button14.thickness = 0;
         button14.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button14;
             leaname.text = "KALAHARI\nTANGERINE";
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI TANGERINE.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI TANGERINE.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI TANGERINE.bmp", scene);
             textureblack.diffuseTexture.uScale = 10;
             textureblack.diffuseTexture.vScale = 10;
-            textureblack.bumpTexture.uScale = 10;
-            textureblack.bumpTexture.vScale = 10;
+            // textureblack.bumpTexture.uScale = 10;
+            // textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         kaligd.addControl(button14, 0, 3);
 
@@ -641,20 +644,25 @@ var createScene = function () {
         button17.cornerRadius = 100;
         button17.thickness = 0;
         button17.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button17;
             leaname.text = "LUXURY OSTRICH\nCHOCOLATE";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH CHOCOLATE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH CHOCOLATE.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH CHOCOLATE.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH CHOCOLATE.bmp", scene);
             textureblack.diffuseTexture.uScale = 5;
             textureblack.diffuseTexture.vScale = 5;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         ostgd.addControl(button17, 0, 0);
 
@@ -665,20 +673,25 @@ var createScene = function () {
         button18.cornerRadius = 100;
         button18.thickness = 0;
         button18.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button18;
             leaname.text = "LUXURY OSTRICH\nRED";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH RED.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH RED.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH RED.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH RED.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         ostgd.addControl(button18, 0, 1);
 
@@ -689,20 +702,25 @@ var createScene = function () {
         button19.cornerRadius = 100;
         button19.thickness = 0;
         button19.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button19;
             leaname.text = "LUXURY OSTRICH\nTAN";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH TAN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH TAN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH TAN.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH TAN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         ostgd.addControl(button19, 0, 2);
         //////////////////////////////////////////////////////////////////////////////////////////////////////////ranch smooth
@@ -772,20 +790,25 @@ var createScene = function () {
         button20.cornerRadius = 100;
         button20.thickness = 0;
         button20.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button20;
             leaname.text = "RANCH SMOOTH\nCALF BLACK";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF BLACK.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF BLACK.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF BLACK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF BLACK.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         rangd.addControl(button20, 0, 0);
 
@@ -796,20 +819,25 @@ var createScene = function () {
         button21.cornerRadius = 100;
         button21.thickness = 0;
         button21.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button21;
             leaname.text = "RANCH SMOOTH\nCALF EMERALD";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF EMERALD.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF EMERALD.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF EMERALD.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF EMERALD.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         rangd.addControl(button21, 0, 1);
 
@@ -821,20 +849,25 @@ var createScene = function () {
         button22.cornerRadius = 100;
         button22.thickness = 0;
         button22.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button22;
             leaname.text = "RANCH SMOOTH CALF\nMID NIGHT BLUE";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF MID NIGHT BLUE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF MID NIGHT BLUE.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF MID NIGHT BLUE.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF MID NIGHT BLUE.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         rangd.addControl(button22, 0, 2);
 
@@ -845,20 +878,25 @@ var createScene = function () {
         button23.cornerRadius = 100;
         button23.thickness = 0;
         button23.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button23;
             leaname.text = "RANCH SMOOTH\nCALF RED";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF RED.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF RED.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF RED.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF RED.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         rangd.addControl(button23, 0, 3);
 
@@ -869,13 +907,14 @@ var createScene = function () {
         button24.cornerRadius = 100;
         button24.thickness = 0;
         button24.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button24;
             leaname.text = "RANCH SMOOTH\nCALF TAN BROWN";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN  BROWN.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN  BROWN.jpg", scene);
             //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF TAN  BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
@@ -885,6 +924,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         rangd.addControl(button24, 0, 4);
 
@@ -895,13 +938,14 @@ var createScene = function () {
         button25.cornerRadius = 100;
         button25.thickness = 0;
         button25.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button25;
             leaname.text = "RANCH SMOOTH\nCALF TAN";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN.jpg", scene);
             //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF TAN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
@@ -909,6 +953,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         rangd.addControl(button25, 0, 5);
 
@@ -980,14 +1028,15 @@ var createScene = function () {
         button26.cornerRadius = 100;
         button26.thickness = 0;
         button26.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button26;
             leaname.text = "REAL DEER\nBLACK";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REAL DEER BLACK.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REAL DEER BLACK.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REAL DEER BLACK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REAL DEER BLACK.bmp", scene);
             textureblack.diffuseTexture.uScale = 5;
             textureblack.diffuseTexture.vScale = 5;
             textureblack.bumpTexture.uScale = 5;
@@ -996,6 +1045,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         dearsgd.addControl(button26, 0, 0);
 
@@ -1066,20 +1119,25 @@ var createScene = function () {
         button27.cornerRadius = 100;
         button27.thickness = 0;
         button27.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button27;
             leaname.text = "REGULAR CLASSIC\nLEATHER BLACK";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BLACK.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BLACK.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BLACK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BLACK.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         regugd.addControl(button27, 0, 0);
 
@@ -1090,20 +1148,25 @@ var createScene = function () {
         button28.cornerRadius = 100;
         button28.thickness = 0;
         button28.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button28;
             leaname.text = "REGULAR CLASSIC\nLEATHER BROWN";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BROWN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BROWN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BROWN.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         regugd.addControl(button28, 0, 1);
 
@@ -1114,20 +1177,25 @@ var createScene = function () {
         button29.cornerRadius = 100;
         button29.thickness = 0;
         button29.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button29;
             leaname.text = "REGULAR CLASSIC\nLEATHER HONEY";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER HONEY.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER HONEY.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER HONEY.jpg", scene);
+         //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER HONEY.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         regugd.addControl(button29, 0, 2);
 
@@ -1138,20 +1206,25 @@ var createScene = function () {
         button30.cornerRadius = 100;
         button30.thickness = 0;
         button30.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button30;
             leaname.text = "REGULAR CLASSIC\nLEATHER MID NIGHT BLUE";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER MID NIGHT BLUE.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER MID NIGHT BLUE.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         regugd.addControl(button30, 0, 3);
 
@@ -1162,20 +1235,25 @@ var createScene = function () {
         button31.cornerRadius = 100;
         button31.thickness = 0;
         button31.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button31;
             leaname.text = "REGULAR CLASSIC\nLEATHER RED";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER RED.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER RED.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER RED.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER RED.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         regugd.addControl(button31, 0, 4);
 
@@ -1186,20 +1264,25 @@ var createScene = function () {
         button32.cornerRadius = 100;
         button32.thickness = 0;
         button32.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = button32;
             leaname.text = "REGULAR CLASSIC\nLEATHER TAN";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER TAN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER TAN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER TAN.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER TAN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         regugd.addControl(button32, 0, 5);
 
@@ -1266,20 +1349,25 @@ var createScene = function () {
         L1Btn.cornerRadius = 100;
         L1Btn.thickness = 0;
         L1Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = L1Btn;
             leaname.text = "BABY CROCO\nBLACK";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BLACK.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BLACK.jpg", scene);
+         //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BLACK.bmp", scene);
+            textureblack.diffuseTexture.uScale = 5;
+            textureblack.diffuseTexture.vScale = 5;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         babygd.addControl(L1Btn, 0, 0);
 
@@ -1290,20 +1378,25 @@ var createScene = function () {
         L2Btn.cornerRadius = 100;
         L2Btn.thickness = 0;
         L2Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = L2Btn;
             leaname.text = "BABY CROCO\nBROWN";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BROWN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BROWN.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         babygd.addControl(L2Btn, 0, 1);
 
@@ -1315,20 +1408,25 @@ var createScene = function () {
         L3Btn.cornerRadius = 100;
         L3Btn.thickness = 0;
         L3Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = L3Btn;
             leaname.text = "BABY CROCO\nEMERALD";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO EMERALD.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO EMERALD.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO EMERALD.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         babygd.addControl(L3Btn, 0, 2);
 
@@ -1341,6 +1439,7 @@ var createScene = function () {
         L4Btn.cornerRadius = 100;
         L4Btn.thickness = 0;
         L4Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = L4Btn;
             leaname.text = "BABY CROCO\nMID NIGHT BLUE";
@@ -1348,13 +1447,17 @@ var createScene = function () {
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO MID NIGHT BLUE.bmp", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO MID NIGHT BLUE.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         babygd.addControl(L4Btn, 0, 3);
 
@@ -1365,14 +1468,15 @@ var createScene = function () {
         L5Btn.cornerRadius = 100;
         L5Btn.thickness = 0;
         L5Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             currentButton.thickness = 0;
             currentButton = L5Btn;
             leaname.text = "BABY CROCO\nPINK";
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO PINK.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO PINK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO PINK.bmp", scene);
             textureblack.diffuseTexture.uScale = 1.1;
             textureblack.diffuseTexture.vScale = 1.1;
             textureblack.bumpTexture.uScale = 1.1;
@@ -1381,6 +1485,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         babygd.addControl(L5Btn, 0, 4);
 
@@ -1542,8 +1650,8 @@ var createScene = function () {
             leaname.fontSize = fonttext;
             crnt.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KID SUEDE GENUINE LEATHER BROWN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KID SUEDE GENUINE LEATHER BROWN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KID SUEDE GENUINE LEATHER BROWN.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KID SUEDE GENUINE LEATHER BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -1566,8 +1674,8 @@ var createScene = function () {
             leaname.fontSize = fonttext;
             crnt.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KID SUEDE GENUINE LEATHER TAN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KID SUEDE GENUINE LEATHER TAN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KID SUEDE GENUINE LEATHER TAN.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KID SUEDE GENUINE LEATHER TAN.bmp", scene);
             textureblack.diffuseTexture.uScale = 3;
             textureblack.diffuseTexture.vScale = 3;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -1642,8 +1750,8 @@ var createScene = function () {
             leaname.fontSize = fonttext;
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BIG BROWN.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/HIDESIGN BRANDED LINING BIG BROWN.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModelsDev2/seam/HIDESIGN BRANDED LINING BIG BROWN.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/HIDESIGN BRANDED LINING BIG BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -1666,8 +1774,8 @@ var createScene = function () {
             leaname.text = "HIDESIGN BRANDED\nLINING BLACK";
             leaname.fontSize = fonttext;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/HIDESIGN BRANDED LINING BLACK.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/HIDESIGN BRANDED LINING BLACK.bmp", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/HIDESIGN BRANDED LINING BLACK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/HIDESIGN BRANDED LINING BLACK.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -1738,7 +1846,7 @@ var createScene = function () {
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE BLUE.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BRUSHED POLYESTER SUEDE BLUE.bmp", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BRUSHED POLYESTER SUEDE BLUE.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -1762,7 +1870,7 @@ var createScene = function () {
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BRUSHED POLYESTER SUEDE RED.jpg", scene);
-            textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BRUSHED POLYESTER SUEDE RED.bmp", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BRUSHED POLYESTER SUEDE RED.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
