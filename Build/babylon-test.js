@@ -1128,8 +1128,8 @@ var createScene = function () {
 
 
         var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg");
-        L1Btn.width = btnW;
-        L1Btn.height = btnH;
+        L1Btn.width = btcW;
+        L1Btn.height = btcH;
         L1Btn.color = "#25BAFFFF";
         L1Btn.cornerRadius = 100;
         L1Btn.thickness = 0;
@@ -1157,8 +1157,8 @@ var createScene = function () {
         babygd.addControl(L1Btn, 0, 0);
 
         var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg ");
-        L2Btn.width = btnW;
-        L2Btn.height = btnH;
+        L2Btn.width = btcW;
+        L2Btn.height = btcH;
         L2Btn.color = "#25BAFFFF";
         L2Btn.cornerRadius = 100;
         L2Btn.thickness = 0;
@@ -1187,8 +1187,8 @@ var createScene = function () {
 
 
         var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg ");
-        L3Btn.width = btnW;
-        L3Btn.height = btnH;
+        L3Btn.width = btcW;
+        L3Btn.height = btcH;
         L3Btn.color = "#25BAFFFF";
         L3Btn.cornerRadius = 100;
         L3Btn.thickness = 0;
@@ -1218,8 +1218,8 @@ var createScene = function () {
 
 
         var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture4", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg ");
-        L4Btn.width = btnW;
-        L4Btn.height = btnH;
+        L4Btn.width = btcW;
+        L4Btn.height = btcH;
         L4Btn.color = "#25BAFFFF";
         L4Btn.cornerRadius = 100;
         L4Btn.thickness = 0;
@@ -1247,8 +1247,8 @@ var createScene = function () {
         babygd.addControl(L4Btn, 1, 0);
 
         var L5Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture5", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg ");
-        L5Btn.width = btnW;
-        L5Btn.height = btnH;
+        L5Btn.width = btcW;
+        L5Btn.height = btcH;
         L5Btn.color = "#25BAFFFF";
         L5Btn.cornerRadius = 100;
         L5Btn.thickness = 0;
