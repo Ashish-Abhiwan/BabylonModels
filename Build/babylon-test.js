@@ -444,7 +444,7 @@ var createScene = function () {
         var Loadingtext = new BABYLON.GUI.TextBlock();
         Loadingtext.text = "Loading....";
         Loadingtext.resizeToFit = true;
-        Loadingtext.fontSize = "30%";
+        Loadingtext.fontSize = "15%";
         Loadingpanel.addControl(Loadingtext);
 
 
@@ -531,8 +531,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI SAPPHIRE.jpg", scene);
            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI SAPPHIRE.bmp", scene);
-            textureblack.diffuseTexture.uScale = 10;
-            textureblack.diffuseTexture.vScale = 10;
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
            // textureblack.bumpTexture.uScale = 10;
           //  textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -562,8 +562,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI TANGERINE.jpg", scene);
           //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI TANGERINE.bmp", scene);
-            textureblack.diffuseTexture.uScale = 10;
-            textureblack.diffuseTexture.vScale = 10;
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
             // textureblack.bumpTexture.uScale = 10;
             // textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -653,8 +653,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH CHOCOLATE.jpg", scene);
             //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH CHOCOLATE.bmp", scene);
-            textureblack.diffuseTexture.uScale = 5;
-            textureblack.diffuseTexture.vScale = 5;
+            textureblack.diffuseTexture.uScale = 3;
+            textureblack.diffuseTexture.vScale = 3;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1039,8 +1039,8 @@ var createScene = function () {
            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REAL DEER BLACK.bmp", scene);
             textureblack.diffuseTexture.uScale = 5;
             textureblack.diffuseTexture.vScale = 5;
-            textureblack.bumpTexture.uScale = 5;
-            textureblack.bumpTexture.vScale = 5;
+            // textureblack.bumpTexture.uScale = 5;
+            // textureblack.bumpTexture.vScale = 5;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1477,10 +1477,10 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO PINK.jpg", scene);
            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO PINK.bmp", scene);
-            textureblack.diffuseTexture.uScale = 1.1;
-            textureblack.diffuseTexture.vScale = 1.1;
-            textureblack.bumpTexture.uScale = 1.1;
-            textureblack.bumpTexture.vScale = 1.1;
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 1.1;
+            // textureblack.bumpTexture.vScale = 1.1;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1644,6 +1644,7 @@ var createScene = function () {
         button15.cornerRadius = 100;
         button15.thickness = 0;
         button15.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             crnt.thickness = 0;
             crnt = button15;
             leaname.text = "KID SUEDE GENUINE\nLEATHER BROWN";
@@ -1658,6 +1659,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         LININGgd.addControl(button15, 0, 0);
 
@@ -1668,6 +1673,7 @@ var createScene = function () {
         button16.cornerRadius = 100;
         button16.thickness = 0;
         button16.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             crnt.thickness = 0;
             crnt = button16;
             leaname.text = "KID SUEDE GENUINE\nLEATHER TAN";
@@ -1682,6 +1688,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         LININGgd.addControl(button16, 0, 1);
 
@@ -1744,13 +1754,14 @@ var createScene = function () {
         L8Btn.cornerRadius = 100;
         L8Btn.thickness = 0;
         L8Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             crnt.thickness = 0;
             crnt = L8Btn;
             leaname.text = "HIDESIGN BRANDED\nLINING BIG BROWN";
             leaname.fontSize = fonttext;
             crnt.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModelsDev2/seam/HIDESIGN BRANDED LINING BIG BROWN.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/HIDESIGN BRANDED LINING BIG BROWN.jpg", scene);
            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/HIDESIGN BRANDED LINING BIG BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 2;
             textureblack.diffuseTexture.vScale = 2;
@@ -1758,6 +1769,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         hbrgd.addControl(L8Btn, 0, 0);
 
@@ -1768,6 +1783,7 @@ var createScene = function () {
         L9Btn.cornerRadius = 100;
         L9Btn.thickness = 0;
         L9Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             crnt.thickness = 0;
             crnt = L4Btn;
             crnt.thickness = 3;
@@ -1782,6 +1798,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         hbrgd.addControl(L9Btn, 0, 1);
 
@@ -1839,6 +1859,7 @@ var createScene = function () {
         L6Btn.cornerRadius = 100;
         L6Btn.thickness = 0;
         L6Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             crnt.thickness = 0;
             crnt = L6Btn;
             leaname.text = "BRUSHED POLYESTER\nSUEDE BLUE";
@@ -1853,6 +1874,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         Bgd.addControl(L6Btn, 0, 0);
 
@@ -1863,6 +1888,7 @@ var createScene = function () {
         L7Btn.cornerRadius = 100;
         L7Btn.thickness = 0;
         L7Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
             crnt.thickness = 0;
             crnt = L7Btn;
             leaname.text = "BRUSHED POLYESTER\nSUEDE RED";
@@ -1877,6 +1903,10 @@ var createScene = function () {
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
         });
         Bgd.addControl(L7Btn, 0, 1);
 
