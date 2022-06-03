@@ -66,55 +66,60 @@ var createScene = function () {
         var fontsizes = "63%"
 
         var mainpanel = new BABYLON.GUI.Rectangle();
-        mainpanel.width = "25%";
+        mainpanel.width = "100%";
         mainpanel.height = "100%";
         mainpanel.verticalAlignment = "Center";
         mainpanel.horizontalAlignment = "Center";
-        mainpanel.top = "";
-        mainpanel.left = "0.5%";
+        mainpanel.top = "0%";
+        mainpanel.left = "0%";
         mainpanel.cornerRadius = 0;
         mainpanel.color = "Grey";
         mainpanel.thickness = 0;
         mainpanel.background = "#F5F4F2";
-        mainpanel.shadowColor = "black";
-        mainpanel.shadowOffsetX = 3;
-        mainpanel.shadowBlur = 15;
-        mainpanel.shadowColor = "#7C7878FF";
+        // mainpanel.shadowColor = "black";
+        // mainpanel.shadowOffsetX = 3;
+        // mainpanel.shadowBlur = 15;
+        // mainpanel.shadowColor = "#7C7878FF";
         advancedTexture.addControl(mainpanel);
 
-        var grid = new BABYLON.GUI.Grid();
-        grid.width = "100%";
-        grid.height = "100%";
-        grid.addRowDefinition(0.15);
-        grid.addRowDefinition(0.15);
-        grid.addRowDefinition(0.50);
-        grid.addRowDefinition(0.20);
-        mainpanel.addControl(grid);
+        
+        var backgroundimg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/background.png");
+        backgroundimg.width = "100%";
+        backgroundimg.height = "100%";
+        mainpanel.addControl(backgroundimg);
+
+        var mainpanelgrid = new BABYLON.GUI.Grid();
+        mainpanelgrid.width = "100%";
+        mainpanelgrid.height = "100%";
+        mainpanelgrid.addColumnDefinition(1/3);
+        mainpanelgrid.addColumnDefinition(1/3);
+        mainpanelgrid.addColumnDefinition(1/3);
+        mainpanel.addControl(mainpanelgrid);
 
 
 
         ///////////////////  Buttons of the customize options 
 
-        var leather = BABYLON.GUI.Button.CreateSimpleButton("Leather", "LEATHER");
+        var leather = BABYLON.GUI.Button.CreateImageOnlyButton("Leather", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/buttonwith text.png");
         leather.width = "90%"
         leather.height = "50%";
-        leather.color = "White";
+       // leather.color = "White";
         leather.resizeToFit = true;
-        leather.background = "#56A3A3";
+        //leather.background = "#56A3A3";
         leather.cornerRadius = 3;
-        leather.thickness = 2;
-        leather.fontSize = "30%";
-        leather.shadowColor = "black";
-        leather.shadowOffsetX = 3;
-        leather.shadowBlur = 15;
-        leather.shadowColor = "#7C7878FF";
+        leather.thickness = 0;
+      ///  leather.fontSize = "30%";
+      //  leather.shadowColor = "black";
+        //leather.shadowOffsetX = 3;
+      //  leather.shadowBlur = 15;
+      //  leather.shadowColor = "#7C7878FF";
         leather.onPointerUpObservable.add(function () {
             mainpanel.isVisible = false;
             descrippanel.isVisible = true;
             leatherstab.isVisible = true;
             leaname.text = "";
         });
-        grid.addControl(leather, 0);
+        mainpanelgrid.addControl(leather, 0);
 
         var leatherlining = BABYLON.GUI.Button.CreateSimpleButton("Leather lining", "LINING");
         leatherlining.width = "90%"
