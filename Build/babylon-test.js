@@ -44,6 +44,7 @@ var createScene = function () {
     var light3 = new BABYLON.DirectionalLight("dir01", new BABYLON.Vector3(0, 0.5, 1.0), scene);
     light3.intensity = 1;
     light3.position = new BABYLON.Vector3(0, 5, 5);
+    
     // Load Bag character and play animation
     BABYLON.SceneLoader.ImportMesh("", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/BAGS/", modelname, scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
         var Bag = newMeshes[1];
