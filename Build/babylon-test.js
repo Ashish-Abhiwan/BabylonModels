@@ -83,7 +83,7 @@ var createScene = function () {
         advancedTexture.addControl(mainpanel);
 
         
-        var backgroundimg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/background.png");
+        var backgroundimg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/background.jpg");
         backgroundimg.width = "100%";
         backgroundimg.height = "100%";
         mainpanel.addControl(backgroundimg);
@@ -103,16 +103,9 @@ var createScene = function () {
         var leather = BABYLON.GUI.Button.CreateImageOnlyButton("Leather", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/buttonwith text.png");
         leather.width = "90%"
         leather.height = "50%";
-       // leather.color = "White";
         leather.resizeToFit = true;
-        //leather.background = "#56A3A3";
-        leather.cornerRadius = 3;
+        leather.cornerRadius = 0;
         leather.thickness = 0;
-      ///  leather.fontSize = "30%";
-      //  leather.shadowColor = "black";
-        //leather.shadowOffsetX = 3;
-      //  leather.shadowBlur = 15;
-      //  leather.shadowColor = "#7C7878FF";
         leather.onPointerUpObservable.add(function () {
             mainpanel.isVisible = false;
             descrippanel.isVisible = true;
@@ -121,19 +114,12 @@ var createScene = function () {
         });
         mainpanelgrid.addControl(leather, 0);
 
-        var leatherlining = BABYLON.GUI.Button.CreateSimpleButton("Leather lining", "LINING");
+        var leatherlining = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/buttonwith text.png");
         leatherlining.width = "90%"
         leatherlining.height = "50%";
-        leatherlining.color = "white";
         leatherlining.resizeToFit = true;
-        leatherlining.background = "#56A3A3";
-        leatherlining.cornerRadius = 3;
-        leatherlining.thickness = 2;
-        leatherlining.fontSize = "30%";
-        leatherlining.shadowColor = "black";
-        leatherlining.shadowOffsetX = 3;
-        leatherlining.shadowBlur = 15;
-        leatherlining.shadowColor = "#7C7878FF";
+        leatherlining.cornerRadius = 0;
+        leatherlining.thickness = 0;
         leatherlining.onPointerUpObservable.add(function () {
             mainpanel.isVisible = false;
             leatherliningtab.isVisible = true;
@@ -141,38 +127,38 @@ var createScene = function () {
             leaname.text = "";
 
         });
-        grid.addControl(leatherlining, 1);
+        mainpanelgrid.addControl(leatherlining, 1);
 
 
-        var rect4 = new BABYLON.GUI.Rectangle();
-        rect4.width = "92%";
-        rect4.height = "80%";
-        rect4.color = "black";
-        rect4.thickness = 1;
-        grid.addControl(rect4, 2);
+        // var rect4 = new BABYLON.GUI.Rectangle();
+        // rect4.width = "92%";
+        // rect4.height = "80%";
+        // rect4.color = "black";
+        // rect4.thickness = 1;
+        // grid.addControl(rect4, 2);
 
-        var grd = new BABYLON.GUI.Grid();
-        grd.width = "100%";
-        grd.height = "100%";
-        grd.paddingTop = "0%"
-        grd.addRowDefinition(0.10);
-        grd.addRowDefinition(0.90);
-        rect4.addControl(grd);
+        // var grd = new BABYLON.GUI.Grid();
+        // grd.width = "100%";
+        // grd.height = "100%";
+        // grd.paddingTop = "0%"
+        // grd.addRowDefinition(0.10);
+        // grd.addRowDefinition(0.90);
+        // rect4.addControl(grd);
 
-        var lePText = new BABYLON.GUI.TextBlock();
-        lePText.text = "PERSONALISE TAG";
-        lePText.fontSize = "85%";
-        lePText.top = "20%";
-        grd.addControl(lePText, 0);
+        // var lePText = new BABYLON.GUI.TextBlock();
+        // lePText.text = "PERSONALISE TAG";
+        // lePText.fontSize = "85%";
+        // lePText.top = "20%";
+        // grd.addControl(lePText, 0);
 
 
-        var gIrd = new BABYLON.GUI.Grid();
-        gIrd.width = "100%";
-        gIrd.height = "100%";
-        gIrd.paddingTop = "0%"
-        gIrd.addRowDefinition(0.80);
-        gIrd.addRowDefinition(0.20);
-        grd.addControl(gIrd, 1);
+        // var gIrd = new BABYLON.GUI.Grid();
+        // gIrd.width = "100%";
+        // gIrd.height = "100%";
+        // gIrd.paddingTop = "0%"
+        // gIrd.addRowDefinition(0.80);
+        // gIrd.addRowDefinition(0.20);
+        // grd.addControl(gIrd, 1);
 
         var namefeild = new BABYLON.GUI.InputText("Input");
         namefeild.width = "95%";
