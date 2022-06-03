@@ -1106,7 +1106,7 @@ var createScene = function () {
         babycrocogd.height = "99.9%";
         babycrocogd.addRowDefinition(0.30);
         babycrocogd.addRowDefinition(0.70);
-        leathergd.addControl(babycrocogd, 2, 1);
+        leathergd.addControl(babycrocogd, 1, 1);
 
         var DeerText = new BABYLON.GUI.TextBlock();
         DeerText.text = "BABY\nCROCO";
@@ -1143,8 +1143,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BLACK.jpg", scene);
          //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BLACK.bmp", scene);
-            textureblack.diffuseTexture.uScale = 5;
-            textureblack.diffuseTexture.vScale = 5;
+            textureblack.diffuseTexture.uScale = 4;
+            textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1172,8 +1172,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BROWN.jpg", scene);
           //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BROWN.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture.uScale = 4;
+            textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1202,8 +1202,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO EMERALD.jpg", scene);
             //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO EMERALD.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture.uScale = 4;
+            textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1231,10 +1231,10 @@ var createScene = function () {
             leaname.fontSize = fonttext;
             currentButton.thickness = 3;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO MID NIGHT BLUE.jpg", scene);
           //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO MID NIGHT BLUE.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture.uScale = 4;
+            textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
@@ -1244,7 +1244,7 @@ var createScene = function () {
                 Loadingpanel.isVisible = false;
             })
         });
-        babygd.addControl(L4Btn, 0, 3);
+        babygd.addControl(L4Btn, 1, 0);
 
         var L5Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture5", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg ");
         L5Btn.width = btnW;
@@ -1262,8 +1262,8 @@ var createScene = function () {
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO PINK.jpg", scene);
            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO PINK.bmp", scene);
-            textureblack.diffuseTexture.uScale = 2;
-            textureblack.diffuseTexture.vScale = 2;
+            textureblack.diffuseTexture.uScale = 4;
+            textureblack.diffuseTexture.vScale = 4;
             // textureblack.bumpTexture.uScale = 1.1;
             // textureblack.bumpTexture.vScale = 1.1;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
@@ -1275,7 +1275,7 @@ var createScene = function () {
                 Loadingpanel.isVisible = false;
             })
         });
-        babygd.addControl(L5Btn, 0, 4);
+        babygd.addControl(L5Btn, 1, 1);
 
 
         // ////////////////////////////////////////////////    leather lining main canvas 
