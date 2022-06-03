@@ -135,7 +135,7 @@ var createScene = function () {
         persolizetag.onPointerUpObservable.add(function () {
             mainpanel.isVisible = false;
             personzetagmenu.isVisible = true;
-
+            personalText.isVisible = true;
         });
         mainpanelgrid.addControl(persolizetag, 0, 2);
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -151,19 +151,55 @@ var createScene = function () {
         personzetagmenu.thickness = 0;
         advancedTexture.addControl(personzetagmenu);
 
+
+
+        var personalText = new BABYLON.GUI.TextBlock();
+        personalText.isVisible = false
+        personalText.text = "Personalised\nTag";
+        personalText.resizeToFit = true;
+        personalText.fontSize = "7%";
+        personalText.paddingBottom = "85%"
+        personalText.left = "40%"
+        personalText.fontFamily = "Pacifico";
+        personalText.fontStyle = "oblique"
+        advancedTexture.addControl(personalText);
+
+
+        var persongdextra = new BABYLON.GUI.Grid();
+        persongdextra.width = "100%";
+        persongdextra.height = "100%";
+        persongdextra.addRowDefinition(0.05);
+        persongdextra.addRowDefinition(0.95);
+        persongdextra.addColumnDefinition(0.10);
+        persongdextra.addColumnDefinition(0.90);
+        personzetagmenu.addControl(persongdextra);
+
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
+        close.width = "100%"
+        close.height = "100%";
+        close.thickness = 0;
+        close.onPointerUpObservable.add(function () {
+            personzetagmenu.isVisible = false;
+            descrippanel.isVisible = false;
+            mainpanel.isVisible = true;
+            personalText.isVisible = false;
+        });
+        persongdextra.addControl(close, 0, 0);
+
         var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag table.png");
         personalizetabbg.width = "100%";
         personalizetabbg.height = "100%";
-        personzetagmenu.addControl(personalizetabbg);
+        persongdextra.addControl(personalizetabbg, 1, 1);
+
 
         var persolizetaggrid = new BABYLON.GUI.Grid();
         persolizetaggrid.width = "100%";
-        persolizetaggrid.height = "100%";
+        persolizetaggrid.height = "95%";
         persolizetaggrid.addRowDefinition(1 / 4);
         persolizetaggrid.addRowDefinition(1 / 4);
         persolizetaggrid.addRowDefinition(1 / 4);
         persolizetaggrid.addRowDefinition(1 / 4);
-        personzetagmenu.addControl(persolizetaggrid);
+        persongdextra.addControl(persolizetaggrid, 1, 1);
 
         var perText1 = new BABYLON.GUI.TextBlock();
         perText1.text = "Name In\nBlind Emboss";
@@ -209,7 +245,7 @@ var createScene = function () {
         });
         persolizetaggrid.addControl(tag2, 3);
 
-//////////////////////////////////////////////////////////////////////////////  leather options canvas panel 
+        //////////////////////////////////////////////////////////////////////////////  leather options canvas panel 
 
         var leatherstab = new BABYLON.GUI.Rectangle();
         leatherstab.isVisible = false;
@@ -218,6 +254,18 @@ var createScene = function () {
         leatherstab.verticalAlignment = "Center";
         leatherstab.horizontalAlignment = "Center";
         advancedTexture.addControl(leatherstab);
+
+
+        var leText = new BABYLON.GUI.TextBlock();
+        leText.isVisible = false
+        leText.text = "LEATHER";
+        leText.resizeToFit = true;
+        leText.fontSize = "7%";
+        leText.paddingBottom = "85%"
+        leText.left = "40%"
+        leText.fontFamily = "Pacifico";
+        leText.fontStyle = "oblique"
+        advancedTexture.addControl(leText);
 
         var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leathers table.png");
         personalizetabbg.width = "100%";
@@ -234,7 +282,7 @@ var createScene = function () {
         leathergdextra.addColumnDefinition(0.90);
         leatherstab.addControl(leathergdextra);
 
-        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
         close.width = "100%"
         close.height = "100%";
         close.thickness = 0;
@@ -242,8 +290,9 @@ var createScene = function () {
             leatherstab.isVisible = false;
             descrippanel.isVisible = false;
             mainpanel.isVisible = true;
+            leText.isVisible = false;
         });
-        leathergdextra.addControl(close,0,0);
+        leathergdextra.addControl(close, 0, 0);
 
 
         var leathergd = new BABYLON.GUI.Grid();
@@ -254,1019 +303,760 @@ var createScene = function () {
         leathergd.addRowDefinition(1 / 3);
         leathergd.addColumnDefinition(1 / 2);
         leathergd.addColumnDefinition(1 / 2);
-        leathergdextra.addControl(leathergd,1,1);
+        leathergdextra.addControl(leathergd, 1, 1);
 
-        var leText = new BABYLON.GUI.TextBlock();
-        leText.isVisible = false
-        leText.text = "LEATHER";
-        leText.resizeToFit = true;
-        leText.fontSize = "7%";
-        leText.paddingBottom = "85%"
-        leText.left = "40%"
-        leText.fontFamily = "Pacifico";
-        leText.fontStyle = "oblique"
-        advancedTexture.addControl(leText);
+        ///////////////////////////////////// kalahari 
+        var kalaharigd = new BABYLON.GUI.Grid();
+        kalaharigd.width = "100%";
+        kalaharigd.height = "99.9%";
+        kalaharigd.addRowDefinition(0.30);
+        kalaharigd.addRowDefinition(0.70);
+        leathergd.addControl(kalaharigd, 0, 0);
 
-     
+        var KALAHARIText = new BABYLON.GUI.TextBlock();
+        KALAHARIText.text = "KALAHARI";
+        KALAHARIText.resizeToFit = true;
+        KALAHARIText.fontSize = "28%";
+        kalaharigd.addControl(KALAHARIText, 0);
 
+        var kaligd = new BABYLON.GUI.Grid("kaligd");
+        kaligd.width = "100%";
+        kaligd.height = "100%";
+        kaligd.addRowDefinition(1 / 2);
+        kaligd.addRowDefinition(1 / 2);
+        kaligd.addColumnDefinition(1 / 2);
+        kaligd.addColumnDefinition(1 / 2);
+        kalaharigd.addControl(kaligd, 1);
 
+        var currentButton;
+        var btnW = "60%";
+        var btnH = "60%";
+        var btnColor = "#25BAFFFF";
+        var fonttext = "27%";
 
-
-
-
-
-
-
-
-
-        
-
-        // var Leathertab = new BABYLON.GUI.Rectangle();
-        // Leathertab.width = "100%";
-        // Leathertab.height = "100%";
-        // leathergd.addControl(Leathertab, 1, 1);
-
-        // var scroll = new BABYLON.GUI.ScrollViewer("Texture", scene, true);
-        // scroll.width = "100%";
-        // scroll.height = "100%";
-        // scroll.barSize = "10";
-        // scroll.thumbImage = new BABYLON.GUI.Image("thumb", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/hidesign%20pics/Bar.png");
-        // scroll.barImage = new BABYLON.GUI.Image("bar", "");
-        // scroll.thumbLength = 0.3;
-        // scroll.thumbHeight = 1;
-        // scroll.barImageHeight = 0.3;
-        // scroll.barBackground = "blue";
-
-
-        // //check if control is picked
-        // advancedTexture.onControlPickedObservable.add(e => {
-        //     //  console.log ("picked scene");
-        //     if (e.name != "root") {
-        //         //  console.log ("picked scrol");
-        //         camera1.detachControl();
-        //         e.onPointerUpObservable.addOnce(() => camera1.attachControl(canvas, true));
-        //     }
-        // });
-
-        // //add a delay before returning to camera move
-        // var addDelay = function () {
-        //     // the new and simple way
-        //     BABYLON.setAndStartTimer({
-        //         timeout: 300,
-        //         contextObservable: scene.onBeforeRenderObservable,
-        //         onEnded: () => {
-        //             //  console.log("ended");
-        //             // code running here is guaranteed to run inside the beforeRender loop
-        //         },
-        //     });
-        // };
-        // scroll.onPointerEnterObservable.add(function () {
-        //     //console.log("in");
-        //     camera1.detachControl();
-        //     bgcamera.detachControl();
-        // });
-        // scroll.onPointerOutObservable.add(function () {
-        //     // console.log("out");        
-        //     camera1.attachControl(mainpanel, true);
-        //     bgcamera.attachControl(mainpanel, true);
-        // });
-        // Leathertab.addControl(scroll);
-
-        // var gd = new BABYLON.GUI.Grid();
-        // gd.width = "100%";
-        // gd.height = "100%";
-        // gd.addRowDefinition(1 / 6);
-        // gd.addRowDefinition(1 / 6);
-        // gd.addRowDefinition(1 / 6);
-        // gd.addRowDefinition(1 / 6);
-        // gd.addRowDefinition(1 / 6);
-        // gd.addRowDefinition(1 / 6);
-        // scroll.addControl(gd);
-
-        // //////////////////////////////////////////////////////////////////////// kalahari leather option opens 
-
-        // var kalaharitab = new BABYLON.GUI.Rectangle();
-        // kalaharitab.width = "100%";
-        // kalaharitab.height = "97%";
-        // kalaharitab.verticalAlignment = "Center";
-        // kalaharitab.horizontalAlignment = "Center";
-        // kalaharitab.top = "3%";
-        // kalaharitab.paddingRight = "1%";
-        // kalaharitab.cornerRadius = 0;
-        // kalaharitab.color = "black";
-        // kalaharitab.thickness = 0;
-        // kalaharitab.background = "";
-        // gd.addControl(kalaharitab, 0);
+        var Loadingpanel = new BABYLON.GUI.Rectangle();
+        Loadingpanel.isVisible = false
+        Loadingpanel.width = "100%";
+        Loadingpanel.height = "100%";
+        Loadingpanel.verticalAlignment = "Center";
+        Loadingpanel.horizontalAlignment = "Center";
+        Loadingpanel.top = "";
+        Loadingpanel.left = "0.5%";
+        Loadingpanel.cornerRadius = 0;
+        Loadingpanel.color = "black";
+        Loadingpanel.thickness = 0;
+        Loadingpanel.background = "#F5F4F2";
+        Loadingpanel.shadowColor = "black";
+        Loadingpanel.shadowOffsetX = 3;
+        Loadingpanel.shadowBlur = 15;
+        Loadingpanel.shadowColor = "#7C7878FF";
+        advancedTexture.addControl(Loadingpanel);
 
 
-        // var kalaharigd = new BABYLON.GUI.Grid("kalaharigd");
-        // kalaharigd.width = "100%";
-        // kalaharigd.height = "100%";
-        // kalaharigd.addRowDefinition(0.30);
-        // kalaharigd.addRowDefinition(0.70);
-        // kalaharitab.addControl(kalaharigd);
-
-        // var kaltab = new BABYLON.GUI.Rectangle();
-        // kaltab.width = "100%";
-        // kaltab.height = "100%";
-        // kaltab.color = "black";
-        // kaltab.thickness = 0.5;
-        // kalaharigd.addControl(kaltab, 0);
-
-        // var lelText = new BABYLON.GUI.TextBlock();
-        // lelText.text = "KALAHARI";
-        // lelText.resizeToFit = true;
-        // lelText.fontSize = fontsizes;
-        // kaltab.addControl(lelText);
-
-        // var kalitab = new BABYLON.GUI.Rectangle();
-        // kalitab.width = "100%";
-        // kalitab.height = "100%";
-        // kalitab.color = "black";
-        // kalitab.thickness = 1;
-        // kalaharigd.addControl(kalitab, 1);
-
-        // var kaligd = new BABYLON.GUI.Grid("kaligd");
-        // kaligd.width = "100%";
-        // kaligd.height = "100%";
-        // kaligd.addRowDefinition(1);
-        // kaligd.addColumnDefinition(1 / 6);
-        // kaligd.addColumnDefinition(1 / 6);
-        // kaligd.addColumnDefinition(1 / 6);
-        // kaligd.addColumnDefinition(1 / 6);
-        // kaligd.addColumnDefinition(1 / 6);
-        // kaligd.addColumnDefinition(1 / 6);
-        // kalitab.addControl(kaligd);
-
-        // var currentButton;
-        // var btnW = "90%";
-        // var btnH = "70%";
-        // var btnColor = "#25BAFFFF";
-        // var fonttext = "27%";
-
-        // var Loadingpanel = new BABYLON.GUI.Rectangle();
-        // Loadingpanel.isVisible = false
-        // Loadingpanel.width = "100%";
-        // Loadingpanel.height = "100%";
-        // Loadingpanel.verticalAlignment = "Center";
-        // Loadingpanel.horizontalAlignment = "Center";
-        // Loadingpanel.top = "";
-        // Loadingpanel.left = "0.5%";
-        // Loadingpanel.cornerRadius = 0;
-        // Loadingpanel.color = "black";
-        // Loadingpanel.thickness = 0;
-        // Loadingpanel.background = "#F5F4F2";
-        // Loadingpanel.shadowColor = "black";
-        // Loadingpanel.shadowOffsetX = 3;
-        // Loadingpanel.shadowBlur = 15;
-        // Loadingpanel.shadowColor = "#7C7878FF";
-        // advancedTexture.addControl(Loadingpanel);
+        var Loadingtext = new BABYLON.GUI.TextBlock();
+        Loadingtext.text = "Loading....";
+        Loadingtext.resizeToFit = true;
+        Loadingtext.fontSize = "15%";
+        Loadingpanel.addControl(Loadingtext);
 
 
-        // var Loadingtext = new BABYLON.GUI.TextBlock();
-        // Loadingtext.text = "Loading....";
-        // Loadingtext.resizeToFit = true;
-        // Loadingtext.fontSize = "15%";
-        // Loadingpanel.addControl(Loadingtext);
+        var button11 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg ");
+        currentButton = button11;
+        button11.width = btnW;
+        button11.height = btnH;
+        button11.color = btnColor;
+        button11.cornerRadius = 100;
+        button11.thickness = 0;
+        button11.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button11;
+            currentButton.thickness = 2;
+            leaname.text = "KALAHARI\nBROWN";
+            leaname.fontSize = fonttext;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI BROWN.jpg", scene);
+            //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 10;
+            // textureblack.bumpTexture.vScale = 10;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.delayLoadState = BABYLON.Engine.DELAYLOADSTATE_NOTLOADED;
+            Bag.hasAlpha = true;
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        kaligd.addControl(button11, 0, 0);
+
+        var button12 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg ");
+        button12.width = btnW;
+        button12.height = btnH;
+        button12.color = btnColor;
+        button12.cornerRadius = 100;
+        button12.thickness = 0;
+        button12.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button12;
+            leaname.text = "KALAHARI\nMARSALA";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 2;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI MARSALA.jpg", scene);
+            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI MARSALA.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 10;
+            //textureblack.bumpTexture.vScale = 10;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.83, 0.29, 0.29)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
 
 
-        // var button11 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI BROWN.jpg ");
-        // currentButton = button11;
-        // button11.width = btnW;
-        // button11.height = btnH;
-        // button11.color = btnColor;
-        // button11.cornerRadius = 100;
-        // button11.thickness = 0;
-        // button11.onPointerUpObservable.add(function () {
-        //    Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button11;
-        //     currentButton.thickness = 2;
-        //     leaname.text = "KALAHARI\nBROWN";
-        //     leaname.fontSize = fonttext;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //      textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI BROWN.jpg", scene);
-        // //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //    // textureblack.bumpTexture.uScale = 10;
-        //    // textureblack.bumpTexture.vScale = 10;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.delayLoadState = BABYLON.Engine.DELAYLOADSTATE_NOTLOADED;
-        //     Bag.hasAlpha = true;
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // kaligd.addControl(button11, 0, 0);
+        });
+        kaligd.addControl(button12, 0, 1);
 
-        // var button12 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI MARSALA.jpg ");
-        // button12.width = btnW;
-        // button12.height = btnH;
-        // button12.color = btnColor;
-        // button12.cornerRadius = 100;
-        // button12.thickness = 0;
-        // button12.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button12;
-        //     leaname.text = "KALAHARI\nMARSALA";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 2;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI MARSALA.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI MARSALA.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //    // textureblack.bumpTexture.uScale = 10;
-        //     //textureblack.bumpTexture.vScale = 10;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.83, 0.29, 0.29)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
+        var button13 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg ");
+        button13.width = btnW;
+        button13.height = btnH;
+        button13.color = btnColor;
+        button13.cornerRadius = 100;
+        button13.thickness = 0;
+        button13.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button13;
+            leaname.text = "KALAHARI\nSAPPHIRE";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 2;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI SAPPHIRE.jpg", scene);
+            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI SAPPHIRE.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 10;
+            //  textureblack.bumpTexture.vScale = 10;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.29, 0.68, 0.83)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        kaligd.addControl(button13, 1, 0);
 
-
-        // });
-        // kaligd.addControl(button12, 0, 1);
-
-        // var button13 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI SAPPHIRE.jpg ");
-        // button13.width = btnW;
-        // button13.height = btnH;
-        // button13.color = btnColor;
-        // button13.cornerRadius = 100;
-        // button13.thickness = 0;
-        // button13.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button13;
-        //     leaname.text = "KALAHARI\nSAPPHIRE";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 2;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI SAPPHIRE.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI SAPPHIRE.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //    // textureblack.bumpTexture.uScale = 10;
-        //   //  textureblack.bumpTexture.vScale = 10;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.29, 0.68, 0.83)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // kaligd.addControl(button13, 0, 2);
-
-        // var button14 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg ");
-        // button14.width = btnW;
-        // button14.height = btnH;
-        // button14.color = btnColor;
-        // button14.cornerRadius = 100;
-        // button14.thickness = 0;
-        // button14.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button14;
-        //     leaname.text = "KALAHARI\nTANGERINE";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 2;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI TANGERINE.jpg", scene);
-        //   //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI TANGERINE.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     // textureblack.bumpTexture.uScale = 10;
-        //     // textureblack.bumpTexture.vScale = 10;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // kaligd.addControl(button14, 0, 3);
+        var button14 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/KALAHARI TANGERINE.jpg ");
+        button14.width = btnW;
+        button14.height = btnH;
+        button14.color = btnColor;
+        button14.cornerRadius = 100;
+        button14.thickness = 0;
+        button14.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button14;
+            leaname.text = "KALAHARI\nTANGERINE";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 2;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI TANGERINE.jpg", scene);
+            //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI TANGERINE.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 10;
+            // textureblack.bumpTexture.vScale = 10;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        kaligd.addControl(button14, 1, 1);
 
         // ////////////////////////////////////////////////////////////////////////////////////luxry ostrich 
-        // var luxostrichtab = new BABYLON.GUI.Rectangle();
-        // luxostrichtab.width = "100%";
-        // luxostrichtab.height = "97%";
-        // luxostrichtab.verticalAlignment = "Center";
-        // luxostrichtab.horizontalAlignment = "Center";
-        // luxostrichtab.top = "3%";
-        // luxostrichtab.paddingRight = "1%";
-        // luxostrichtab.cornerRadius = 0;
-        // luxostrichtab.color = "black";
-        // luxostrichtab.thickness = 0;
-        // luxostrichtab.background = "";
-        // gd.addControl(luxostrichtab, 1);
+        var ostrichgd = new BABYLON.GUI.Grid();
+        ostrichgd.width = "100%";
+        ostrichgd.height = "99.9%";
+        ostrichgd.addRowDefinition(0.30);
+        ostrichgd.addRowDefinition(0.70);
+        leathergd.addControl(ostrichgd, 1, 0);
 
+        var ostrichText = new BABYLON.GUI.TextBlock();
+        ostrichText.text = "LUXURY\nOSTRICH";
+        ostrichText.resizeToFit = true;
+        ostrichText.fontSize = "28%";
+        ostrichgd.addControl(ostrichText, 0);
 
-        // var luxostgd = new BABYLON.GUI.Grid("kalharigd");
-        // luxostgd.isVisible = true;
-        // luxostgd.width = "100%";
-        // luxostgd.height = "100%";
-        // luxostgd.paddingBottom = "0%";
-        // luxostgd.addRowDefinition(0.30);
-        // luxostgd.addRowDefinition(0.70);
-        // luxostrichtab.addControl(luxostgd);
+        var ostgd = new BABYLON.GUI.Grid("kaligd");
+        ostgd.isVisible = true;
+        ostgd.width = "100%";
+        ostgd.height = "100%";
+        ostgd.paddingTop = "0%";
+        ostgd.addRowDefinition(1 / 2);
+        ostgd.addRowDefinition(1 / 2);
+        ostgd.addColumnDefinition(1 / 2);
+        ostgd.addColumnDefinition(1 / 2);
+        ostrichgd.addControl(ostgd, 1);
 
-        // var lxtab = new BABYLON.GUI.Rectangle();
-        // lxtab.width = "100%";
-        // lxtab.height = "100%";
-        // lxtab.color = "black";
-        // lxtab.thickness = 0.5;
-        // lxtab.background = "";
-        // luxostgd.addControl(lxtab, 0);
+        var button17 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH CHOCOLATE.jpg ");
+        button17.width = btnW;
+        button17.height = btnH;
+        button17.color = "#25BAFFFF";
+        button17.cornerRadius = 100;
+        button17.thickness = 0;
+        button17.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button17;
+            leaname.text = "LUXURY OSTRICH\nCHOCOLATE";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH CHOCOLATE.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH CHOCOLATE.bmp", scene);
+            textureblack.diffuseTexture.uScale = 3;
+            textureblack.diffuseTexture.vScale = 3;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        ostgd.addControl(button17, 0, 0);
 
-        // var ostext = new BABYLON.GUI.TextBlock();
-        // ostext.text = "LUXURY OSTRICH";
-        // ostext.resizeToFit = true;
-        // ostext.fontSize = fontsizes;
-        // lxtab.addControl(ostext);
+        var button18 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH RED.jpg ");
+        button18.width = btnW;
+        button18.height = btnH;
+        button18.color = "#25BAFFFF";
+        button18.cornerRadius = 100;
+        button18.thickness = 0;
+        button18.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button18;
+            leaname.text = "LUXURY OSTRICH\nRED";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH RED.jpg", scene);
+            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH RED.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        ostgd.addControl(button18, 0, 1);
 
-        // var lxotab = new BABYLON.GUI.Rectangle();
-        // lxotab.width = "100%";
-        // lxotab.height = "100%";
-        // lxotab.color = "black";
-        // lxotab.thickness = 1;
-        // lxotab.background = "";
-        // luxostgd.addControl(lxotab, 1);
-
-        // var ostgd = new BABYLON.GUI.Grid("kaligd");
-        // ostgd.isVisible = true;
-        // ostgd.width = "100%";
-        // ostgd.height = "100%";
-        // ostgd.paddingTop = "0%";
-        // ostgd.addRowDefinition(1);
-        // ostgd.addColumnDefinition(1 / 6);
-        // ostgd.addColumnDefinition(1 / 6);
-        // ostgd.addColumnDefinition(1 / 6);
-        // ostgd.addColumnDefinition(1 / 6);
-        // ostgd.addColumnDefinition(1 / 6);
-        // ostgd.addColumnDefinition(1 / 6);
-        // lxotab.addControl(ostgd);
-
-        // var button17 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH CHOCOLATE.jpg ");
-        // button17.width = btnW;
-        // button17.height = btnH;
-        // button17.color = "#25BAFFFF";
-        // button17.cornerRadius = 100;
-        // button17.thickness = 0;
-        // button17.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button17;
-        //     leaname.text = "LUXURY OSTRICH\nCHOCOLATE";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH CHOCOLATE.jpg", scene);
-        //     //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH CHOCOLATE.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 3;
-        //     textureblack.diffuseTexture.vScale = 3;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // ostgd.addControl(button17, 0, 0);
-
-        // var button18 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH RED.jpg ");
-        // button18.width = btnW;
-        // button18.height = btnH;
-        // button18.color = "#25BAFFFF";
-        // button18.cornerRadius = 100;
-        // button18.thickness = 0;
-        // button18.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button18;
-        //     leaname.text = "LUXURY OSTRICH\nRED";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH RED.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH RED.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // ostgd.addControl(button18, 0, 1);
-
-        // var button19 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH TAN.jpg ");
-        // button19.width = btnW;
-        // button19.height = btnH;
-        // button19.color = "#25BAFFFF";
-        // button19.cornerRadius = 100;
-        // button19.thickness = 0;
-        // button19.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button19;
-        //     leaname.text = "LUXURY OSTRICH\nTAN";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH TAN.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH TAN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // ostgd.addControl(button19, 0, 2);
+        var button19 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/LUXURY OSTRICH TAN.jpg ");
+        button19.width = btnW;
+        button19.height = btnH;
+        button19.color = "#25BAFFFF";
+        button19.cornerRadius = 100;
+        button19.thickness = 0;
+        button19.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button19;
+            leaname.text = "LUXURY OSTRICH\nTAN";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/LUXURY OSTRICH TAN.jpg", scene);
+            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/LUXURY OSTRICH TAN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        ostgd.addControl(button19, 1, 0);
         // //////////////////////////////////////////////////////////////////////////////////////////////////////////ranch smooth
 
-        // var ranchtab = new BABYLON.GUI.Rectangle();
-        // ranchtab.width = "100%";
-        // ranchtab.height = "97%";
-        // ranchtab.verticalAlignment = "Center";
-        // ranchtab.horizontalAlignment = "Center";
-        // ranchtab.top = "3%";
-        // ranchtab.paddingRight = "1%";
-        // ranchtab.cornerRadius = 0;
-        // ranchtab.color = "black";
-        // ranchtab.thickness = 0;
-        // ranchtab.background = "";
-        // gd.addControl(ranchtab, 2);
+        var ranchgd = new BABYLON.GUI.Grid();
+        ranchgd.width = "100%";
+        ranchgd.height = "99.9%";
+        ranchgd.addRowDefinition(0.30);
+        ranchgd.addRowDefinition(0.70);
+        leathergd.addControl(ranchgd, 0, 1);
+
+        var ranchText = new BABYLON.GUI.TextBlock();
+        ranchText.text = "RANCH SMOOTH\nCALF";
+        ranchText.resizeToFit = true;
+        ranchText.fontSize = "28%";
+        ranchgd.addControl(ranchText, 0);
+
+        var rangd = new BABYLON.GUI.Grid("kaligd");
+        rangd.isVisible = true;
+        rangd.width = "100%";
+        rangd.height = "100%";
+        rangd.paddingTop = "0%";
+        rangd.addRowDefinition(1/2);
+        rangd.addRowDefinition(1/2);
+        rangd.addColumnDefinition(1 / 3);
+        rangd.addColumnDefinition(1 / 3);
+        rangd.addColumnDefinition(1 / 3);
+        ranchgd.addControl(rangd,1);
+
+        var btcW = "85%";
+        var btcH = "60%";
 
 
-        // var ranchgd = new BABYLON.GUI.Grid("kalharigd");
-        // ranchgd.isVisible = true;
-        // ranchgd.width = "100%";
-        // ranchgd.height = "100%";
-        // ranchgd.paddingBottom = "0%";
-        // ranchgd.addRowDefinition(0.30);
-        // ranchgd.addRowDefinition(0.70);
-        // ranchtab.addControl(ranchgd);
+        var button20 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF BLACK.jpg ");
+        button20.width = btcW;
+        button20.height = btcH;
+        button20.color = "#25BAFFFF";
+        button20.cornerRadius = 100;
+        button20.thickness = 0;
+        button20.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button20;
+            leaname.text = "RANCH SMOOTH\nCALF BLACK";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF BLACK.jpg", scene);
+            // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF BLACK.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        rangd.addControl(button20, 0, 0);
 
-        // var ttab = new BABYLON.GUI.Rectangle();
-        // ttab.width = "100%";
-        // ttab.height = "100%";
-        // ttab.color = "black";
-        // ttab.thickness = .5;
-        // ranchgd.addControl(ttab, 0);
-
-        // var rantext = new BABYLON.GUI.TextBlock();
-        // rantext.text = "RANCH SMOOTH CALF";
-        // rantext.resizeToFit = true;
-        // rantext.fontSize = fontsizes;
-        // ttab.addControl(rantext);
-
-        // var ranctab = new BABYLON.GUI.Rectangle();
-        // ranctab.width = "100%";
-        // ranctab.height = "100%";
-        // ranctab.color = "black";
-        // ranctab.thickness = 1;
-        // ranctab.background = "";
-        // ranchgd.addControl(ranctab, 1);
-
-        // var rangd = new BABYLON.GUI.Grid("kaligd");
-        // rangd.isVisible = true;
-        // rangd.width = "100%";
-        // rangd.height = "100%";
-        // rangd.paddingTop = "0%";
-        // rangd.addRowDefinition(1);
-        // rangd.addColumnDefinition(1 / 6);
-        // rangd.addColumnDefinition(1 / 6);
-        // rangd.addColumnDefinition(1 / 6);
-        // rangd.addColumnDefinition(1 / 6);
-        // rangd.addColumnDefinition(1 / 6);
-        // rangd.addColumnDefinition(1 / 6);
-        // ranctab.addControl(rangd);
-
-        // var button20 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF BLACK.jpg ");
-        // button20.width = btnW;
-        // button20.height = btnH;
-        // button20.color = "#25BAFFFF";
-        // button20.cornerRadius = 100;
-        // button20.thickness = 0;
-        // button20.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button20;
-        //     leaname.text = "RANCH SMOOTH\nCALF BLACK";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF BLACK.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF BLACK.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // rangd.addControl(button20, 0, 0);
-
-        // var button21 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF EMERALD.jpg ");
-        // button21.width = btnW;
-        // button21.height = btnH;
-        // button21.color = "#25BAFFFF";
-        // button21.cornerRadius = 100;
-        // button21.thickness = 0;
-        // button21.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button21;
-        //     leaname.text = "RANCH SMOOTH\nCALF EMERALD";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF EMERALD.jpg", scene);
-        //   //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF EMERALD.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // rangd.addControl(button21, 0, 1);
+        var button21 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF EMERALD.jpg ");
+        button21.width = btcW;
+        button21.height = btnH;
+        button21.color = "#25BAFFFF";
+        button21.cornerRadius = 100;
+        button21.thickness = 0;
+        button21.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button21;
+            leaname.text = "RANCH SMOOTH\nCALF EMERALD";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF EMERALD.jpg", scene);
+            //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF EMERALD.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        rangd.addControl(button21, 0, 1);
 
 
-        // var button22 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF MID NIGHT BLUE.jpg ");
-        // button22.width = btnW;
-        // button22.height = btnH;
-        // button22.color = "#25BAFFFF";
-        // button22.cornerRadius = 100;
-        // button22.thickness = 0;
-        // button22.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button22;
-        //     leaname.text = "RANCH SMOOTH CALF\nMID NIGHT BLUE";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF MID NIGHT BLUE.jpg", scene);
-        //   //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF MID NIGHT BLUE.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // rangd.addControl(button22, 0, 2);
+        var button22 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF MID NIGHT BLUE.jpg ");
+        button22.width = btcW;
+        button22.height = btcH;
+        button22.color = "#25BAFFFF";
+        button22.cornerRadius = 100;
+        button22.thickness = 0;
+        button22.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button22;
+            leaname.text = "RANCH SMOOTH CALF\nMID NIGHT BLUE";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF MID NIGHT BLUE.jpg", scene);
+            //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF MID NIGHT BLUE.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        rangd.addControl(button22, 0, 2);
 
-        // var button23 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF RED.jpg ");
-        // button23.width = btnW;
-        // button23.height = btnH;
-        // button23.color = "#25BAFFFF";
-        // button23.cornerRadius = 100;
-        // button23.thickness = 0;
-        // button23.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button23;
-        //     leaname.text = "RANCH SMOOTH\nCALF RED";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF RED.jpg", scene);
-        //     //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF RED.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // rangd.addControl(button23, 0, 3);
+        var button23 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF RED.jpg ");
+        button23.width = btcW;
+        button23.height = btcH;
+        button23.color = "#25BAFFFF";
+        button23.cornerRadius = 100;
+        button23.thickness = 0;
+        button23.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button23;
+            leaname.text = "RANCH SMOOTH\nCALF RED";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF RED.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF RED.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        rangd.addControl(button23, 1, 0);
 
-        // var button24 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN  BROWN.jpg ");
-        // button24.width = btnW;
-        // button24.height = btnH;
-        // button24.color = "#25BAFFFF";
-        // button24.cornerRadius = 100;
-        // button24.thickness = 0;
-        // button24.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button24;
-        //     leaname.text = "RANCH SMOOTH\nCALF TAN BROWN";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN  BROWN.jpg", scene);
-        //     //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF TAN  BROWN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     // textureblack.bumpTexture.uScale = 2;
-        //     // textureblack.bumpTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // rangd.addControl(button24, 0, 4);
+        var button24 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN  BROWN.jpg ");
+        button24.width = btcW;
+        button24.height = btcH;
+        button24.color = "#25BAFFFF";
+        button24.cornerRadius = 100;
+        button24.thickness = 0;
+        button24.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button24;
+            leaname.text = "RANCH SMOOTH\nCALF TAN BROWN";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN  BROWN.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF TAN  BROWN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 2;
+            // textureblack.bumpTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        rangd.addControl(button24, 1, 1);
 
-        // var button25 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN.jpg ");
-        // button25.width = btnW;
-        // button25.height = btnH;
-        // button25.color = "#25BAFFFF";
-        // button25.cornerRadius = 100;
-        // button25.thickness = 0;
-        // button25.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button25;
-        //     leaname.text = "RANCH SMOOTH\nCALF TAN";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN.jpg", scene);
-        //     //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF TAN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // rangd.addControl(button25, 0, 5);
+        var button25 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/RANCH SMOOTH CALF TAN.jpg ");
+        button25.width = btcW;
+        button25.height = btcH;
+        button25.color = "#25BAFFFF";
+        button25.cornerRadius = 100;
+        button25.thickness = 0;
+        button25.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button25;
+            leaname.text = "RANCH SMOOTH\nCALF TAN";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN.jpg", scene);
+            //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/RANCH SMOOTH CALF TAN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        rangd.addControl(button25, 1, 2);
 
 
         // /////////////////////////////////////////////////////////// real dear
-        // var deartab = new BABYLON.GUI.Rectangle();
-        // deartab.width = "100%";
-        // deartab.height = "97%";
-        // deartab.verticalAlignment = "Center";
-        // deartab.horizontalAlignment = "Center";
-        // deartab.top = "3%";
-        // deartab.paddingRight = "1%";
-        // deartab.cornerRadius = 0;
-        // deartab.color = "black";
-        // deartab.thickness = 0;
-        // deartab.background = "";
-        // gd.addControl(deartab, 3);
+     
 
 
-        // var deargd = new BABYLON.GUI.Grid("kalharigd");
-        // deargd.isVisible = true;
-        // deargd.width = "100%";
-        // deargd.height = "100%";
-        // deargd.paddingBottom = "0%";
-        // deargd.addRowDefinition(0.30);
-        // deargd.addRowDefinition(0.70);
-        // deartab.addControl(deargd);
+        var raeldeergd = new BABYLON.GUI.Grid();
+        raeldeergd.width = "100%";
+        raeldeergd.height = "99.9%";
+        raeldeergd.addRowDefinition(0.30);
+        raeldeergd.addRowDefinition(0.70);
+        leathergd.addControl(raeldeergd, 2, 0);
 
-        // var rgtab = new BABYLON.GUI.Rectangle();
-        // rgtab.width = "100%";
-        // rgtab.height = "100%";
-        // rgtab.color = "black";
-        // rgtab.thickness = .5;
-        // deargd.addControl(rgtab, 0);
+        var DeerText = new BABYLON.GUI.TextBlock();
+        DeerText.text = "REAL DEER";
+        DeerText.resizeToFit = true;
+        DeerText.fontSize = "28%";
+        raeldeergd.addControl(DeerText, 0);
 
-        // var deartext = new BABYLON.GUI.TextBlock();
-        // deartext.text = "REAL DEER";
-        // deartext.resizeToFit = true;
-        // deartext.fontSize = fontsizes;
-        // rgtab.addControl(deartext);
-
-        // var deertab = new BABYLON.GUI.Rectangle();
-        // deertab.width = "100%";
-        // deertab.height = "100%";
-        // deertab.color = "black";
-        // deertab.thickness = 1;
-        // deertab.background = "";
-        // deargd.addControl(deertab, 1);
-
-        // var dearsgd = new BABYLON.GUI.Grid("kaligd");
-        // dearsgd.isVisible = true;
-        // dearsgd.width = "100%";
-        // dearsgd.height = "100%";
-        // dearsgd.paddingTop = "0%";
-        // dearsgd.addRowDefinition(1);
-        // dearsgd.addColumnDefinition(1 / 6);
-        // dearsgd.addColumnDefinition(1 / 6);
-        // dearsgd.addColumnDefinition(1 / 6);
-        // dearsgd.addColumnDefinition(1 / 6);
-        // dearsgd.addColumnDefinition(1 / 6);
-        // dearsgd.addColumnDefinition(1 / 6);
-        // deertab.addControl(dearsgd);
-
-
-        // var button26 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REAL DEER BLACK.jpg ");
-        // button26.width = btnW;
-        // button26.height = btnH;
-        // button26.color = "#25BAFFFF";
-        // button26.cornerRadius = 100;
-        // button26.thickness = 0;
-        // button26.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button26;
-        //     leaname.text = "REAL DEER\nBLACK";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REAL DEER BLACK.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REAL DEER BLACK.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 5;
-        //     textureblack.diffuseTexture.vScale = 5;
-        //     // textureblack.bumpTexture.uScale = 5;
-        //     // textureblack.bumpTexture.vScale = 5;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // dearsgd.addControl(button26, 0, 0);
+        var button26 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REAL DEER BLACK.jpg ");
+        button26.width = "32%";
+        button26.height = "32%";
+        button26.color = "#25BAFFFF";
+        button26.cornerRadius = 100;
+        button26.thickness = 0;
+        button26.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button26;
+            leaname.text = "REAL DEER\nBLACK";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REAL DEER BLACK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REAL DEER BLACK.bmp", scene);
+            textureblack.diffuseTexture.uScale = 5;
+            textureblack.diffuseTexture.vScale = 5;
+            // textureblack.bumpTexture.uScale = 5;
+            // textureblack.bumpTexture.vScale = 5;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        raeldeergd.addControl(button26, 1);
 
         // /////////////////////////////////////////////////////////////////////// Regular classic
+        var regulargd = new BABYLON.GUI.Grid();
+        regulargd.width = "100%";
+        regulargd.height = "99.9%";
+        regulargd.addRowDefinition(0.30);
+        regulargd.addRowDefinition(0.70);
+        leathergd.addControl(regulargd, 2, 1);
 
-        // var regulartab = new BABYLON.GUI.Rectangle();
-        // regulartab.width = "100%";
-        // regulartab.height = "97%";
-        // regulartab.verticalAlignment = "Center";
-        // regulartab.horizontalAlignment = "Center";
-        // regulartab.top = "3%";
-        // regulartab.paddingRight = "1%";
-        // regulartab.cornerRadius = 0;
-        // regulartab.color = "black";
-        // regulartab.thickness = 0;
-        // regulartab.background = "";
-        // gd.addControl(regulartab, 4);
+        var DeerText = new BABYLON.GUI.TextBlock();
+        DeerText.text = "REGULAR\nCLASSIC";
+        DeerText.resizeToFit = true;
+        DeerText.fontSize = "28%";
+        regulargd.addControl(DeerText, 0);
 
-
-        // var regulargd = new BABYLON.GUI.Grid("kalharigd");
-        // regulargd.isVisible = true;
-        // regulargd.width = "100%";
-        // regulargd.height = "100%";
-        // regulargd.paddingBottom = "0%";
-        // regulargd.addRowDefinition(0.30);
-        // regulargd.addRowDefinition(0.70);
-        // regulartab.addControl(regulargd);
-
-        // var rgtab = new BABYLON.GUI.Rectangle();
-        // rgtab.width = "100%";
-        // rgtab.height = "100%";
-        // rgtab.color = "black";
-        // rgtab.thickness = .5;
-        // regulargd.addControl(rgtab, 0);
-
-        // var regutext = new BABYLON.GUI.TextBlock();
-        // regutext.text = "REGULAR CLASSIC";
-        // regutext.resizeToFit = true;
-        // regutext.fontSize = fontsizes;
-        // rgtab.addControl(regutext);
-
-        // var regtab = new BABYLON.GUI.Rectangle();
-        // regtab.width = "100%";
-        // regtab.height = "100%";
-        // regtab.color = "black";
-        // regtab.thickness = 1;
-        // regulargd.addControl(regtab, 1);
-
-        // var regugd = new BABYLON.GUI.Grid("kaligd");
-        // regugd.isVisible = true;
-        // regugd.width = "100%";
-        // regugd.height = "100%";
-        // regugd.paddingTop = "0%";
-        // regugd.addRowDefinition(1);
-        // regugd.addColumnDefinition(1 / 6);
-        // regugd.addColumnDefinition(1 / 6);
-        // regugd.addColumnDefinition(1 / 6);
-        // regugd.addColumnDefinition(1 / 6);
-        // regugd.addColumnDefinition(1 / 6);
-        // regugd.addColumnDefinition(1 / 6);
-        // regtab.addControl(regugd);
+        var regugd = new BABYLON.GUI.Grid("kaligd");
+        regugd.isVisible = true;
+        regugd.width = "100%";
+        regugd.height = "100%";
+        regugd.paddingTop = "0%";
+        regugd.addRowDefinition(1/2);
+        regugd.addRowDefinition(1/2);
+        regugd.addColumnDefinition(1 / 3);
+        regugd.addColumnDefinition(1 / 3);
+        regugd.addColumnDefinition(1 / 3);
+        regulargd.addControl(regugd, 1);
 
 
-        // var button27 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BLACK.jpg ");
-        // button27.width = btnW;
-        // button27.height = btnH;
-        // button27.color = "#25BAFFFF";
-        // button27.cornerRadius = 100;
-        // button27.thickness = 0;
-        // button27.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button27;
-        //     leaname.text = "REGULAR CLASSIC\nLEATHER BLACK";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BLACK.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BLACK.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // regugd.addControl(button27, 0, 0);
+        var button27 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BLACK.jpg ");
+        button27.width = btnW;
+        button27.height = btnH;
+        button27.color = "#25BAFFFF";
+        button27.cornerRadius = 100;
+        button27.thickness = 0;
+        button27.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button27;
+            leaname.text = "REGULAR CLASSIC\nLEATHER BLACK";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BLACK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BLACK.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        regugd.addControl(button27, 0, 0);
 
-        // var button28 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BROWN.jpg ");
-        // button28.width = btnW;
-        // button28.height = btnH;
-        // button28.color = "#25BAFFFF";
-        // button28.cornerRadius = 100;
-        // button28.thickness = 0;
-        // button28.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button28;
-        //     leaname.text = "REGULAR CLASSIC\nLEATHER BROWN";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BROWN.jpg", scene);
-        //     //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BROWN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // regugd.addControl(button28, 0, 1);
+        var button28 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER BROWN.jpg ");
+        button28.width = btnW;
+        button28.height = btnH;
+        button28.color = "#25BAFFFF";
+        button28.cornerRadius = 100;
+        button28.thickness = 0;
+        button28.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button28;
+            leaname.text = "REGULAR CLASSIC\nLEATHER BROWN";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BROWN.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER BROWN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        regugd.addControl(button28, 0, 1);
 
-        // var button29 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER HONEY.jpg ");
-        // button29.width = btnW;
-        // button29.height = btnH;
-        // button29.color = "#25BAFFFF";
-        // button29.cornerRadius = 100;
-        // button29.thickness = 0;
-        // button29.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button29;
-        //     leaname.text = "REGULAR CLASSIC\nLEATHER HONEY";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER HONEY.jpg", scene);
-        //  //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER HONEY.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // regugd.addControl(button29, 0, 2);
+        var button29 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER HONEY.jpg ");
+        button29.width = btnW;
+        button29.height = btnH;
+        button29.color = "#25BAFFFF";
+        button29.cornerRadius = 100;
+        button29.thickness = 0;
+        button29.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button29;
+            leaname.text = "REGULAR CLASSIC\nLEATHER HONEY";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER HONEY.jpg", scene);
+         //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER HONEY.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        regugd.addControl(button29, 0, 2);
 
-        // var button30 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg ");
-        // button30.width = btnW;
-        // button30.height = btnH;
-        // button30.color = "#25BAFFFF";
-        // button30.cornerRadius = 100;
-        // button30.thickness = 0;
-        // button30.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button30;
-        //     leaname.text = "REGULAR CLASSIC\nLEATHER MID NIGHT BLUE";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER MID NIGHT BLUE.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // regugd.addControl(button30, 0, 3);
+        var button30 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg ");
+        button30.width = btnW;
+        button30.height = btnH;
+        button30.color = "#25BAFFFF";
+        button30.cornerRadius = 100;
+        button30.thickness = 0;
+        button30.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button30;
+            leaname.text = "REGULAR CLASSIC\nLEATHER MID NIGHT BLUE";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER MID NIGHT BLUE.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        regugd.addControl(button30, 1, 0);
 
-        // var button31 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER RED.jpg ");
-        // button31.width = btnW;
-        // button31.height = btnH;
-        // button31.color = "#25BAFFFF";
-        // button31.cornerRadius = 100;
-        // button31.thickness = 0;
-        // button31.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button31;
-        //     leaname.text = "REGULAR CLASSIC\nLEATHER RED";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER RED.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER RED.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // regugd.addControl(button31, 0, 4);
+        var button31 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER RED.jpg ");
+        button31.width = btnW;
+        button31.height = btnH;
+        button31.color = "#25BAFFFF";
+        button31.cornerRadius = 100;
+        button31.thickness = 0;
+        button31.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button31;
+            leaname.text = "REGULAR CLASSIC\nLEATHER RED";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER RED.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER RED.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        regugd.addControl(button31, 1, 1);
 
-        // var button32 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER TAN.jpg ");
-        // button32.width = btnW;
-        // button32.height = btnH;
-        // button32.color = "#25BAFFFF";
-        // button32.cornerRadius = 100;
-        // button32.thickness = 0;
-        // button32.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = button32;
-        //     leaname.text = "REGULAR CLASSIC\nLEATHER TAN";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER TAN.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER TAN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // regugd.addControl(button32, 0, 5);
+        var button32 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/REGULAR CLASSIC LEATHER TAN.jpg ");
+        button32.width = btnW;
+        button32.height = btnH;
+        button32.color = "#25BAFFFF";
+        button32.cornerRadius = 100;
+        button32.thickness = 0;
+        button32.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = button32;
+            leaname.text = "REGULAR CLASSIC\nLEATHER TAN";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER TAN.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/REGULAR CLASSIC LEATHER TAN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        regugd.addControl(button32, 1, 2);
 
 
         // /////////////////////////////////////////////////////////////////////////////////////// baby croco 
@@ -1311,172 +1101,181 @@ var createScene = function () {
         // babycrtab.thickness = 1;
         // babycrocogd.addControl(babycrtab, 1);
 
-        // var babygd = new BABYLON.GUI.Grid("kaligd");
-        // babygd.width = "100%";
-        // babygd.height = "100%";
-        // babygd.addRowDefinition(1);
-        // babygd.addColumnDefinition(1 / 6);
-        // babygd.addColumnDefinition(1 / 6);
-        // babygd.addColumnDefinition(1 / 6);
-        // babygd.addColumnDefinition(1 / 6);
-        // babygd.addColumnDefinition(1 / 6);
-        // babygd.addColumnDefinition(1 / 6);
-        // babycrtab.addControl(babygd);
+        var babycrocogd = new BABYLON.GUI.Grid();
+        babycrocogd.width = "100%";
+        babycrocogd.height = "99.9%";
+        babycrocogd.addRowDefinition(0.30);
+        babycrocogd.addRowDefinition(0.70);
+        leathergd.addControl(babycrocogd, 2, 1);
 
-
-        // var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg");
-        // L1Btn.width = btnW;
-        // L1Btn.height = btnH;
-        // L1Btn.color = "#25BAFFFF";
-        // L1Btn.cornerRadius = 100;
-        // L1Btn.thickness = 0;
-        // L1Btn.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = L1Btn;
-        //     leaname.text = "BABY CROCO\nBLACK";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BLACK.jpg", scene);
-        //  //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BLACK.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 5;
-        //     textureblack.diffuseTexture.vScale = 5;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // babygd.addControl(L1Btn, 0, 0);
-
-        // var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg ");
-        // L2Btn.width = btnW;
-        // L2Btn.height = btnH;
-        // L2Btn.color = "#25BAFFFF";
-        // L2Btn.cornerRadius = 100;
-        // L2Btn.thickness = 0;
-        // L2Btn.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = L2Btn;
-        //     leaname.text = "BABY CROCO\nBROWN";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BROWN.jpg", scene);
-        //   //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BROWN.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // babygd.addControl(L2Btn, 0, 1);
-
-
-        // var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg ");
-        // L3Btn.width = btnW;
-        // L3Btn.height = btnH;
-        // L3Btn.color = "#25BAFFFF";
-        // L3Btn.cornerRadius = 100;
-        // L3Btn.thickness = 0;
-        // L3Btn.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = L3Btn;
-        //     leaname.text = "BABY CROCO\nEMERALD";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO EMERALD.jpg", scene);
-        //     //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO EMERALD.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // babygd.addControl(L3Btn, 0, 2);
+        var DeerText = new BABYLON.GUI.TextBlock();
+        DeerText.text = "BABY\nCROCO";
+        DeerText.resizeToFit = true;
+        DeerText.fontSize = "28%";
+        babycrocogd.addControl(DeerText, 0);
 
 
 
-        // var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture4", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg ");
-        // L4Btn.width = btnW;
-        // L4Btn.height = btnH;
-        // L4Btn.color = "#25BAFFFF";
-        // L4Btn.cornerRadius = 100;
-        // L4Btn.thickness = 0;
-        // L4Btn.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = L4Btn;
-        //     leaname.text = "BABY CROCO\nMID NIGHT BLUE";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg", scene);
-        //   //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO MID NIGHT BLUE.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // babygd.addControl(L4Btn, 0, 3);
-
-        // var L5Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture5", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg ");
-        // L5Btn.width = btnW;
-        // L5Btn.height = btnH;
-        // L5Btn.color = "#25BAFFFF";
-        // L5Btn.cornerRadius = 100;
-        // L5Btn.thickness = 0;
-        // L5Btn.onPointerUpObservable.add(function () {
-        //     Loadingpanel.isVisible = true;
-        //     currentButton.thickness = 0;
-        //     currentButton = L5Btn;
-        //     leaname.text = "BABY CROCO\nPINK";
-        //     leaname.fontSize = fonttext;
-        //     currentButton.thickness = 3;
-        //     var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
-        //     textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO PINK.jpg", scene);
-        //    // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO PINK.bmp", scene);
-        //     textureblack.diffuseTexture.uScale = 2;
-        //     textureblack.diffuseTexture.vScale = 2;
-        //     // textureblack.bumpTexture.uScale = 1.1;
-        //     // textureblack.bumpTexture.vScale = 1.1;
-        //     textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
-        //     Bag.material = textureblack;
-        //     Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
-        //     Stich.renderOverlay = true;
-        //     textureblack.diffuseTexture.onLoadObservable.add(tex => {
-        //         console.log('alpha:', textureblack.hasAlpha)
-        //         Loadingpanel.isVisible = false;
-        //     })
-        // });
-        // babygd.addControl(L5Btn, 0, 4);
+        var babygd = new BABYLON.GUI.Grid("kaligd");
+        babygd.width = "100%";
+        babygd.height = "100%";
+        babygd.addRowDefinition(1/2);
+        babygd.addRowDefinition(1/2);
+        babygd.addColumnDefinition(1 / 3);
+        babygd.addColumnDefinition(1 / 3);
+        babygd.addColumnDefinition(1 / 3);
+        babycrocogd.addControl(babygd,1);
 
 
+        var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BLACK.jpg");
+        L1Btn.width = btnW;
+        L1Btn.height = btnH;
+        L1Btn.color = "#25BAFFFF";
+        L1Btn.cornerRadius = 100;
+        L1Btn.thickness = 0;
+        L1Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = L1Btn;
+            leaname.text = "BABY CROCO\nBLACK";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BLACK.jpg", scene);
+         //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BLACK.bmp", scene);
+            textureblack.diffuseTexture.uScale = 5;
+            textureblack.diffuseTexture.vScale = 5;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        babygd.addControl(L1Btn, 0, 0);
+
+        var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO BROWN.jpg ");
+        L2Btn.width = btnW;
+        L2Btn.height = btnH;
+        L2Btn.color = "#25BAFFFF";
+        L2Btn.cornerRadius = 100;
+        L2Btn.thickness = 0;
+        L2Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = L2Btn;
+            leaname.text = "BABY CROCO\nBROWN";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BROWN.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO BROWN.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        babygd.addControl(L2Btn, 0, 1);
 
 
+        var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO EMERALD.jpg ");
+        L3Btn.width = btnW;
+        L3Btn.height = btnH;
+        L3Btn.color = "#25BAFFFF";
+        L3Btn.cornerRadius = 100;
+        L3Btn.thickness = 0;
+        L3Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = L3Btn;
+            leaname.text = "BABY CROCO\nEMERALD";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO EMERALD.jpg", scene);
+            //textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO EMERALD.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        babygd.addControl(L3Btn, 0, 2);
+
+
+
+        var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture4", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg ");
+        L4Btn.width = btnW;
+        L4Btn.height = btnH;
+        L4Btn.color = "#25BAFFFF";
+        L4Btn.cornerRadius = 100;
+        L4Btn.thickness = 0;
+        L4Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = L4Btn;
+            leaname.text = "BABY CROCO\nMID NIGHT BLUE";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO MID NIGHT BLUE.jpg", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO MID NIGHT BLUE.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        babygd.addControl(L4Btn, 0, 3);
+
+        var L5Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture5", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/main/Textures/BABY CROCO PINK.jpg ");
+        L5Btn.width = btnW;
+        L5Btn.height = btnH;
+        L5Btn.color = "#25BAFFFF";
+        L5Btn.cornerRadius = 100;
+        L5Btn.thickness = 0;
+        L5Btn.onPointerUpObservable.add(function () {
+            Loadingpanel.isVisible = true;
+            currentButton.thickness = 0;
+            currentButton = L5Btn;
+            leaname.text = "BABY CROCO\nPINK";
+            leaname.fontSize = fonttext;
+            currentButton.thickness = 3;
+            var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
+            textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO PINK.jpg", scene);
+           // textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/BABY CROCO PINK.bmp", scene);
+            textureblack.diffuseTexture.uScale = 2;
+            textureblack.diffuseTexture.vScale = 2;
+            // textureblack.bumpTexture.uScale = 1.1;
+            // textureblack.bumpTexture.vScale = 1.1;
+            textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
+            Bag.material = textureblack;
+            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.renderOverlay = true;
+            textureblack.diffuseTexture.onLoadObservable.add(tex => {
+                console.log('alpha:', textureblack.hasAlpha)
+                Loadingpanel.isVisible = false;
+            })
+        });
+        babygd.addControl(L5Btn, 0, 4);
 
 
         // ////////////////////////////////////////////////    leather lining main canvas 
