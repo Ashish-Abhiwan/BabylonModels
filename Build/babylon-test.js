@@ -182,8 +182,8 @@ var createScene = function () {
 
         var tag1 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/PlainTag.png");
         ctag = tag1;
-        tag1.width = "70%"
-        tag1.height = "60%";
+        tag1.width = "50%"
+        tag1.height = "90%";
         tag1.color = "#25BAFFFF";
         tag1.cornerRadius = 20;
         tag1.thickness = 0;
@@ -196,8 +196,8 @@ var createScene = function () {
         persolizetaggrid.addControl(tag1, 1);
 
         var tag2 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/GoldTag.png");
-        tag2.width = "70%"
-        tag2.height = "60%";
+        tag2.width = "50%"
+        tag2.height = "90%";
         tag2.color = "#25BAFFFF";
         tag2.cornerRadius = 20;
         tag2.thickness = 0;
@@ -224,6 +224,28 @@ var createScene = function () {
         personalizetabbg.height = "100%";
         leatherstab.addControl(personalizetabbg);
 
+
+        var leathergdextra = new BABYLON.GUI.Grid();
+        leathergdextra.width = "100%";
+        leathergdextra.height = "99.9%";
+        leathergdextra.addRowDefinition(0.05);
+        leathergdextra.addRowDefinition(0.95);
+        leathergdextra.addColumnDefinition(0.10);
+        leathergdextra.addColumnDefinition(0.90);
+        leatherstab.addControl(leathergdextra);
+
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
+        close.width = "100%"
+        close.height = "100%";
+        close.thickness = 0;
+        close.onPointerUpObservable.add(function () {
+            leatherstab.isVisible = false;
+            descrippanel.isVisible = false;
+            mainpanel.isVisible = true;
+        });
+        leathergdextra.addControl(close,0,0);
+
+
         var leathergd = new BABYLON.GUI.Grid();
         leathergd.width = "100%";
         leathergd.height = "99.9%";
@@ -232,7 +254,7 @@ var createScene = function () {
         leathergd.addRowDefinition(1 / 3);
         leathergd.addColumnDefinition(1 / 2);
         leathergd.addColumnDefinition(1 / 2);
-        leatherstab.addControl(leathergd);
+        leathergdextra.addControl(leathergd,1,1);
 
         var leText = new BABYLON.GUI.TextBlock();
         leText.isVisible = false
@@ -245,19 +267,7 @@ var createScene = function () {
         leText.fontStyle = "oblique"
         advancedTexture.addControl(leText);
 
-        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", " https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/back.png");
-        close.width = "7%"
-        close.height = "2%";
-        close.paddingBottom = "20%"; 
-        close.left = "0%";
-        close.thickness = 0;
-        close.onPointerUpObservable.add(function () {
-            leatherstab.isVisible = false;
-            descrippanel.isVisible = false;
-            mainpanel.isVisible = true;
-        });
-        leatherstab.addControl(close);
-
+     
 
 
 
