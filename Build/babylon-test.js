@@ -1635,6 +1635,7 @@ var createScene = function () {
 
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
     advancedTexture.layer.layerMask = 0x10000000;
+    advancedTexture.resizeToFit = true;
 
     var Loadingpanel = new BABYLON.GUI.Rectangle();
     Loadingpanel.isVisible = false
@@ -1652,6 +1653,7 @@ var createScene = function () {
     Loadingpanel.shadowOffsetX = 3;
     Loadingpanel.shadowBlur = 15;
     Loadingpanel.shadowColor = "#7C7878FF";
+    Loadingpanel.resizeToFit = true;
     advancedTexture.addControl(Loadingpanel);
 
 
@@ -1853,11 +1855,11 @@ function resize() {
     setTimeout(function () {
         engine.resize();
         if ($(window).width() < 450) {
-            alert('For better experience open in landscpe mode');
+            alert('For Better Experience Open In Landscpe Mode');
 
         }
 
-    }, 180);
+    }, 200);
 
 }
 
