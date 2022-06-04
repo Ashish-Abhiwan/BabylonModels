@@ -20,7 +20,7 @@ var createScene = function () {
     var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(0, -5, 0), scene);
     //scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
-    camera1.lowerRadiusLimit = 2;
+    camera1.lowerRadiusLimit = 2.3;
     camera1.upperRadiusLimit = 4;
     camera1.wheelDeltaPercentage = 0.05;
 
@@ -155,17 +155,22 @@ var createScene = function () {
         personzetagmenu.thickness = 0;
         advancedTexture.addControl(personzetagmenu);
 
-
+        
+        var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag table.svg");
+        personalizetabbg.width = "100%";
+        personalizetabbg.height = "100%";
+        personzetagmenu.addControl(personalizetabbg, 1, 1);
 
         var personalText = new BABYLON.GUI.TextBlock();
         personalText.isVisible = false
         personalText.text = "Personalised\nTag";
         personalText.resizeToFit = true;
-        personalText.fontSize = "7%";
+        personalText.fontSize = "6%";
+      //  personalText.color = "#F7EFDE";
         personalText.paddingBottom = "85%"
         personalText.left = "40%"
-        personalText.fontFamily = "Pacifico";
-        personalText.fontStyle = "oblique"
+        personalText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+      //  personalText.fontStyle = "oblique"
         advancedTexture.addControl(personalText);
 
 
@@ -190,40 +195,48 @@ var createScene = function () {
         });
         persongdextra.addControl(close, 0, 0);
 
-        var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag table.png");
-        personalizetabbg.width = "100%";
-        personalizetabbg.height = "100%";
-        persongdextra.addControl(personalizetabbg, 1, 1);
-
 
         var persolizetaggrid = new BABYLON.GUI.Grid();
         persolizetaggrid.width = "100%";
-        persolizetaggrid.height = "95%";
-        persolizetaggrid.addRowDefinition(1 / 4);
-        persolizetaggrid.addRowDefinition(1 / 4);
-        persolizetaggrid.addRowDefinition(1 / 4);
-        persolizetaggrid.addRowDefinition(1 / 4);
+        persolizetaggrid.height = "100%";
+        persolizetaggrid.addRowDefinition(0.09);
+        persolizetaggrid.addRowDefinition(0.20);
+        persolizetaggrid.addRowDefinition(0.11);
+        persolizetaggrid.addRowDefinition(0.20);
+        persolizetaggrid.addRowDefinition(0.10);
+        persolizetaggrid.addRowDefinition(0.20);
         persongdextra.addControl(persolizetaggrid, 1, 1);
 
         var perText1 = new BABYLON.GUI.TextBlock();
         perText1.text = "Name In\nBlind Emboss";
         perText1.resizeToFit = true;
-        perText1.fontSize = "13%";
+        perText1.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        perText1.fontSize = "30%";
+      //  perText1.color = "#F7EFDE";
         persolizetaggrid.addControl(perText1, 0);
 
         var perText2 = new BABYLON.GUI.TextBlock();
         perText2.text = "Name In\nGold Emboss";
         perText2.resizeToFit = true;
-        perText2.fontSize = "13%";
+        perText2.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        perText2.fontSize = "26%";
         persolizetaggrid.addControl(perText2, 2);
+
+        var perText3 = new BABYLON.GUI.TextBlock();
+        perText3.text = "Emboss Name";
+        perText3.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        perText3.resizeToFit = true;
+        perText3.fontSize = "32%";
+        persolizetaggrid.addControl(perText3, 4);
+
 
 
         var ctag;
 
         var tag1 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/PlainTag.png");
         ctag = tag1;
-        tag1.width = "50%"
-        tag1.height = "90%";
+        tag1.width = "40%"
+        tag1.height = "80%";
         tag1.color = "#25BAFFFF";
         tag1.cornerRadius = 20;
         tag1.thickness = 0;
@@ -236,8 +249,8 @@ var createScene = function () {
         persolizetaggrid.addControl(tag1, 1);
 
         var tag2 = BABYLON.GUI.Button.CreateImageOnlyButton("Tag2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/hidesign%20pics/GoldTag.png");
-        tag2.width = "50%"
-        tag2.height = "90%";
+        tag2.width = "40%"
+        tag2.height = "80%";
         tag2.color = "#25BAFFFF";
         tag2.cornerRadius = 20;
         tag2.thickness = 0;
@@ -248,6 +261,27 @@ var createScene = function () {
             ctag.thickness = 3;
         });
         persolizetaggrid.addControl(tag2, 3);
+
+        var namefeild = new BABYLON.GUI.InputText("Input");
+        namefeild.width = "90%";
+        namefeild.height = "40%";
+        namefeild.color = "White";
+        namefeild.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        namefeild.resizeToFit = true;
+        namefeild.background = "#AFAFAFFF";
+        namefeild.placeholderText = "Emboss";
+        namefeild.fontSize = "20%";
+        namefeild.placeholderText.fontSize = "10px"
+        namefeild.placeholderColor = "white";
+        namefeild.focusedBackground = "#AFAFAFFF";
+        //namefeild.autoStretchWidth = true;
+        namefeild.onTextChangedObservable.add(() => {
+            if (namefeild && namefeild.text.length > 20) {
+                namefeild.text = namefeild.text.substring(0, 20);
+            }
+        })
+        persolizetaggrid.addControl(namefeild, 6);
+
 
         //////////////////////////////////////////////////////////////////////////////  leather options canvas panel 
 
@@ -263,12 +297,13 @@ var createScene = function () {
         var leText = new BABYLON.GUI.TextBlock();
         leText.isVisible = false
         leText.text = "Leathers";
+        leText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         leText.resizeToFit = true;
         leText.fontSize = "7%";
         leText.paddingBottom = "85%"
         leText.left = "40%"
-        leText.fontFamily = "Pacifico";
-        leText.fontStyle = "oblique"
+       
+    
         advancedTexture.addControl(leText);
 
         var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leathers table.png");
@@ -319,6 +354,7 @@ var createScene = function () {
 
         var KALAHARIText = new BABYLON.GUI.TextBlock();
         KALAHARIText.text = "KALAHARI";
+        KALAHARIText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         KALAHARIText.resizeToFit = true;
         KALAHARIText.fontSize = "28%";
         kalaharigd.addControl(KALAHARIText, 0);
@@ -360,6 +396,7 @@ var createScene = function () {
 
         var Loadingtext = new BABYLON.GUI.TextBlock();
         Loadingtext.text = "Loading....";
+        Loadingtext.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         Loadingtext.resizeToFit = true;
         Loadingtext.fontSize = "15%";
         Loadingpanel.addControl(Loadingtext);
@@ -512,6 +549,7 @@ var createScene = function () {
 
         var ostrichText = new BABYLON.GUI.TextBlock();
         ostrichText.text = "LUXURY\nOSTRICH";
+        ostrichText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         ostrichText.resizeToFit = true;
         ostrichText.fontSize = "28%";
         ostrichgd.addControl(ostrichText, 0);
@@ -625,6 +663,7 @@ var createScene = function () {
 
         var ranchText = new BABYLON.GUI.TextBlock();
         ranchText.text = "RANCH SMOOTH\nCALF";
+        ranchText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         ranchText.resizeToFit = true;
         ranchText.fontSize = "28%";
         ranchgd.addControl(ranchText, 0);
@@ -836,6 +875,7 @@ var createScene = function () {
 
         var DeerText = new BABYLON.GUI.TextBlock();
         DeerText.text = "REAL DEER";
+        DeerText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         DeerText.resizeToFit = true;
         DeerText.fontSize = "28%";
         raeldeergd.addControl(DeerText, 0);
@@ -879,11 +919,12 @@ var createScene = function () {
         regulargd.addRowDefinition(0.70);
         leathergd.addControl(regulargd, 2, 1);
 
-        var DeerText = new BABYLON.GUI.TextBlock();
-        DeerText.text = "REGULAR\nCLASSIC";
-        DeerText.resizeToFit = true;
-        DeerText.fontSize = "28%";
-        regulargd.addControl(DeerText, 0);
+        var regularText = new BABYLON.GUI.TextBlock();
+        regularText.text = "REGULAR\nCLASSIC";
+        regularText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        regularText.resizeToFit = true;
+        regularText.fontSize = "28%";
+        regulargd.addControl(regularText, 0);
 
         var regugd = new BABYLON.GUI.Grid("kaligd");
         regugd.isVisible = true;
@@ -1082,11 +1123,12 @@ var createScene = function () {
         babycrocogd.addRowDefinition(0.70);
         leathergd.addControl(babycrocogd, 1, 1);
 
-        var DeerText = new BABYLON.GUI.TextBlock();
-        DeerText.text = "BABY\nCROCO";
-        DeerText.resizeToFit = true;
-        DeerText.fontSize = "28%";
-        babycrocogd.addControl(DeerText, 0);
+        var crocoText = new BABYLON.GUI.TextBlock();
+        crocoText.text = "BABY\nCROCO";
+        crocoText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        crocoText.resizeToFit = true;
+        crocoText.fontSize = "28%";
+        babycrocogd.addControl(crocoText, 0);
 
 
 
@@ -1266,12 +1308,13 @@ var createScene = function () {
         var liningText = new BABYLON.GUI.TextBlock();
         liningText.isVisible = false
         liningText.text = "Linings";
+        liningText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         liningText.resizeToFit = true;
         liningText.fontSize = "7%";
         liningText.paddingBottom = "85%"
         liningText.left = "40%"
-        liningText.fontFamily = "Pacifico";
-        liningText.fontStyle = "oblique"
+        // liningText.fontFamily = "Pacifico";
+        // liningText.fontStyle = "oblique"
         advancedTexture.addControl(liningText);
 
 
@@ -1331,11 +1374,12 @@ var createScene = function () {
         kidgd.addRowDefinition(0.70);
         gd1extra.addControl(kidgd, 0, 0);
 
-        var KALAHARIText = new BABYLON.GUI.TextBlock();
-        KALAHARIText.text = "KID SUEDE\nGENUINE";
-        KALAHARIText.resizeToFit = true;
-        KALAHARIText.fontSize = "23%";
-        kidgd.addControl(KALAHARIText, 0);
+        var KidText = new BABYLON.GUI.TextBlock();
+        KidText.text = "KID SUEDE\nGENUINE";
+        KidText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        KidText.resizeToFit = true;
+        KidText.fontSize = "23%";
+        kidgd.addControl(KidText, 0);
 
 
         var LININGgd = new BABYLON.GUI.Grid("kaligd");
@@ -1416,11 +1460,12 @@ var createScene = function () {
         hidegd.addRowDefinition(0.70);
         gd1extra.addControl(hidegd, 0, 1);
 
-        var KALAHARIText = new BABYLON.GUI.TextBlock();
-        KALAHARIText.text = "HIDESIGN\nBRANDED";
-        KALAHARIText.resizeToFit = true;
-        KALAHARIText.fontSize = "23%";
-        hidegd.addControl(KALAHARIText, 0);
+        var hideText = new BABYLON.GUI.TextBlock();
+        hideText.text = "HIDESIGN\nBRANDED";
+        hideText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        hideText.resizeToFit = true;
+        hideText.fontSize = "23%";
+        hidegd.addControl(hideText, 0);
 
 
 
@@ -1501,6 +1546,7 @@ var createScene = function () {
 
         var bushText = new BABYLON.GUI.TextBlock();
         bushText.text = "Brushed\nFabric";
+        bushText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         bushText.resizeToFit = true;
         bushText.fontSize = "27%";
         brshfgd.addControl(bushText, 0);
@@ -1615,6 +1661,7 @@ var createScene = function () {
     button1.height = "95%";
     button1.fontSize = "30%";
     button1.textBlock.text = "CLOSED";
+    button1.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
     button1.color = "White";
     button1.resizeToFit = true;
     button1.cornerRadius = 100;
@@ -1647,6 +1694,7 @@ var createScene = function () {
     CLOSED.height = "95%";
     CLOSED.fontSize = "35%";
     CLOSED.textBlock.text = "OPEN";
+    CLOSED.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
     CLOSED.color = "white";
     CLOSED.resizeToFit = true;
     CLOSED.cornerRadius = 100;
@@ -1702,6 +1750,7 @@ var createScene = function () {
 
     var leaname = new BABYLON.GUI.TextBlock();
     leaname.text = "";
+    leaname.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
     leaname.color = "green";
     leaname.fontSize = "40%";
     leaname.resizeToFit = true;
