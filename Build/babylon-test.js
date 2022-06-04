@@ -32,7 +32,7 @@ var createScene = function () {
 
     scene.activeCameras = [camera1, bgcamera];
 
-    scene.clearColor = new BABYLON.Color3(1, 1, 1);
+    scene.clearColor = new BABYLON.Color3(0.97, 0.95, 0.91);
 
     // Lights
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
@@ -302,6 +302,7 @@ var createScene = function () {
         leText.text = "Leathers";
         leText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         leText.resizeToFit = true;
+        leText.text.resizeToFit = true;
         leText.fontSize = "7%";
         leText.paddingBottom = "85%"
         leText.left = "40%"
@@ -359,7 +360,8 @@ var createScene = function () {
         KALAHARIText.text = "KALAHARI";
         KALAHARIText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         KALAHARIText.resizeToFit = true;
-        KALAHARIText.fontSize = "28%";
+        KALAHARIText.text.resizeToFit = true;
+        KALAHARIText.fontSize = "30%";
         kalaharigd.addControl(KALAHARIText, 0);
 
         var kaligd = new BABYLON.GUI.Grid("kaligd");
@@ -406,8 +408,9 @@ var createScene = function () {
             Bag.delayLoadState = BABYLON.Engine.DELAYLOADSTATE_NOTLOADED;
             Bag.hasAlpha = true;
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.06, 0.03, 0)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             // textureblack.bumpTexture.onLoadObservable.add(tex => {
             //     console.log('alpha:', textureblack.hasAlpha)
             //     Loadingpanel.isVisible = false;
@@ -446,8 +449,9 @@ var createScene = function () {
             //textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.83, 0.29, 0.29)
+            Stich.overlayColor = new BABYLON.Color3(0.39, 0.05, 0.05)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -480,8 +484,9 @@ var createScene = function () {
             //  textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.29, 0.68, 0.83)
+            Stich.overlayColor = new BABYLON.Color3(0.04, 0.26, 0.35)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -512,8 +517,9 @@ var createScene = function () {
             // textureblack.bumpTexture.vScale = 10;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.31, 0.19, 0.03)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -531,9 +537,10 @@ var createScene = function () {
 
         var ostrichText = new BABYLON.GUI.TextBlock();
         ostrichText.text = "LUXURY\nOSTRICH";
+        ostrichText.text.resizeToFit = true;
         ostrichText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         ostrichText.resizeToFit = true;
-        ostrichText.fontSize = "28%";
+        ostrichText.fontSize = "30%";
         ostrichgd.addControl(ostrichText, 0);
 
         var ostgd = new BABYLON.GUI.Grid("kaligd");
@@ -569,8 +576,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.29, 0.12, 0.05)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -599,8 +607,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.65, 0.16, 0.04)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -629,8 +638,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.51, 0.27, 0.05)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -648,9 +658,10 @@ var createScene = function () {
 
         var ranchText = new BABYLON.GUI.TextBlock();
         ranchText.text = "RANCH SMOOTH\nCALF";
+        ranchText.text.resizeToFit = true;
         ranchText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         ranchText.resizeToFit = true;
-        ranchText.fontSize = "28%";
+        ranchText.fontSize = "29.5%";
         ranchgd.addControl(ranchText, 0);
 
         var rangd = new BABYLON.GUI.Grid("kaligd");
@@ -690,8 +701,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0, 0, 0)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -720,8 +732,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.01, 0.11, 0.07)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -751,8 +764,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.01, 0.03, 0.11)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -781,8 +795,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.28, 0.05, 0.05)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -813,8 +828,9 @@ var createScene = function () {
             // textureblack.bumpTexture.vScale = 2;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.31, 0.23, 0.23)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -843,8 +859,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.26, 0.15, 0.02)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -866,9 +883,10 @@ var createScene = function () {
 
         var DeerText = new BABYLON.GUI.TextBlock();
         DeerText.text = "REAL DEER";
+        DeerText.text.resizeToFit = true;
         DeerText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         DeerText.resizeToFit = true;
-        DeerText.fontSize = "28%";
+        DeerText.fontSize = "30%";
         raeldeergd.addControl(DeerText, 0);
 
         var button26 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REAL DEER BLACK.jpg ");
@@ -894,8 +912,9 @@ var createScene = function () {
             // textureblack.bumpTexture.vScale = 5;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0, 0, 0);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -913,9 +932,10 @@ var createScene = function () {
 
         var regularText = new BABYLON.GUI.TextBlock();
         regularText.text = "REGULAR\nCLASSIC";
+        regularText.text.resizeToFit = true;
         regularText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         regularText.resizeToFit = true;
-        regularText.fontSize = "28%";
+        regularText.fontSize = "30%";
         regulargd.addControl(regularText, 0);
 
         var regugd = new BABYLON.GUI.Grid("kaligd");
@@ -952,8 +972,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0, 0, 0);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -982,8 +1003,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.19, 0.12, 0.01);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1012,8 +1034,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.51, 0.31, 0);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1042,8 +1065,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.14, 0.19, 0.17);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1072,8 +1096,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.19, 0.02, 0.02);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1102,8 +1127,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.39, 0.18, 0.06);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1123,9 +1149,10 @@ var createScene = function () {
 
         var crocoText = new BABYLON.GUI.TextBlock();
         crocoText.text = "BABY\nCROCO";
+        crocoText.text.resizeToFit = true;
         crocoText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         crocoText.resizeToFit = true;
-        crocoText.fontSize = "28%";
+        crocoText.fontSize = "30%";
         babycrocogd.addControl(crocoText, 0);
 
 
@@ -1152,7 +1179,7 @@ var createScene = function () {
             currentButton.thickness = 0;
             currentButton = L1Btn;
             leaname.text = "BABY CROCO\nBLACK";
-            leaname.resizeToFit = true;
+            leaname.text.resizeToFit = true;
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
@@ -1162,8 +1189,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0, 0, 0)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1182,7 +1210,7 @@ var createScene = function () {
             currentButton.thickness = 0;
             currentButton = L2Btn;
             leaname.text = "BABY CROCO\nBROWN";
-            leaname.resizeToFit = true;
+            leaname.text.resizeToFit = true;
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
@@ -1192,8 +1220,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.24, 0.1, 0.02);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1213,7 +1242,7 @@ var createScene = function () {
             currentButton.thickness = 0;
             currentButton = L3Btn;
             leaname.text = "BABY CROCO\nEMERALD";
-            leaname.resizeToFit = true;
+            leaname.text.resizeToFit = true;
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
@@ -1223,8 +1252,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.08, 0.14, 0.01);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1245,7 +1275,7 @@ var createScene = function () {
             currentButton.thickness = 0;
             currentButton = L4Btn;
             leaname.text = "BABY CROCO\nMID NIGHT BLUE";
-            leaname.resizeToFit = true;
+            leaname.text.resizeToFit = true;
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
@@ -1255,8 +1285,9 @@ var createScene = function () {
             textureblack.diffuseTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.01, 0.07, 0.14);
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1275,7 +1306,7 @@ var createScene = function () {
             currentButton.thickness = 0;
             currentButton = L5Btn;
             leaname.text = "BABY CROCO\nPINK";
-            leaname.resizeToFit = true;
+            leaname.text.resizeToFit = true;
             leaname.fontSize = fonttext;
             currentButton.thickness = 2;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
@@ -1287,8 +1318,9 @@ var createScene = function () {
             // textureblack.bumpTexture.vScale = 1.1;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.material = textureblack;
-            Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
+            Stich.overlayColor = new BABYLON.Color3(0.33, 0.18, 0.25)
             Stich.renderOverlay = true;
+            Stich.material = textureblack;
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
@@ -1313,6 +1345,7 @@ var createScene = function () {
         liningText.text = "Linings";
         liningText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         liningText.resizeToFit = true;
+        liningText.text.resizeToFit = true;
         liningText.fontSize = "7%";
         liningText.paddingBottom = "85%"
         liningText.left = "40%"
@@ -1866,5 +1899,6 @@ function resize() {
 // Resize
 window.addEventListener("resize", async function () {
     engine.resize();
+   
     // console.log("safygfasghfsdhgciujkshgdcj")
 });
