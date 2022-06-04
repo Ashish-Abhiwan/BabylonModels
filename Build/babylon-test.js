@@ -107,6 +107,7 @@ var createScene = function () {
             descrippanel.isVisible = true;
             leatherstab.isVisible = true;
             leText.isVisible = true;
+            anipanel.isVisible = true;
             leaname.text = "";
         });
         mainpanelgrid.addControl(leather, 0, 0);
@@ -122,6 +123,7 @@ var createScene = function () {
             leatherliningtab.isVisible = true;
             descrippanel.isVisible = true;
             liningText.isVisible = true;
+            anipanel.isVisible = true;
             leaname.text = "";
 
         });
@@ -137,6 +139,7 @@ var createScene = function () {
             mainpanel.isVisible = false;
             personzetagmenu.isVisible = true;
             personalText.isVisible = true;
+            anipanel.isVisible = true;
         });
         mainpanelgrid.addControl(persolizetag, 0, 2);
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -343,7 +346,7 @@ var createScene = function () {
         Loadingpanel.verticalAlignment = "Center";
         Loadingpanel.horizontalAlignment = "Center";
         Loadingpanel.top = "";
-        Loadingpanel.left = "0.5%";
+        Loadingpanel.left = "0%";
         Loadingpanel.cornerRadius = 0;
         Loadingpanel.color = "black";
         Loadingpanel.thickness = 0;
@@ -378,21 +381,29 @@ var createScene = function () {
             leaname.fontSize = fonttext;
             var textureblack = new BABYLON.StandardMaterial("textureblack", scene);
             textureblack.diffuseTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KALAHARI BROWN.jpg", scene);
-            //   textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
+          //  textureblack.bumpTexture = new BABYLON.Texture("https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev/Normals/Normals/KALAHARI BROWN.bmp", scene);
             textureblack.diffuseTexture.uScale = 4;
             textureblack.diffuseTexture.vScale = 4;
-            // textureblack.bumpTexture.uScale = 10;
-            // textureblack.bumpTexture.vScale = 10;
+            // textureblack.bumpTexture.uScale = 4;
+            // textureblack.bumpTexture.vScale = 4;
             textureblack.specularColor = new BABYLON.Color3(.1, .1, .1);
             Bag.delayLoadState = BABYLON.Engine.DELAYLOADSTATE_NOTLOADED;
             Bag.hasAlpha = true;
             Bag.material = textureblack;
             Stich.overlayColor = new BABYLON.Color3(0.97, 0.75, 0.41)
             Stich.renderOverlay = true;
+            // textureblack.bumpTexture.onLoadObservable.add(tex => {
+            //     console.log('alpha:', textureblack.hasAlpha)
+            //     Loadingpanel.isVisible = false;
+            // })
             textureblack.diffuseTexture.onLoadObservable.add(tex => {
                 console.log('alpha:', textureblack.hasAlpha)
                 Loadingpanel.isVisible = false;
             })
+         
+
+
+
         });
         kaligd.addControl(button11, 0, 0);
 
@@ -1575,6 +1586,7 @@ var createScene = function () {
 
 
     var anipanel = new BABYLON.GUI.Rectangle();
+    anipanel.isVisible = false;
     anipanel.width = "10%";
     anipanel.height = "7%";
     anipanel.cornerRadius = 10;
