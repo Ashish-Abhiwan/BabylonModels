@@ -15,6 +15,7 @@ var createDefaultEngine = function () { return new BABYLON.Engine(canvas, true, 
 
 var createScene = function () {
     engine.enableOfflineSupport = false;
+    engine.setHardwareScalingLevel(1 / window.devicePixelRatio);
     // Scene and Camera
     var scene = new BABYLON.Scene(engine);
     var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(0, -5, 0), scene);
@@ -1669,6 +1670,8 @@ var createScene = function () {
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
     advancedTexture.layer.layerMask = 0x10000000;
     advancedTexture.resizeToFit = true;
+    // advancedTexture.rootContainer.scaleX = window.devicePixelRatio;
+    // advancedTexture.rootContainer.scaleY = window.devicePixelRatio;
 
     var Loadingpanel = new BABYLON.GUI.Rectangle();
     Loadingpanel.isVisible = false
@@ -1840,7 +1843,9 @@ var createScene = function () {
     camera1.idleRotationSpinupTime = 1000;
     camera1.autoRotationBehavior.idleRotationSpeed = 1;
 
-
+    window.addEventListener("resize", () => {
+        advancedTexture.scaleTo(engine.getRenderWidth(), engine.getRenderHeight());
+        });
 
 
     window.addEventListener("resize", () => { advancedTexture.scaleTo(engine.getRenderWidth(), engine.getRenderHeight()); });
