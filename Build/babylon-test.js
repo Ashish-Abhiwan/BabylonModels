@@ -67,7 +67,7 @@ var createScene = function () {
         var fontsizes = "63%"
 
         var mainpanel = new BABYLON.GUI.Rectangle();
-        mainpanel.width = "100%";
+        mainpanel.width = "10%";
         mainpanel.height = "100%";
         mainpanel.verticalAlignment = "Center";
         mainpanel.horizontalAlignment = "Center";
