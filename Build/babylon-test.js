@@ -99,9 +99,9 @@ var createScene = function () {
 
  ////////////////////////////////////////////  Buttons of the customize options 
 
-        var leather = BABYLON.GUI.Button.CreateImageOnlyButton("Leather", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/Leather.png");
+        var leather = BABYLON.GUI.Button.CreateImageOnlyButton("Leather", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leathers.png");
         leather.width = "90%"
-        leather.height = "50%";
+        leather.height = "30%";
         leather.resizeToFit = true;
         leather.cornerRadius = 0;
         leather.thickness = 0;
@@ -119,9 +119,9 @@ var createScene = function () {
         });
         mainpanelgrid.addControl(leather, 0, 0);
 
-        var leatherlining = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leather lining.png");
+        var leatherlining = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leatherlining.png");
         leatherlining.width = "90%"
-        leatherlining.height = "50%";
+        leatherlining.height = "30%";
         leatherlining.resizeToFit = true;
         leatherlining.cornerRadius = 0;
         leatherlining.thickness = 0;
@@ -139,9 +139,9 @@ var createScene = function () {
         });
         mainpanelgrid.addControl(leatherlining, 1, 0);
 
-        var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag.png");
+        var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalizedtag.png");
         persolizetag.width = "90%"
-        persolizetag.height = "50%";
+        persolizetag.height = "30%";
         persolizetag.resizeToFit = true;
         persolizetag.cornerRadius = 0;
         persolizetag.thickness = 0;
@@ -165,12 +165,12 @@ var createScene = function () {
         personzetagmenu.resizeToFit = true;
         personzetagmenu.width = "15%";
         personzetagmenu.height = "60%";
-        personzetagmenu.left = "14%"
+        personzetagmenu.left = "15%"
         personzetagmenu.verticalAlignment = "Center";
         personzetagmenu.horizontalAlignment = "Center";
         personzetagmenu.resizeToFit = true;
         personzetagmenu.thickness = 0;
-        personzetagmenu.background = "#ffe1ba";
+        personzetagmenu.background = "#ebe0d3";
         advancedTexture.addControl(personzetagmenu);
 
         
@@ -307,11 +307,11 @@ var createScene = function () {
         leatherstab.isVisible = false;
         leatherstab.width = "15%";
         leatherstab.height = "100%";
-        leatherstab.left = "14%";
+        leatherstab.left = "15%";
         leatherstab.verticalAlignment = "Center";
         leatherstab.horizontalAlignment = "Center";
         leatherstab.thickness = 0;
-        leatherstab.background = "#ffe1ba";
+        leatherstab.background = "#ebe0d3";
         advancedTexture.addControl(leatherstab);
 
 
@@ -1825,9 +1825,9 @@ var createScene = function () {
     descrippanel.isVisible = false;
     descrippanel.verticalAlignment = "Center";
     descrippanel.horizontalAlignment = "Top";
-    descrippanel.width = "18%";
-    descrippanel.height = "10%";
-    descrippanel.left = "81.5%";
+    descrippanel.width = "180px%";
+    descrippanel.height = "70px";
+    descrippanel.left = "87%";
     descrippanel.top = "15%";
     descrippanel.bottom = "30%";
     descrippanel.cornerRadius = 0;
