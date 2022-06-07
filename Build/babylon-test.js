@@ -67,7 +67,7 @@ var createScene = function () {
         var fontsizes = "63%"
 
         var mainpanel = new BABYLON.GUI.Rectangle();
-        mainpanel.width = "10%";
+        mainpanel.width = "15%";
         mainpanel.height = "100%";
         mainpanel.verticalAlignment = "Center";
         mainpanel.horizontalAlignment = "Center";
@@ -77,22 +77,22 @@ var createScene = function () {
         mainpanel.cornerRadius = 0;
         mainpanel.color = "Grey";
         mainpanel.thickness = 0;
-        mainpanel.background = "#F5F4F2";
+        mainpanel.background = "#ebe0d3";
         advancedTexture.addControl(mainpanel);
 
 
-        var backgroundimg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/background.jpg");
-        backgroundimg.width = "100%";
-        backgroundimg.height = "100%";
-        backgroundimg.resizeToFit = true;
-        mainpanel.addControl(backgroundimg);
+        // var backgroundimg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/bgrectangle.png");
+        // backgroundimg.width = "100%";
+        // backgroundimg.height = "100%";
+        // backgroundimg.resizeToFit = true;
+        // mainpanel.addControl(backgroundimg);
 
         var mainpanelgrid = new BABYLON.GUI.Grid();
         mainpanelgrid.width = "100%";
         mainpanelgrid.height = "100%";
-        mainpanelgrid.addColumnDefinition(1 / 3);
-        mainpanelgrid.addColumnDefinition(1 / 3);
-        mainpanelgrid.addColumnDefinition(1 / 3);
+        mainpanelgrid.addRowDefinition(1 / 3);
+        mainpanelgrid.addRowDefinition(1 / 3);
+        mainpanelgrid.addRowDefinition(1 / 3);
         mainpanel.addControl(mainpanelgrid);
 
 
@@ -106,12 +106,16 @@ var createScene = function () {
         leather.cornerRadius = 0;
         leather.thickness = 0;
         leather.onPointerUpObservable.add(function () {
-            mainpanel.isVisible = false;
+          //  mainpanel.isVisible = false;
             descrippanel.isVisible = true;
             leatherstab.isVisible = true;
             leText.isVisible = true;
             anipanel.isVisible = true;
             leaname.text = "";
+            leatherliningtab.isVisible = false;
+            personzetagmenu.isVisible = false;
+            personalText.isVisible = false;
+            liningText.isVisible = false;
         });
         mainpanelgrid.addControl(leather, 0, 0);
 
@@ -122,15 +126,18 @@ var createScene = function () {
         leatherlining.cornerRadius = 0;
         leatherlining.thickness = 0;
         leatherlining.onPointerUpObservable.add(function () {
-            mainpanel.isVisible = false;
+           // mainpanel.isVisible = false;
             leatherliningtab.isVisible = true;
             descrippanel.isVisible = true;
             liningText.isVisible = true;
             anipanel.isVisible = true;
             leaname.text = "";
-
+            leatherstab.isVisible = false;
+            personzetagmenu.isVisible = false;
+            personalText.isVisible = false;
+            leText.isVisible = false;
         });
-        mainpanelgrid.addControl(leatherlining, 0, 1);
+        mainpanelgrid.addControl(leatherlining, 1, 0);
 
         var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag.png");
         persolizetag.width = "90%"
@@ -139,31 +146,38 @@ var createScene = function () {
         persolizetag.cornerRadius = 0;
         persolizetag.thickness = 0;
         persolizetag.onPointerUpObservable.add(function () {
-            mainpanel.isVisible = false;
+          //  mainpanel.isVisible = false;
             personzetagmenu.isVisible = true;
             personalText.isVisible = true;
             anipanel.isVisible = true;
+            leatherstab.isVisible = false;
+            leatherliningtab.isVisible = false;
+            leText.isVisible = false;
+            descrippanel.isVisible = false;
+            liningText.isVisible = false;
         });
-        mainpanelgrid.addControl(persolizetag, 0, 2);
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        mainpanelgrid.addControl(persolizetag, 2, 0);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// personize tag panel 
 
         var personzetagmenu = new BABYLON.GUI.Rectangle();
         personzetagmenu.isVisible = false;
         personzetagmenu.resizeToFit = true;
-        personzetagmenu.width = "25%";
-        personzetagmenu.height = "100%";
+        personzetagmenu.width = "15%";
+        personzetagmenu.height = "60%";
+        personzetagmenu.left = "14%"
         personzetagmenu.verticalAlignment = "Center";
         personzetagmenu.horizontalAlignment = "Center";
         personzetagmenu.resizeToFit = true;
         personzetagmenu.thickness = 0;
+        personzetagmenu.background = "#ffe1ba";
         advancedTexture.addControl(personzetagmenu);
 
         
-        var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag table.svg");
-        personalizetabbg.width = "100%";
-        personalizetabbg.height = "100%";
-        personzetagmenu.addControl(personalizetabbg, 1, 1);
+        // var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalised tag table.svg");
+        // personalizetabbg.width = "100%";
+        // personalizetabbg.height = "100%";
+        // personzetagmenu.addControl(personalizetabbg, 1, 1);
 
         var personalText = new BABYLON.GUI.TextBlock();
         personalText.isVisible = false
@@ -215,7 +229,7 @@ var createScene = function () {
         perText1.text = "Name In\nBlind Emboss";
         perText1.resizeToFit = true;
         perText1.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
-        perText1.fontSize = "30%";
+        perText1.fontSize = "45%";
       //  perText1.color = "#F7EFDE";
         persolizetaggrid.addControl(perText1, 0);
 
@@ -223,14 +237,14 @@ var createScene = function () {
         perText2.text = "Name In\nGold Emboss";
         perText2.resizeToFit = true;
         perText2.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
-        perText2.fontSize = "26%";
+        perText2.fontSize = "35%";
         persolizetaggrid.addControl(perText2, 2);
 
         var perText3 = new BABYLON.GUI.TextBlock();
         perText3.text = "Emboss Name";
         perText3.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         perText3.resizeToFit = true;
-        perText3.fontSize = "32%";
+        perText3.fontSize = "45%";
         persolizetaggrid.addControl(perText3, 4);
 
 
@@ -287,14 +301,17 @@ var createScene = function () {
         persolizetaggrid.addControl(namefeild, 6);
 
 
-        //////////////////////////////////////////////////////////////////////////////  leather options canvas panel 
+//////////////////////////////////////////////////////////////////////////////  leather options canvas panel 
 
         var leatherstab = new BABYLON.GUI.Rectangle();
         leatherstab.isVisible = false;
-        leatherstab.width = "25%";
+        leatherstab.width = "15%";
         leatherstab.height = "100%";
+        leatherstab.left = "14%";
         leatherstab.verticalAlignment = "Center";
         leatherstab.horizontalAlignment = "Center";
+        leatherstab.thickness = 0;
+        leatherstab.background = "#ffe1ba";
         advancedTexture.addControl(leatherstab);
 
 
@@ -304,24 +321,22 @@ var createScene = function () {
         leText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         leText.resizeToFit = true;
         leText.text.resizeToFit = true;
-        leText.fontSize = "7%";
+        leText.fontSize = "5%";
         leText.paddingBottom = "85%"
         leText.left = "40%"
-       
-    
         advancedTexture.addControl(leText);
 
-        var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leathers table.png");
-        personalizetabbg.width = "100%";
-        personalizetabbg.height = "100%";
-        leatherstab.addControl(personalizetabbg);
+            // var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leathers table.png");
+            // personalizetabbg.width = "100%";
+            // personalizetabbg.height = "100%";
+            // leatherstab.addControl(personalizetabbg);
 
 
         var leathergdextra = new BABYLON.GUI.Grid();
         leathergdextra.width = "100%";
         leathergdextra.height = "99.9%";
-        leathergdextra.addRowDefinition(0.05);
-        leathergdextra.addRowDefinition(0.95);
+        leathergdextra.addRowDefinition(0.04);
+        leathergdextra.addRowDefinition(0.96);
         leathergdextra.addColumnDefinition(0.10);
         leathergdextra.addColumnDefinition(0.90);
         leatherstab.addControl(leathergdextra);
@@ -341,12 +356,14 @@ var createScene = function () {
 
         var leathergd = new BABYLON.GUI.Grid();
         leathergd.width = "100%";
-        leathergd.height = "99.9%";
-        leathergd.addRowDefinition(1 / 3);
-        leathergd.addRowDefinition(1 / 3);
-        leathergd.addRowDefinition(1 / 3);
-        leathergd.addColumnDefinition(1 / 2);
-        leathergd.addColumnDefinition(1 / 2);
+        leathergd.height = "100%";
+        leathergd.addColumnDefinition(1);
+        leathergd.addRowDefinition(1 / 6);
+        leathergd.addRowDefinition(1 / 6);
+        leathergd.addRowDefinition(1 / 6);
+        leathergd.addRowDefinition(1 / 6);
+        leathergd.addRowDefinition(1 / 6);
+        leathergd.addRowDefinition(1 / 6);
         leathergdextra.addControl(leathergd, 1, 1);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// kalahari 
@@ -362,7 +379,7 @@ var createScene = function () {
         KALAHARIText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         KALAHARIText.resizeToFit = true;
         KALAHARIText.text.resizeToFit = true;
-        KALAHARIText.fontSize = "30%";
+        KALAHARIText.fontSize = "60%";
         kalaharigd.addControl(KALAHARIText, 0);
 
         var kaligd = new BABYLON.GUI.Grid("kaligd");
@@ -376,8 +393,8 @@ var createScene = function () {
         kalaharigd.addControl(kaligd, 1);
 
         var currentButton;
-        var btnW = "85%";
-        var btnH = "60%";
+        var btnW = "60%";
+        var btnH = "90%";
         var btnColor = "#25BAFFFF";
         var fonttext = "27%";
 
@@ -537,11 +554,11 @@ var createScene = function () {
         leathergd.addControl(ostrichgd, 1, 0);
 
         var ostrichText = new BABYLON.GUI.TextBlock();
-        ostrichText.text = "LUXURY\nOSTRICH";
+        ostrichText.text = "LUXURY OSTRICH";
         ostrichText.text.resizeToFit = true;
         ostrichText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         ostrichText.resizeToFit = true;
-        ostrichText.fontSize = "30%";
+        ostrichText.fontSize = "60%";
         ostrichgd.addControl(ostrichText, 0);
 
         var ostgd = new BABYLON.GUI.Grid("kaligd");
@@ -655,14 +672,14 @@ var createScene = function () {
         ranchgd.height = "99.9%";
         ranchgd.addRowDefinition(0.30);
         ranchgd.addRowDefinition(0.70);
-        leathergd.addControl(ranchgd, 0, 1);
+        leathergd.addControl(ranchgd, 2, 0);
 
         var ranchText = new BABYLON.GUI.TextBlock();
-        ranchText.text = "RANCH SMOOTH\nCALF";
+        ranchText.text = "RANCH SMOOTH CALF";
         ranchText.text.resizeToFit = true;
         ranchText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         ranchText.resizeToFit = true;
-        ranchText.fontSize = "29.5%";
+        ranchText.fontSize = "50%";
         ranchgd.addControl(ranchText, 0);
 
         var rangd = new BABYLON.GUI.Grid("kaligd");
@@ -682,8 +699,8 @@ var createScene = function () {
 
 
         var button20 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF BLACK.jpg ");
-        button20.width = btcW;
-        button20.height = btcH;
+        button20.width = btnW;
+        button20.height = btnH;
         button20.color = "#25BAFFFF";
         button20.cornerRadius = 100;
         button20.thickness = 0;
@@ -713,7 +730,7 @@ var createScene = function () {
         rangd.addControl(button20, 0, 0);
 
         var button21 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF EMERALD.jpg ");
-        button21.width = btcW;
+        button21.width = btnW;
         button21.height = btnH;
         button21.color = "#25BAFFFF";
         button21.cornerRadius = 100;
@@ -745,8 +762,8 @@ var createScene = function () {
 
 
         var button22 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF MID NIGHT BLUE.jpg ");
-        button22.width = btcW;
-        button22.height = btcH;
+        button22.width = btnW;
+        button22.height = btnH;
         button22.color = "#25BAFFFF";
         button22.cornerRadius = 100;
         button22.thickness = 0;
@@ -776,8 +793,8 @@ var createScene = function () {
         rangd.addControl(button22, 0, 2);
 
         var button23 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF RED.jpg ");
-        button23.width = btcW;
-        button23.height = btcH;
+        button23.width = btnW;
+        button23.height = btnH;
         button23.color = "#25BAFFFF";
         button23.cornerRadius = 100;
         button23.thickness = 0;
@@ -807,8 +824,8 @@ var createScene = function () {
         rangd.addControl(button23, 1, 0);
 
         var button24 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN  BROWN.jpg ");
-        button24.width = btcW;
-        button24.height = btcH;
+        button24.width = btnW;
+        button24.height = btnH;
         button24.color = "#25BAFFFF";
         button24.cornerRadius = 100;
         button24.thickness = 0;
@@ -840,8 +857,8 @@ var createScene = function () {
         rangd.addControl(button24, 1, 1);
 
         var button25 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/RANCH SMOOTH CALF TAN.jpg ");
-        button25.width = btcW;
-        button25.height = btcH;
+        button25.width = btnW;
+        button25.height = btnH;
         button25.color = "#25BAFFFF";
         button25.cornerRadius = 100;
         button25.thickness = 0;
@@ -880,19 +897,19 @@ var createScene = function () {
         raeldeergd.height = "99.9%";
         raeldeergd.addRowDefinition(0.30);
         raeldeergd.addRowDefinition(0.70);
-        leathergd.addControl(raeldeergd, 2, 0);
+        leathergd.addControl(raeldeergd, 3, 0);
 
         var DeerText = new BABYLON.GUI.TextBlock();
         DeerText.text = "REAL DEER";
         DeerText.text.resizeToFit = true;
         DeerText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         DeerText.resizeToFit = true;
-        DeerText.fontSize = "30%";
+        DeerText.fontSize = "60%";
         raeldeergd.addControl(DeerText, 0);
 
         var button26 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REAL DEER BLACK.jpg ");
-        button26.width = "32%";
-        button26.height = "32%";
+        button26.width = "20%";
+        button26.height = "50%";
         button26.color = "#25BAFFFF";
         button26.cornerRadius = 100;
         button26.thickness = 0;
@@ -929,14 +946,14 @@ var createScene = function () {
         regulargd.height = "99.9%";
         regulargd.addRowDefinition(0.30);
         regulargd.addRowDefinition(0.70);
-        leathergd.addControl(regulargd, 2, 1);
+        leathergd.addControl(regulargd, 4, 0);
 
         var regularText = new BABYLON.GUI.TextBlock();
-        regularText.text = "REGULAR\nCLASSIC";
+        regularText.text = "REGULAR CLASSIC";
         regularText.text.resizeToFit = true;
         regularText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         regularText.resizeToFit = true;
-        regularText.fontSize = "30%";
+        regularText.fontSize = "60%";
         regulargd.addControl(regularText, 0);
 
         var regugd = new BABYLON.GUI.Grid("kaligd");
@@ -953,8 +970,8 @@ var createScene = function () {
 
 
         var button27 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BLACK.jpg ");
-        button27.width = btcW;
-        button27.height = btcH;
+        button27.width = btnW;
+        button27.height = btnH;
         button27.color = "#25BAFFFF";
         button27.cornerRadius = 100;
         button27.thickness = 0;
@@ -984,8 +1001,8 @@ var createScene = function () {
         regugd.addControl(button27, 0, 0);
 
         var button28 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER BROWN.jpg ");
-        button28.width = btcW;
-        button28.height = btcH;
+        button28.width = btnW;
+        button28.height = btnH;
         button28.color = "#25BAFFFF";
         button28.cornerRadius = 100;
         button28.thickness = 0;
@@ -1015,8 +1032,8 @@ var createScene = function () {
         regugd.addControl(button28, 0, 1);
 
         var button29 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER HONEY.jpg ");
-        button29.width = btcW;
-        button29.height = btcH;
+        button29.width = btnW;
+        button29.height = btnH;
         button29.color = "#25BAFFFF";
         button29.cornerRadius = 100;
         button29.thickness = 0;
@@ -1046,8 +1063,8 @@ var createScene = function () {
         regugd.addControl(button29, 0, 2);
 
         var button30 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER MID NIGHT BLUE.jpg ");
-        button30.width = btcW;
-        button30.height = btcH;
+        button30.width = btnW;
+        button30.height = btnH;
         button30.color = "#25BAFFFF";
         button30.cornerRadius = 100;
         button30.thickness = 0;
@@ -1077,8 +1094,8 @@ var createScene = function () {
         regugd.addControl(button30, 1, 0);
 
         var button31 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER RED.jpg ");
-        button31.width = btcW;
-        button31.height = btcH;
+        button31.width = btnW;
+        button31.height = btnH;
         button31.color = "#25BAFFFF";
         button31.cornerRadius = 100;
         button31.thickness = 0;
@@ -1108,8 +1125,8 @@ var createScene = function () {
         regugd.addControl(button31, 1, 1);
 
         var button32 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/REGULAR CLASSIC LEATHER TAN.jpg ");
-        button32.width = btcW;
-        button32.height = btcH;
+        button32.width = btnW;
+        button32.height = btnH;
         button32.color = "#25BAFFFF";
         button32.cornerRadius = 100;
         button32.thickness = 0;
@@ -1146,14 +1163,14 @@ var createScene = function () {
         babycrocogd.height = "99.9%";
         babycrocogd.addRowDefinition(0.30);
         babycrocogd.addRowDefinition(0.70);
-        leathergd.addControl(babycrocogd, 1, 1);
+        leathergd.addControl(babycrocogd, 5, 0);
 
         var crocoText = new BABYLON.GUI.TextBlock();
-        crocoText.text = "BABY\nCROCO";
+        crocoText.text = "BABY CROCO";
         crocoText.text.resizeToFit = true;
         crocoText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         crocoText.resizeToFit = true;
-        crocoText.fontSize = "30%";
+        crocoText.fontSize = "60%";
         babycrocogd.addControl(crocoText, 0);
 
 
@@ -1170,8 +1187,8 @@ var createScene = function () {
 
 
         var L1Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture1", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BLACK.jpg");
-        L1Btn.width = btcW;
-        L1Btn.height = btcH;
+        L1Btn.width = btnW;
+        L1Btn.height = btnH;
         L1Btn.color = "#25BAFFFF";
         L1Btn.cornerRadius = 100;
         L1Btn.thickness = 0;
@@ -1201,8 +1218,8 @@ var createScene = function () {
         babygd.addControl(L1Btn, 0, 0);
 
         var L2Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture2", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO BROWN.jpg ");
-        L2Btn.width = btcW;
-        L2Btn.height = btcH;
+        L2Btn.width = btnW;
+        L2Btn.height = btnH;
         L2Btn.color = "#25BAFFFF";
         L2Btn.cornerRadius = 100;
         L2Btn.thickness = 0;
@@ -1233,8 +1250,8 @@ var createScene = function () {
 
 
         var L3Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO EMERALD.jpg ");
-        L3Btn.width = btcW;
-        L3Btn.height = btcH;
+        L3Btn.width = btnW;
+        L3Btn.height = btnH;
         L3Btn.color = "#25BAFFFF";
         L3Btn.cornerRadius = 100;
         L3Btn.thickness = 0;
@@ -1266,8 +1283,8 @@ var createScene = function () {
 
 
         var L4Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture4", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO MID NIGHT BLUE.jpg ");
-        L4Btn.width = btcW;
-        L4Btn.height = btcH;
+        L4Btn.width = btnW;
+        L4Btn.height = btnH;
         L4Btn.color = "#25BAFFFF";
         L4Btn.cornerRadius = 100;
         L4Btn.thickness = 0;
@@ -1297,8 +1314,8 @@ var createScene = function () {
         babygd.addControl(L4Btn, 1, 0);
 
         var L5Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture5", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BABY CROCO PINK.jpg ");
-        L5Btn.width = btcW;
-        L5Btn.height = btcH;
+        L5Btn.width = btnW;
+        L5Btn.height = btnH;
         L5Btn.color = "#25BAFFFF";
         L5Btn.cornerRadius = 100;
         L5Btn.thickness = 0;
@@ -1333,8 +1350,11 @@ var createScene = function () {
 
         var leatherliningtab = new BABYLON.GUI.Rectangle();
         leatherliningtab.isVisible = false;
-        leatherliningtab.width = "25%";
+        leatherliningtab.width = "15%";
         leatherliningtab.height = "100%";
+        leatherliningtab.left = "10%";
+        leatherliningtab.thickness = 0;
+        leatherliningtab.background = "#ffe1ba";
         leatherliningtab.verticalAlignment = "Center";
         leatherliningtab.horizontalAlignment = "Center";
         advancedTexture.addControl(leatherliningtab);
@@ -1347,7 +1367,7 @@ var createScene = function () {
         liningText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         liningText.resizeToFit = true;
         liningText.text.resizeToFit = true;
-        liningText.fontSize = "7%";
+        liningText.fontSize = "5%";
         liningText.paddingBottom = "85%"
         liningText.left = "40%"
         // liningText.fontFamily = "Pacifico";
@@ -1355,10 +1375,10 @@ var createScene = function () {
         advancedTexture.addControl(liningText);
 
 
-        var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/linings.png");
-        personalizetabbg.width = "100%";
-        personalizetabbg.height = "100%";
-        leatherliningtab.addControl(personalizetabbg);
+        // var personalizetabbg = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/linings.png");
+        // personalizetabbg.width = "100%";
+        // personalizetabbg.height = "100%";
+        // leatherliningtab.addControl(personalizetabbg);
 
 
 
@@ -1389,18 +1409,19 @@ var createScene = function () {
         var gd1 = new BABYLON.GUI.Grid();
         gd1.width = "100%";
         gd1.height = "100%";
-        gd1.addRowDefinition(1 / 2);
-        gd1.addRowDefinition(1 / 2);
+        gd1.addRowDefinition(1 / 3);
+        gd1.addRowDefinition(1 / 3);
+        gd1.addRowDefinition(1 / 3);
         lininggd.addControl(gd1,1,1);
         // ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        var gd1extra = new BABYLON.GUI.Grid();
-        gd1extra.width = "100%";
-        gd1extra.height = "100%";
-        gd1extra.addColumnDefinition(1 / 2);
-        gd1extra.addColumnDefinition(1 / 2);
-        gd1.addControl(gd1extra,0);
+        // var gd1extra = new BABYLON.GUI.Grid();
+        // gd1extra.width = "100%";
+        // gd1extra.height = "100%";
+        // gd1extra.addColumnDefinition(1 / 2);
+        // gd1extra.addColumnDefinition(1 / 2);
+        // gd1.addControl(gd1extra,0);
 
 
 
@@ -1409,13 +1430,13 @@ var createScene = function () {
         kidgd.height = "99.9%";
         kidgd.addRowDefinition(0.30);
         kidgd.addRowDefinition(0.70);
-        gd1extra.addControl(kidgd, 0, 0);
+        gd1.addControl(kidgd, 0, 0);
 
         var KidText = new BABYLON.GUI.TextBlock();
         KidText.text = "KID SUEDE\nGENUINE";
         KidText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         KidText.resizeToFit = true;
-        KidText.fontSize = "23%";
+        KidText.fontSize = "30%";
         kidgd.addControl(KidText, 0);
 
 
@@ -1427,7 +1448,7 @@ var createScene = function () {
         kidgd.addControl(LININGgd, 1);
 
         var crnt;
-        var cbW = "35%";
+        var cbW = "22%";
         var cbH = "50%";
         var button15 = BABYLON.GUI.Button.CreateImageOnlyButton("Texture3", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/KID SUEDE GENUINE LEATHER BROWN.jpg ");
         crnt = button15;
@@ -1488,7 +1509,7 @@ var createScene = function () {
                 Loadingpanel.isVisible = false;
             })
         });
-        LININGgd.addControl(button16, 1, 1);
+        LININGgd.addControl(button16,1, 0);
 
        //////////////////////////////////////// // /////////////////////////////////
 
@@ -1497,13 +1518,13 @@ var createScene = function () {
         hidegd.height = "99.9%";
         hidegd.addRowDefinition(0.30);
         hidegd.addRowDefinition(0.70);
-        gd1extra.addControl(hidegd, 0, 1);
+        gd1.addControl(hidegd, 1, 0);
 
         var hideText = new BABYLON.GUI.TextBlock();
         hideText.text = "HIDESIGN\nBRANDED";
         hideText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         hideText.resizeToFit = true;
-        hideText.fontSize = "23%";
+        hideText.fontSize = "30%";
         hidegd.addControl(hideText, 0);
 
 
@@ -1583,13 +1604,13 @@ var createScene = function () {
         brshfgd.height = "99.9%";
         brshfgd.addRowDefinition(0.30);
         brshfgd.addRowDefinition(0.70);
-        gd1.addControl(brshfgd, 1);
+        gd1.addControl(brshfgd, 2);
 
         var bushText = new BABYLON.GUI.TextBlock();
         bushText.text = "Brushed\nFabric";
         bushText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         bushText.resizeToFit = true;
-        bushText.fontSize = "27%";
+        bushText.fontSize = "35%";
         brshfgd.addControl(bushText, 0);
 
 
@@ -1604,8 +1625,8 @@ var createScene = function () {
         brshfgd.addControl(Bgd,1);
 
         var L6Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture6", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BRUSHED POLYESTER SUEDE BLUE.jpg ");
-        L6Btn.width = "18%";
-        L6Btn.height = "50%";
+        L6Btn.width = cbW;
+        L6Btn.height = cbH;
         L6Btn.color = "#25BAFFFF";
         L6Btn.cornerRadius = 100;
         L6Btn.thickness = 0;
@@ -1634,8 +1655,8 @@ var createScene = function () {
         Bgd.addControl(L6Btn, 0);
 
         var L7Btn = BABYLON.GUI.Button.CreateImageOnlyButton("Texture7", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/seam/BRUSHED POLYESTER SUEDE RED.jpg ");
-        L7Btn.width = "18%";
-        L7Btn.height = "50%";
+        L7Btn.width = cbW;
+        L7Btn.height = cbH;
         L7Btn.color = "#25BAFFFF";
         L7Btn.cornerRadius = 100;
         L7Btn.thickness = 0;
@@ -1704,7 +1725,7 @@ var createScene = function () {
 
 
     var anipanel = new BABYLON.GUI.Rectangle();
-    anipanel.isVisible = false;
+    anipanel.isVisible = true;
     anipanel.width = "10%";
     anipanel.height = "7%";
     anipanel.cornerRadius = 10;
