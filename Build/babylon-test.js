@@ -18,15 +18,16 @@ var createScene = function () {
     engine.setHardwareScalingLevel(1 / window.devicePixelRatio);
     // Scene and Camera
     var scene = new BABYLON.Scene(engine);
-    var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(0, 5, 0), scene);
+    var camera1 = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 4, 10, new BABYLON.Vector3(5, 5, 0), scene);
     //scene.activeCamera = camera1;
     scene.activeCamera.attachControl(canvas, true);
     camera1.radius =   0.2577;
-    camera1.lowerRadiusLimit = 1.8;
+    camera1.lowerRadiusLimit = 1.73;
     camera1.upperRadiusLimit = 4;
     camera1.wheelDeltaPercentage = 0.05;
+    camera1.fov = 0.4 ;
     camera1.checkCollisions = true;
-    //  camera1.targetScreenOffset = new BABYLON.Vector3(0.35, 0, 0);
+      camera1.targetScreenOffset = new BABYLON.Vector3(0,0.20, 0, );
 
     var bgcamera = camera1.clone("bgcamera");
     bgcamera.attachControl(canvas, true);
