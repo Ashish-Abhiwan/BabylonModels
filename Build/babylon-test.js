@@ -25,7 +25,8 @@ var createScene = function () {
     camera1.lowerRadiusLimit = 1.73;
     camera1.upperRadiusLimit = 4;
     camera1.wheelDeltaPercentage = 0.05;
-    camera1.fov = 0.4 ;
+    //// fov allow to zoom more near to the camera 
+   /// camera1.fov = 0.4 ;
     camera1.checkCollisions = true;
       camera1.targetScreenOffset = new BABYLON.Vector3(0,0.20, 0, );
 
@@ -158,9 +159,9 @@ var createScene = function () {
         });
         mainpanelgrid.addControl(leatherlining, 1, 0);
 
-        var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalizedtag.png");
-        persolizetag.width = "90%"
-        persolizetag.height = "30%";
+        var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("personal tag", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalizedtag.png");
+        persolizetag.width = "288px"
+        persolizetag.height = "107px";
         persolizetag.resizeToFit = true;
         persolizetag.cornerRadius = 0;
         persolizetag.thickness = 0;
@@ -302,7 +303,7 @@ var createScene = function () {
         var namefeild = new BABYLON.GUI.InputText("Input");
         namefeild.width = "90%";
         namefeild.height = "40%";
-        namefeild.color = "White";
+        namefeild.color = "black";
         namefeild.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         namefeild.resizeToFit = true;
         namefeild.background = "#AFAFAFFF";
@@ -1826,9 +1827,9 @@ var createScene = function () {
     var descrippanel = new BABYLON.GUI.Rectangle();
     descrippanel.isVisible = false;
     descrippanel.verticalAlignment = "Center";
-    descrippanel.horizontalAlignment = "Top";
+    descrippanel.horizontalAlignment = "Left";
     descrippanel.width = "180px%";
-    descrippanel.height = "70px";
+    descrippanel.height = "80px";
     descrippanel.left = "87%";
     descrippanel.top = "15%";
     descrippanel.bottom = "30%";
@@ -1917,11 +1918,8 @@ function resize() {
         engine.resize();
         if ($(window).width() < 450) {
             alert('For Better Experience Open In Landscpe Mode');
-
         }
-
     }, 200);
-
 }
 
 // Resize
