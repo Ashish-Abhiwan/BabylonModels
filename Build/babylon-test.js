@@ -36,7 +36,8 @@ var createScene = function () {
 
     scene.activeCameras = [camera1, bgcamera];
 
-    scene.clearColor = new BABYLON.Color3(0.97, 0.95, 0.91);
+   // scene.clearColor = new BABYLON.Color3(0.97, 0.95, 0.91);
+    scene.clearColor = new BABYLON.Color3(1, 1, 1);
 
     // Lights
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
@@ -119,12 +120,17 @@ var createScene = function () {
 
         ////////////////////////////////////////////  Buttons of the customize options 
 
-        var leather = BABYLON.GUI.Button.CreateImageOnlyButton("Leather", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leathers.png");
+        var leather = BABYLON.GUI.Button.CreateSimpleButton("Leather");
         leather.width = "90%"
         leather.height = "30%";
         leather.resizeToFit = true;
-        leather.cornerRadius = 0;
-        leather.thickness = 0;
+        leather.cornerRadius = 5;
+        leather.thickness = 1;
+        leather.fontSize = "10%";
+        leather.textBlock.text = "Leather";
+        leather.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        leather.color = "White";
+        leather.background = "#56A3A3";
         leather.onPointerUpObservable.add(function () {
             //  mainpanel.isVisible = false;
             descrippanel.isVisible = true;
@@ -139,12 +145,19 @@ var createScene = function () {
         });
         mainpanelgrid.addControl(leather, 0, 0);
 
-        var leatherlining = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/leatherlining.png");
+
+        var leatherlining = BABYLON.GUI.Button.CreateSimpleButton("Leather lining");
         leatherlining.width = "90%"
         leatherlining.height = "30%";
         leatherlining.resizeToFit = true;
-        leatherlining.cornerRadius = 0;
-        leatherlining.thickness = 0;
+        leatherlining.cornerRadius = 5;
+        leatherlining.thickness = 1;
+        leatherlining.fontSize = "10%";
+        leatherlining.textBlock.text = "Leather Lining";
+        leatherlining.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        leatherlining.color = "White";
+        leatherlining.resizeToFit = true;
+        leatherlining.background = "#56A3A3";
         leatherlining.onPointerUpObservable.add(function () {
             // mainpanel.isVisible = false;
             leatherliningtab.isVisible = true;
@@ -159,12 +172,18 @@ var createScene = function () {
         });
         mainpanelgrid.addControl(leatherlining, 1, 0);
 
-        var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("personal tag", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalizedtag.png");
-        persolizetag.width = "288px"
-        persolizetag.height = "107px";
+        var persolizetag = BABYLON.GUI.Button.CreateSimpleButton("personal tag");
+        persolizetag.width = "90%"
+        persolizetag.height = "30%";
         persolizetag.resizeToFit = true;
-        persolizetag.cornerRadius = 0;
-        persolizetag.thickness = 0;
+        persolizetag.cornerRadius = 5;
+        persolizetag.thickness = 1;
+        persolizetag.fontSize = "10%";
+        persolizetag.textBlock.text = "Personalise Tag";
+        persolizetag.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        persolizetag.color = "White";
+        persolizetag.resizeToFit = true;
+        persolizetag.background = "#56A3A3";
         persolizetag.onPointerUpObservable.add(function () {
             //  mainpanel.isVisible = false;
             personzetagmenu.isVisible = true;
@@ -1710,6 +1729,7 @@ var createScene = function () {
 
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI", true, scene);
     advancedTexture.layer.layerMask = 0x10000000;
+    advancedTexture.res
     advancedTexture.resizeToFit = true;
     // advancedTexture.rootContainer.scaleX = window.devicePixelRatio;
     // advancedTexture.rootContainer.scaleY = window.devicePixelRatio;
