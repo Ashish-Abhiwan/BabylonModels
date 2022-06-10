@@ -98,7 +98,7 @@ var createScene = function () {
         mainpanel.cornerRadius = 0;
         mainpanel.color = "Grey";
         mainpanel.thickness = 0;
-        mainpanel.background = "#ebe0d3";
+       // mainpanel.background = "#ebe0d3";
         advancedTexture.addControl(mainpanel);
 
 
@@ -122,7 +122,7 @@ var createScene = function () {
 
         var leather = BABYLON.GUI.Button.CreateImageOnlyButton("Leather", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/Leather.svg");
         leather.width = "90%"
-        leather.height = "30%";
+        leather.height = "25%";
         leather.resizeToFit = true;
         leather.cornerRadius = 0;
         leather.thickness = 0;
@@ -148,7 +148,7 @@ var createScene = function () {
 
         var leatherlining = BABYLON.GUI.Button.CreateImageOnlyButton("Leather lining", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/lining.svg");
         leatherlining.width = "90%"
-        leatherlining.height = "30%";
+        leatherlining.height = "25%";
         leatherlining.resizeToFit = true;
         leatherlining.cornerRadius = 0;
         leatherlining.thickness = 0;
@@ -174,7 +174,7 @@ var createScene = function () {
 
         var persolizetag = BABYLON.GUI.Button.CreateImageOnlyButton("personal tag","https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/personalize tag.svg");
         persolizetag.width = "90%"
-        persolizetag.height = "30%";
+        persolizetag.height = "25%";
         persolizetag.resizeToFit = true;
         persolizetag.cornerRadius = 0;
         persolizetag.thickness = 0;
@@ -209,7 +209,7 @@ var createScene = function () {
         personzetagmenu.horizontalAlignment = "Center";
         personzetagmenu.resizeToFit = true;
         personzetagmenu.thickness = 0;
-        personzetagmenu.background = "#ebe0d3";
+       // personzetagmenu.background = "#ebe0d3";
         advancedTexture.addControl(personzetagmenu);
 
 
@@ -351,7 +351,7 @@ var createScene = function () {
         leatherstab.verticalAlignment = "Center";
         leatherstab.horizontalAlignment = "Center";
         leatherstab.thickness = 0;
-        leatherstab.background = "#ebe0d3";
+       // leatherstab.background = "#ebe0d3";
         advancedTexture.addControl(leatherstab);
 
 
@@ -1394,7 +1394,7 @@ var createScene = function () {
         leatherliningtab.height = "100%";
         leatherliningtab.left = 0;
         leatherliningtab.thickness = 0;
-        leatherliningtab.background = "#ebe0d3";
+      //  leatherliningtab.background = "#ebe0d3";
         leatherliningtab.verticalAlignment = "Center";
         leatherliningtab.horizontalAlignment = "Center";
         advancedTexture.addControl(leatherliningtab);
@@ -1839,19 +1839,13 @@ var createScene = function () {
     AnimationgD.addControl(CLOSED, 0, 1);
 
 
-
-
-
-
-
-
     var descrippanel = new BABYLON.GUI.Rectangle();
     descrippanel.isVisible = false;
     descrippanel.verticalAlignment = "Center";
     descrippanel.horizontalAlignment = "Left";
-    descrippanel.width = "10%";
+    descrippanel.width = "15%";
     descrippanel.height = "8%";
-    descrippanel.left = "87%";
+    descrippanel.left = "80%";
     descrippanel.top = "15%";
     descrippanel.bottom = "30%";
     descrippanel.cornerRadius = 0;
