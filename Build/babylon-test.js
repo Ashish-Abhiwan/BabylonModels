@@ -1,3 +1,6 @@
+ 
+//  alert("hello");
+ 
  var canvas = document.getElementById("renderCanvas");
 
 var startRenderLoop = function (engine, canvas) {
@@ -236,11 +239,11 @@ var createScene = function () {
         persongdextra.height = "100%";
         persongdextra.addRowDefinition(0.05);
         persongdextra.addRowDefinition(0.95);
-        persongdextra.addColumnDefinition(0.10);
-        persongdextra.addColumnDefinition(0.90);
+        persongdextra.addColumnDefinition(0.15);
+        persongdextra.addColumnDefinition(0.85);
         personzetagmenu.addControl(persongdextra);
 
-        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign%20pics/back.png");
         close.width = "100%"
         close.height = "100%";
         close.thickness = 0;
@@ -261,7 +264,7 @@ var createScene = function () {
         persolizetaggrid.addRowDefinition(0.20);
         persolizetaggrid.addRowDefinition(0.11);
         persolizetaggrid.addRowDefinition(0.20);
-        persolizetaggrid.addRowDefinition(0.10);
+      //  persolizetaggrid.addRowDefinition(0.10);
         persolizetaggrid.addRowDefinition(0.20);
         persongdextra.addControl(persolizetaggrid, 1, 1);
 
@@ -280,12 +283,12 @@ var createScene = function () {
         perText2.fontSize = "35%";
         persolizetaggrid.addControl(perText2, 2);
 
-        var perText3 = new BABYLON.GUI.TextBlock();
-        perText3.text = "Emboss Name";
-        perText3.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
-        perText3.resizeToFit = true;
-        perText3.fontSize = "45%";
-        persolizetaggrid.addControl(perText3, 4);
+        // var perText3 = new BABYLON.GUI.TextBlock();
+        // perText3.text = "Emboss Name";
+        // perText3.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
+        // perText3.resizeToFit = true;
+        // perText3.fontSize = "45%";
+        // persolizetaggrid.addControl(perText3, 4);
 
 
 
@@ -322,23 +325,23 @@ var createScene = function () {
 
         var namefeild = new BABYLON.GUI.InputText("Input");
         namefeild.width = "90%";
-        namefeild.height = "40%";
+        namefeild.height = "25%";
         namefeild.color = "black";
         namefeild.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         namefeild.resizeToFit = true;
         namefeild.background = "#AFAFAFFF";
-        namefeild.placeholderText = "Emboss";
+        namefeild.placeholderText = "Text";
         namefeild.fontSize = "20%";
         namefeild.placeholderText.fontSize = "10px"
         namefeild.placeholderColor = "white";
         namefeild.focusedBackground = "#AFAFAFFF";
         //namefeild.autoStretchWidth = true;
         namefeild.onTextChangedObservable.add(() => {
-            if (namefeild && namefeild.text.length > 20) {
-                namefeild.text = namefeild.text.substring(0, 20);
+            if (namefeild && namefeild.text.length > 6) {
+                namefeild.text = namefeild.text.substring(0, 6);
             }
         })
-        persolizetaggrid.addControl(namefeild, 6);
+        persolizetaggrid.addControl(namefeild, 4);
 
 
         //////////////////////////////////////////////////////////////////////////////  leather options canvas panel 
@@ -414,6 +417,11 @@ var createScene = function () {
         kalaharigd.addRowDefinition(0.70);
         leathergd.addControl(kalaharigd, 0, 0);
 
+        var kalahari = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        kalahari.width = "100%";
+        kalahari.height = "100%";
+        kalaharigd.addControl(kalahari,0);
+
         var KALAHARIText = new BABYLON.GUI.TextBlock();
         KALAHARIText.text = "KALAHARI";
         KALAHARIText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
@@ -421,6 +429,9 @@ var createScene = function () {
         KALAHARIText.text.resizeToFit = true;
         KALAHARIText.fontSize = "60%";
         kalaharigd.addControl(KALAHARIText, 0);
+
+        
+       
 
         var kaligd = new BABYLON.GUI.Grid("kaligd");
         kaligd.width = "100%";
@@ -593,6 +604,11 @@ var createScene = function () {
         ostrichgd.addRowDefinition(0.70);
         leathergd.addControl(ostrichgd, 1, 0);
 
+        var ostrich = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        ostrich.width = "100%";
+        ostrich.height = "100%";
+        ostrichgd.addControl(ostrich,0);
+
         var ostrichText = new BABYLON.GUI.TextBlock();
         ostrichText.text = "LUXURY OSTRICH";
         ostrichText.text.resizeToFit = true;
@@ -713,6 +729,11 @@ var createScene = function () {
         ranchgd.addRowDefinition(0.30);
         ranchgd.addRowDefinition(0.70);
         leathergd.addControl(ranchgd, 2, 0);
+
+        var ranch = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        ranch.width = "100%";
+        ranch.height = "100%";
+        ranchgd.addControl(ranch,0);
 
         var ranchText = new BABYLON.GUI.TextBlock();
         ranchText.text = "RANCH SMOOTH CALF";
@@ -939,6 +960,13 @@ var createScene = function () {
         raeldeergd.addRowDefinition(0.70);
         leathergd.addControl(raeldeergd, 3, 0);
 
+
+        
+        var deer = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        deer.width = "100%";
+        deer.height = "100%";
+        raeldeergd.addControl(deer,0);
+
         var DeerText = new BABYLON.GUI.TextBlock();
         DeerText.text = "REAL DEER";
         DeerText.text.resizeToFit = true;
@@ -987,6 +1015,11 @@ var createScene = function () {
         regulargd.addRowDefinition(0.30);
         regulargd.addRowDefinition(0.70);
         leathergd.addControl(regulargd, 4, 0);
+
+        var regu = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        regu.width = "100%";
+        regu.height = "100%";
+        regulargd.addControl(regu,0);
 
         var regularText = new BABYLON.GUI.TextBlock();
         regularText.text = "REGULAR CLASSIC";
@@ -1204,6 +1237,12 @@ var createScene = function () {
         babycrocogd.addRowDefinition(0.30);
         babycrocogd.addRowDefinition(0.70);
         leathergd.addControl(babycrocogd, 5, 0);
+
+
+        var croco = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        croco.width = "100%";
+        croco.height = "100%";
+        babycrocogd.addControl(croco,0);
 
         var crocoText = new BABYLON.GUI.TextBlock();
         crocoText.text = "BABY CROCO";
@@ -1472,8 +1511,13 @@ var createScene = function () {
         kidgd.addRowDefinition(0.70);
         gd1.addControl(kidgd, 0, 0);
 
+        var kid = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        kid.width = "100%";
+        kid.height = "50%";
+        kidgd.addControl(kid,0);
+
         var KidText = new BABYLON.GUI.TextBlock();
-        KidText.text = "KID SUEDE\nGENUINE";
+        KidText.text = "KID SUEDE GENUINE";
         KidText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         KidText.resizeToFit = true;
         KidText.fontSize = "30%";
@@ -1560,8 +1604,16 @@ var createScene = function () {
         hidegd.addRowDefinition(0.70);
         gd1.addControl(hidegd, 1, 0);
 
+
+
+        var hid = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        hid.width = "100%";
+        hid.height = "50%";
+        hidegd.addControl(hid,0);
+
+
         var hideText = new BABYLON.GUI.TextBlock();
-        hideText.text = "HIDESIGN\nBRANDED";
+        hideText.text = "HIDESIGN BRANDED";
         hideText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         hideText.resizeToFit = true;
         hideText.fontSize = "30%";
@@ -1646,8 +1698,15 @@ var createScene = function () {
         brshfgd.addRowDefinition(0.70);
         gd1.addControl(brshfgd, 2);
 
+        var brush = new BABYLON.GUI.Image("Image", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/kalahari button.svg");
+        brush.width = "100%";
+        brush.height = "50%";
+        brshfgd.addControl(brush,0);
+
+
+
         var bushText = new BABYLON.GUI.TextBlock();
-        bushText.text = "Brushed\nFabric";
+        bushText.text = "Brushed Fabric";
         bushText.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
         bushText.resizeToFit = true;
         bushText.fontSize = "35%";
