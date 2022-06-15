@@ -247,6 +247,7 @@ var createScene = function () {
         close.width = "100%"
         close.height = "100%";
         close.thickness = 0;
+        close.left = "3%";
         close.onPointerUpObservable.add(function () {
             personzetagmenu.isVisible = false;
             descrippanel.isVisible = false;
@@ -378,16 +379,17 @@ var createScene = function () {
         var leathergdextra = new BABYLON.GUI.Grid();
         leathergdextra.width = "100%";
         leathergdextra.height = "99.9%";
-        leathergdextra.addRowDefinition(0.04);
-        leathergdextra.addRowDefinition(0.96);
-        leathergdextra.addColumnDefinition(0.10);
-        leathergdextra.addColumnDefinition(0.90);
+        leathergdextra.addRowDefinition(0.05);
+        leathergdextra.addRowDefinition(0.95);
+        leathergdextra.addColumnDefinition(0.15);
+        leathergdextra.addColumnDefinition(0.95);
         leatherstab.addControl(leathergdextra);
 
-        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
+        var close = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign%20pics/back.png");
         close.width = "100%"
         close.height = "100%";
         close.thickness = 0;
+        close.left = "3%";
         close.onPointerUpObservable.add(function () {
             leatherstab.isVisible = false;
             descrippanel.isVisible = false;
@@ -1466,16 +1468,17 @@ var createScene = function () {
         lininggd.height = "100%";
         lininggd.addRowDefinition(0.05);
         lininggd.addRowDefinition(0.95);
-        lininggd.addColumnDefinition(0.10);
+        lininggd.addColumnDefinition(0.15);
         lininggd.addColumnDefinition(0.90);
         leatherliningtab.addControl(lininggd);
 
 
 
-        var liningclose = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign/back button.png");
+        var liningclose = BABYLON.GUI.Button.CreateImageOnlyButton("close", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/hidesign%20pics/back.png");
         liningclose.width = "100%"
         liningclose.height = "100%";
         liningclose.thickness = 0;
+        liningclose.left = "3%";
         liningclose.onPointerUpObservable.add(function () {
             leatherliningtab.isVisible = false;
             descrippanel.isVisible = false;
