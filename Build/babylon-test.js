@@ -56,8 +56,8 @@ var createScene = function () {
 
 
 
-    // /// ground
-    // var ground = BABYLON.MeshBuilder.CreateGround("ground", { height: 5, width: 5, subdivisions: 4 }, scene);
+    /// ground
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", { height: 5, width: 5, subdivisions: 4 }, scene);
     // var groundMaterial = new BABYLON.StandardMaterial("groundMaterial", scene);
     // groundMaterial.diffuseTexture = new BABYLON.Texture("textures/wood.jpg", scene);
     // groundMaterial.diffuseTexture.uScale = 30;
@@ -1852,11 +1852,11 @@ var createScene = function () {
     anipanel.addControl(AnimationgD);
 
 
-    var button1 = BABYLON.GUI.Button.CreateSimpleButton("CLOSED_Btn");
+    var button1 = BABYLON.GUI.Button.CreateSimpleButton("Open_btn");
     button1.width = "100%"
     button1.height = "95%";
     button1.fontSize = "35%";
-    button1.textBlock.text = "CLOSE";
+    button1.textBlock.text = "OPEN";
     button1.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
     button1.color = "White";
     button1.resizeToFit = true;
@@ -1879,12 +1879,12 @@ var createScene = function () {
     AnimationgD.addControl(button1, 0, 0);
 
 
-    var CLOSED = BABYLON.GUI.Button.CreateSimpleButton("OPEN_Btn");
+    var CLOSED = BABYLON.GUI.Button.CreateSimpleButton("close_btn");
     CLOSED.isVisible = false;
     CLOSED.width = "100%"
     CLOSED.height = "95%";
     CLOSED.fontSize = "35%";
-    CLOSED.textBlock.text = "OPEN";
+    CLOSED.textBlock.text = "CLOSE";
     CLOSED.fontFamily = "Helvetica,Helvetica Neue,Arial,Lucida Grande,sans-serif";
     CLOSED.color = "white";
     CLOSED.resizeToFit = true;
