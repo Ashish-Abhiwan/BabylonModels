@@ -66,7 +66,7 @@ var createScene = function () {
     // ground.material = groundMaterial;
 
     // Load Bag character and play animation
-    BABYLON.SceneLoader.ImportMesh("", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev2/BAGS/", modelname, scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
+    BABYLON.SceneLoader.ImportMesh("", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev3/BAGS/", modelname, scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
         var Bag = scene.getMeshByName("polySurface773");
         var Stich = scene.getMeshByName("Vu_Stitches001");
         var Metal = scene.getMeshByName("metal");
