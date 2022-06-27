@@ -65,6 +65,17 @@ var createScene = function () {
     // groundMaterial.specularColor = new BABYLON.Color3(.1, .1, .1);
     // ground.material = groundMaterial;
 
+    BABYLON.SceneLoader.ImportMesh("", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev4/BAGS/", "tag.glb", scene, function (TAGMESH, particleSystems, skeletons, ){
+
+    TAGMESH[0].scaling.scaleInPlace(5);
+
+    })
+    
+    
+    
+
+
+
     // Load Bag character and play animation
     BABYLON.SceneLoader.ImportMesh("", "https://raw.githubusercontent.com/Ashishj34/BabylonModels/Dev4/BAGS/", modelname, scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
         var Bag = scene.getMeshByName("polySurface773");
